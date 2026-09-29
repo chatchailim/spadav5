@@ -1,6 +1,6 @@
 # ร่างใบงาน S1–S3 (สำหรับคัดลอกไปใช้ใน `spada-monorepo`)
 
-> สถานะ: **ร่าง ยังไม่ได้ออกใบงานจริง** · วันที่ 2026-09-29 · เกิดจาก [DECISION-MEMO-2026-09-29](../decisions/DECISION-MEMO-2026-09-29.md) ข้อ 4–5
+> สถานะ: **Lead อนุมัติให้ออกใบงาน 2026-09-29 ([APPROVAL-LOG](../decisions/APPROVAL-LOG-2026-09-29.md)) แต่ยังไม่ได้ออกใบงานจริงใน monorepo** ต้องมีผู้ดูแลนำไปออกและตรวจ ACTIVE CLAIMS · วันที่ 2026-09-29 · เกิดจาก [DECISION-MEMO-2026-09-29](../decisions/DECISION-MEMO-2026-09-29.md) ข้อ 4–5
 > ผมมีสิทธิ์อ่านอย่างเดียวใน `spada-monorepo` จึงเขียนร่างไว้ที่นี่ ให้ผู้ดูแลตรวจและนำไปออกใบงานตามขั้นตอนของทีม (AGENT_NOTES, claim-based ownership)
 > **ก่อนเริ่มทุกใบงาน**: ตรวจ `AGENT_NOTES.md` หมวด ACTIVE CLAIMS ว่าไฟล์ที่จะแตะมีใครถือ claim อยู่หรือไม่ (ล่าสุดที่เห็น: hermes ถือ `infra/**` และ `scripts/ops/**`; codex ถือ `services/identity-service/**`, `packages/auth/**`; antigravity ถือ `services/consent-service/**`) และต้องยืนยันสถานะ ณ วันที่เริ่ม เพราะข้อมูลอาจล้าสมัย
 
