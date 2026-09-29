@@ -16,15 +16,17 @@
 | SPD-PRP-000 | ข้อเสนอ PROP-0001..0010 | ร่างเก่า เทียบกับระบบจริงแล้ว | [proposals/README](proposals/README.md) |
 | SPD-DEC-001 | บันทึกคำตัดสินเทคนิค 5 เรื่อง | Lead อนุมัติ 2026-09-29 | [DECISION-MEMO-2026-09-29](decisions/DECISION-MEMO-2026-09-29.md) |
 | SPD-DEC-002 | บันทึกการอนุมัติของ Lead | บันทึกโดย Claude จากข้อความของ Lead | [APPROVAL-LOG](decisions/APPROVAL-LOG-2026-09-29.md) |
-| SPD-DEC-003 | โมเดลเศรษฐกิจ doc 100 ขัดกับสถาปัตยกรรมและเอกสารอื่น | **ร่างรอ Lead ตัดสิน** | [DECISION-MEMO-003](decisions/DECISION-MEMO-003-economic-model-reconciliation.md) |
+| SPD-DEC-003 | โมเดลเศรษฐกิจ doc 100 ขัดกับสถาปัตยกรรมและเอกสารอื่น | **Lead อนุมัติทางเลือก A แล้ว C (2026-09-29)** | [DECISION-MEMO-003](decisions/DECISION-MEMO-003-economic-model-reconciliation.md) |
 | SPD-ADR-D01 | ร่าง ADR ขอบเขตการรับรองฮาร์ดแวร์ (ที่มาการตัดสินใจ) | Lead อนุมัติ | [ADR-DRAFT](decisions/ADR-DRAFT-hardware-qualification-scope.md) |
 | SPD-ADR-D02 | ADR ขอบเขตการรับรองฮาร์ดแวร์ พร้อมนำเข้า monorepo | Accepted (ตามคำอนุมัติ) รอนำเข้า | [ADR-NEXT hardware](decisions/ADR-NEXT-hardware-qualification-scope-import-ready.md) |
-| SPD-ADR-D03 | ADR ปรับโมเดลเศรษฐกิจให้สอดคล้อง พร้อมนำเข้า monorepo | **Proposed รอ Lead** | [ADR-NEXT economic](decisions/ADR-NEXT-economic-model-reconciliation-import-ready.md) |
+| SPD-ADR-D03 | ADR ปรับโมเดลเศรษฐกิจให้สอดคล้อง พร้อมนำเข้า monorepo | **Accepted (ตามคำอนุมัติ 2026-09-29)** รอนำเข้า | [ADR-NEXT economic](decisions/ADR-NEXT-economic-model-reconciliation-import-ready.md) |
 | SPD-PRC-001 | มาตรฐานการจัดซื้อ SetBox | Lead อนุมัติ มีผลกับการซื้อหลังระดมทุน | [SETBOX-PROCUREMENT-STANDARD](procurement/SETBOX-PROCUREMENT-STANDARD.md) |
 | SPD-PRC-002 | แม่แบบจดหมายถึงผู้ขาย (RFQ) | Lead อนุมัติให้ใช้ ยังไม่ส่ง | [RFQ-VENDOR-LETTER-TH](procurement/RFQ-VENDOR-LETTER-TH.md) |
 | SPD-PRC-003 | แบบกรอก ณ วันซื้อ | แม่แบบเปล่า | [PURCHASE-TIME-DECISION-SHEET](procurement/PURCHASE-TIME-DECISION-SHEET.md) |
 | SPD-PRC-004 | แม่แบบทะเบียนฮาร์ดแวร์แบบเดี่ยว | แม่แบบเปล่า (ที่ตั้งจริงที่เสนอ: `onemanos-setbox`) | [HARDWARE-REGISTRY-STANDALONE-TEMPLATE](procurement/HARDWARE-REGISTRY-STANDALONE-TEMPLATE.md) |
 | SPD-INV-001 | รายการตรวจเอกสารลงทุนก่อนเปิดห้องข้อมูล (Go/No-Go) | **ผลตรวจรอบแรก: NO-GO ในสถานะปัจจุบัน** | [INVESTOR-DATAROOM-REVIEW-CHECKLIST](investor-review/INVESTOR-DATAROOM-REVIEW-CHECKLIST.md) |
+| SPD-DEC-004 | คำตัดสิน: ข้อเสนอระดมทุนฉบับปัจจุบัน เงื่อนไขเงินกู้แปลงสภาพ ทะเบียนการถอน และ SPD-DEC-003 | Lead อนุมัติทิศทาง; **ตัวเลขเฉพาะรอ Lead ยืนยัน + ทนาย** | [DECISION-004](decisions/DECISION-004-current-fundraising-offer-and-terms.md) |
+| SPD-INV-003 | ร่าง Term Sheet เงินกู้แปลงสภาพ (สำหรับทนาย) | ร่าง ยังไม่ส่งนักลงทุน | [CONVERTIBLE-LOAN-TERM-SHEET-DRAFT](investor-review/CONVERTIBLE-LOAN-TERM-SHEET-DRAFT.md) |
 | SPD-INV-002 | ทะเบียนข้ออ้างในเอกสารลงทุน (INV-C01..C38) | ผลตรวจรอบแรก (อ่านและค้นไฟล์ ไม่ได้รันระบบ) | [INVESTOR-CLAIM-REGISTER](investor-review/INVESTOR-CLAIM-REGISTER.md) |
 | SPD-WO-001 | ร่างใบงาน S1–S3 | Lead อนุมัติให้ออก ยังไม่ออกจริง | [WO-PROPOSAL-S1-S3](work-orders/WO-PROPOSAL-S1-S3.md) |
 | SPD-WO-002 | ใบงานสคริปต์รับรองฮาร์ดแวร์ (WO-HWQ-001) | ร่าง รอผู้ดูแลออกใบงาน | [WO-HWQ-001](work-orders/WO-HWQ-001-hardware-qualification-script.md) |
@@ -33,15 +35,14 @@
 
 | # | เรื่อง | เอกสาร | หมายเหตุ |
 |---|---|---|---|
-| 1 | เลือกทางเลือก A/B/C สำหรับ doc 100 และประมาณการที่ขัดกัน | SPD-DEC-003, SPD-ADR-D03 | **เกี่ยวข้องกับการระดมทุน** |
+| 1 | **ยืนยันตัวเลขเฉพาะของเงินกู้แปลงสภาพ** (3%, 24 เดือน, pre-money 15 ลบ., แบ่งงวด 2.0/1.0, ช่วงต่อรอง) | SPD-DEC-004 ข้อ 3–4 | ทนายต้องร่างสัญญาต่อ |
 | 2 | ADR 0024, 0025, 0026 (Proposed) | monorepo | ปลดบล็อกข้อเสนอ M2, M7 |
 | 3 | doc 340 §10: SLA/RPO/RTO, ราคาและความรับผิดเมื่อบริการภายนอกล้มเหลว | monorepo doc 340 | จำเป็นต่อ Fee Constitution |
 | 4 | การแยกทายาท/ผู้พิทักษ์ + ผลประโยชน์ทับซ้อน + alive-check (ADR 0019 / D4) | monorepo | ค้างจาก AGENT_NOTES |
 | 5 | ยืนยันย้อนหลัง ADR 0018–0020 (Cowork ลงนามแทน Lead) | monorepo | กระทบความปลอดภัย SetBox |
 | 6 | ยืนยันสถานะ INCOMPLETE เพิ่มเติมในเกณฑ์รับรองฮาร์ดแวร์ | SPD-WO-002 §6 | ช่องว่างของ ADR 0020 |
 | 7 | ผู้สำรอง/ผู้ตรวจ evidence คนที่สอง ของผู้ลงนามฮาร์ดแวร์ | SPD-ADR-D02 | ลดการรวมอำนาจ |
-| 9 | **ประกาศว่าข้อเสนอระดมทุน "ฉบับปัจจุบัน" คือฉบับใด** (ผมสมมติว่า angel 30 ส.ค. 3.0 ลบ.) และถอนเอกสารระดมทุนฉบับอื่น | SPD-INV-001 G1, SPD-INV-002 INV-C01 | **ก่อนเปิดห้องข้อมูล** |
-| 10 | ตัดสินเงื่อนไขจริงของเงินกู้แปลงสภาพ (ดอกเบี้ย 3% หรือ 5%, อายุ 24 เดือนหรือ 1.5 ปี, เพดาน pre/post-money) | SPD-INV-002 INV-C06, C07 | deck กับโมเดลขัดกัน |
+| 9 | ระบุผู้ตรวจเอกสารลงทุนก่อนเปิดห้องข้อมูลและกำหนดวัน | SPD-DEC-003 / SPD-DEC-004 ข้อ 8 | ก่อนเปิดห้องข้อมูล |
 | 8 | ล็อก OTP/secure boot ของ KeySign | SPD-DEC-001 ข้อ 3 | **ห้ามทำ** จนครบ 6 เงื่อนไข |
 
 ## 3. งานที่รอผู้ลงมือ (ผมทำแทนไม่ได้)
@@ -52,7 +53,9 @@
 | 2 | ออกใบงาน S1–S3 และ WO-HWQ-001 ใน monorepo (ตรวจ ACTIVE CLAIMS) | ผู้ดูแล/agent | SPD-WO-001, SPD-WO-002 |
 | 3 | นำ ADR (D02, D03) เข้า `architecture/adr/` ด้วยเลขที่ว่าง | ผู้ดูแล ADR | SPD-ADR-D02, D03 |
 | 4 | ตั้งทะเบียนฮาร์ดแวร์แบบเดี่ยวใน `onemanos-setbox` | ผู้ดูแล repo | SPD-PRC-004 |
-| 5 | ใส่ banner ที่ doc 100 และตรวจเอกสารลงทุนก่อนเปิดห้องข้อมูล | ผู้ดูแลเอกสาร/ผู้ระดมทุน | SPD-DEC-003 |
+| 5 | ใส่ banner SUPERSEDED/WITHDRAWN ตามทะเบียนการถอน และตรวจเอกสารลงทุนที่ยังไม่ได้อ่านเต็ม | ผู้ดูแลเอกสาร/ผู้ระดมทุน | SPD-DEC-004 ข้อ 1 |
+| 5.1 | แก้ deck/โมเดลออก v1.1 ตาม SPD-DEC-004 ข้อ 6 และทำฉบับนักลงทุน | ผู้ระดมทุน | SPD-DEC-004 ข้อ 6 |
+| 5.2 | ให้ทนายร่างสัญญาจาก Term Sheet | ที่ปรึกษากฎหมาย | SPD-INV-003 |
 | 6 | กรอกชื่อผู้รับผิดชอบและวันกำหนด (P1–P5, S1–S3, WO-HWQ-001) | Lead | SPD-DEC-001 |
 | 7 | ปรึกษากฎหมาย: จัดซื้อ/ภาษี/ศุลกากร, โทเคน/staking/ตลาดข้อมูล/เครดิต | ที่ปรึกษากฎหมาย | SPD-PRC-001, SPD-DEC-003 |
 | 9 | ทำ PDF ฉบับนักลงทุนของ deck (ลบ speaker notes) และโมเดลฉบับนักลงทุน (ลบหมายเหตุเชิงต่อรอง) | ผู้ระดมทุน | SPD-INV-001 §3 |
@@ -72,5 +75,8 @@
 
 | วันที่ | เรื่อง | หลักฐาน |
 |---|---|---|
+| 2026-09-29 | Lead ประกาศข้อเสนอระดมทุนฉบับปัจจุบัน (Angel 3.0 ลบ.) และถอน/ติดป้ายฉบับอื่น | SPD-DEC-004 ข้อ 1 |
+| 2026-09-29 | Lead ตัดสิน SPD-DEC-003: ทางเลือก A แล้ว C | SPD-DEC-004 ข้อ 8, SPD-DEC-002 รอบ 2 |
+| 2026-09-29 | กำหนดเงื่อนไขเงินกู้แปลงสภาพ (ทิศทางอนุมัติ; ตัวเลขเฉพาะรอยืนยัน) | SPD-DEC-004 ข้อ 3 |
 | 2026-09-29 | Lead ตัดสิน: ขอบเขตการรับรองฮาร์ดแวร์แบบเดี่ยว/เชื่อมต่อ, ผู้ลงนามแบบเดี่ยว, ทะเบียนแยก, เครื่องลูกค้ารายกรณี | SPD-DEC-002, SPD-ADR-D02 |
 | 2026-09-29 | Lead อนุมัติคำตัดสินเทคนิค 5 เรื่อง, มาตรฐานจัดซื้อ, ใบงาน S1–S3 | SPD-DEC-002 |
