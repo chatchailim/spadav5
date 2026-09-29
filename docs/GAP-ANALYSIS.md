@@ -114,6 +114,8 @@
 
 ### 7.4 doc 343 — คู่มือเจ้าหน้าที่ Node/Network (สำรวจ 2026-09-07, main `39384672`)
 
+> **อัปเดตหลังตรวจโค้ดที่ `206d1f9`**: GAP-04 **ยังเปิด** (`infra/docker/docker-compose.node.yml:90` ฝัง guardian share ตัวอย่าง) · GAP-05 **โค้ดน่าจะแก้แล้ว** (`scripts/ops/backup.mjs` v2/v3 อ่าน volume จาก compose + `sqlite3 .backup`, มี restore drill) ยังขาดหลักฐานการซ้อมบนของจริง · ดู [WO-PROPOSAL-S1-S3](work-orders/WO-PROPOSAL-S1-S3.md)
+
 ช่องว่างก่อนเปิดบริการ (จากซอร์สและเอกสาร ไม่ใช่ pen-test, **สถานะปัจจุบันไม่ทราบ**):
 
 | ID | เรื่อง | ความสำคัญเชิงเศรษฐกิจ/ความเชื่อถือ |
