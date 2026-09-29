@@ -1,20 +1,21 @@
 # สถานะสถาปัตยกรรมปัจจุบัน SPADA + OneManOS SetBox
 
 > รวบรวมจาก `spada-monorepo` @ `206d1f9` (merge PR #92, 2026-09-29), `onemanos-setbox` @ `20471f6` (2026-09-22), `onemanos` @ `321490e` (snapshot 2026-07-23) และประวัติ session ก่อนหน้า
-> วันที่รวบรวม: 2026-09-29 · ปรับเป็น v0.3 · เอกสารนี้เป็น **สรุปเพื่อชี้ทาง** ไม่ใช่ต้นฉบับ ให้ยึดไฟล์ต้นทางที่อ้างถึงเป็นหลักเสมอ
+> วันที่รวบรวม: 2026-09-29 · ปรับเป็น v0.4 (รอบอ่านที่ 3) · เอกสารนี้เป็น **สรุปเพื่อชี้ทาง** ไม่ใช่ต้นฉบับ ให้ยึดไฟล์ต้นทางที่อ้างถึงเป็นหลักเสมอ
 
 ## 1. ขอบเขตของการตรวจ (โปร่งใสว่าอ่านอะไร/ไม่ได้อ่านอะไร)
 
 | แหล่ง | สถานะ |
 |---|---|
 | `spada-monorepo`: README, project-management, `architecture/`, ADR 0005–0008, 0012, 0014–0027 (ส่วนสถานะ/บริบท/คำตัดสิน), AGENT_NOTES (ส่วนท้าย), AGENT_HANDOFF | อ่านแล้ว |
-| doc 335 (AI-Adversary Hardening) ถึง D3, doc 189 (Actual Status), doc 100 (Revenue Model: ส่วนสรุป รายได้ operator ตารางค่าธรรมเนียม), doc 247 (Member Value), doc 263 (OPB OS) ส่วนต้น | อ่านแล้ว บางส่วน |
+| doc 335 (AI-Adversary Hardening) ทั้งฉบับ (ยกเว้นภาคผนวก patch), doc 340–347 (SetBox standard, คู่มือสมาชิก/ผู้ดูแล, เครือข่าย/ฮาร์ดแวร์, ทะเบียน, KeySign), `spada-specs`, doc 189 (Actual Status), doc 100 (Revenue Model: ส่วนสรุป รายได้ operator ตารางค่าธรรมเนียม), doc 247 (Member Value), doc 263 (OPB OS) ส่วนต้น | อ่านแล้ว บางส่วน |
 | บริการ `data-share-broker`, `reclaim-connect` (README) และรายชื่อไฟล์ของ `finance`, `metering`, `billing`, `payment-adapter` | อ่าน README/รายชื่อไฟล์ ไม่ได้อ่านโค้ด |
 | `onemanos-setbox`: README, ROADMAP, ผลตรวจความพร้อม 2026-09-06, หัวไฟล์ handover | อ่านแล้ว |
 | `onemanos`: README ส่วนต้น และรายชื่อไฟล์ | อ่านเล็กน้อย |
-| ADR 0001–0004, 0009–0011, 0013 และเนื้อหาเต็มของ ADR ทุกฉบับ · doc 340–345 · SAMTF (219) · Security Whitepaper | ยังไม่ได้อ่านละเอียด |
+| ADR 0001–0004, 0009–0011, 0013 และเนื้อหาเต็มของ ADR ทุกฉบับ · SAMTF (219) · Security Whitepaper · doc 341/343/346 อ่านเฉพาะสารบัญและส่วนสำคัญ | ยังไม่ได้อ่านละเอียด |
 | โค้ดใน `services/`, `packages/`, `modules/` และซอร์สเครื่องมือเตรียมเครื่อง C# ของ SetBox | **ไม่ได้อ่าน/ไม่พบใน repo ที่โคลน** ไม่ได้รันเทสต์ใดเลย |
-| Google Drive (พบรายการที่เกี่ยวข้อง) · repo `spada-specs`, `ai-platform-kit` | ยังไม่ได้อ่าน |
+| Google Drive (พบรายการที่เกี่ยวข้อง) · repo `ai-platform-kit` | ยังไม่ได้อ่าน |
+| repo `spada-specs` @ `f795a9d` | อ่านครบ (มีไฟล์เดียวคือ README) |
 | ประวัติแชตของ session Opus 5.5 | ไม่มีเครื่องมืออ่านบทสนทนา ได้เพียง metadata และผลงานที่ลง repo |
 
 ดังนั้นข้อความที่ระบุว่า "มี service X" หมายถึงพบโฟลเดอร์หรือไฟล์ ไม่ได้แปลว่าตรวจแล้วว่าทำงานครบตามสเปก
@@ -123,3 +124,13 @@
 - ใน monorepo: SPADA-STD-NET-001 (topology), SPADA-Security-Privacy-Whitepaper.docx, SPADA-Community-Node-Governance-v1.1.docx, SPADA-Roadmap-MVP-to-ASEAN.docx, ไดอะแกรม node-network `.svg` (ฉบับ current: `spada-node-network-circle-mesh-current.svg`, `...role-hierarchy.svg`)
 - ใน Google Drive: SPADA Node Network Topology Diagram (v5.1 SAMTF).png, คู่มือสถาปัตยกรรมและการรวมระบบอธิปไตยดิจิทัล (SPADA Framework & Data Vault Patent Suite).docx, SPADA-OneVault-Prototype-Demo-and-Test-Guide (.pdf/.docx/.md), โน้ต Gemini เรื่อง onemanos (2026-09-10)
 - Artifact เดโม: "เส้นทางเดโม SPADA" (`https://claude.ai/artifact/S4BdT8mMjSXEJVmneMp7by`)
+
+## 12. มาตรฐาน SetBox บน SPADA และ KeySign (doc 340–347) สรุป
+
+- **doc 340 (SSoT 2026-09-01)**: SPADA ทำ trust/identity/policy/coordination/audit · OneManOS ติดตั้งจริง · OneVault เก็บ canonical record ฝั่งกล่อง · **ต้องทำงานพื้นฐานได้แม้ SPADA Bridge ปิด** · ทุก state change มี BookChain audit · Production automation ผ่าน Human Gate · เส้นทางติดตั้ง: ขั้นที่ 0 `ProvisioningClaim` (TrustScore ≥ 500) → `api-gateway` (จุดบังคับใช้เดียว) → WorkSpace → Place · Trusted Service Gate 13 ข้อ
+- **doc 341** คู่มือสมาชิก (ขั้น 0–7, ขั้น 0 ต้องมีอินเทอร์เน็ต, เมื่อ host ถูกเพิกถอนอุปกรณ์ทุกคนบนกล่องลดสิทธิ์ทันที) · topology PC1 / PC1+PC2 / PC1+PC2+PCn
+- **doc 342** เครือข่าย VLAN, สเปกเครื่อง `SB-S1`/`SB-D2`, ประเด็น dTPM/fTPM, พอร์ต 4105/4106/4107
+- **doc 343** คู่มือเจ้าหน้าที่ 17 SOP + แบบฟอร์ม F01–F09 (สำรวจ 2026-09-07) พร้อม GAP-01..08 ก่อนเปิดบริการ
+- **doc 344** ทะเบียนฮาร์ดแวร์ (**ว่าง**) เกณฑ์คือ EK certificate ไม่ใช่ชนิด TPM · vTPM = REJECTED
+- **doc 345–347** KeySign: บทบาท user presence, ต้นแบบ RP2350 A4, ผ่าน PKT-R1..R10 เมื่อ 2026-09-13, runbook เตรียมอุปกรณ์ 7 ขั้น (3 จุดต้องมนุษย์), ข้อห้ามเรียก "FIDO2" และห้ามเปิด `APPLIANCE`
+- **`spada-specs`**: repo ว่าง (README เท่านั้น) รอ sanitize + Human approve รายไฟล์ ห้ามนำเอกสารกลุ่ม business-strategy/patents/founder-profile เข้า

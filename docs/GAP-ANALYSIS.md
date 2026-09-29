@@ -1,7 +1,7 @@
-# Gap Analysis v0.3: เป้าหมายใน Roadmap เทียบกับระบบจริง
+# Gap Analysis v0.4: เป้าหมายใน Roadmap เทียบกับระบบจริง
 
-> แทนที่ v0.2 · วันที่ 2026-09-29
-> แหล่งข้อมูล: `spada-monorepo` @ `206d1f9`, `onemanos-setbox` @ `20471f6`, `onemanos` @ `321490e` · รายละเอียดใน [CURRENT-STATE](CURRENT-STATE.md)
+> แทนที่ v0.3 · วันที่ 2026-09-29 (รอบอ่านที่ 3: เพิ่ม doc 335 ทั้งฉบับ, doc 340–347, `spada-specs`, ตรวจ P5 ในโค้ด — ดูข้อ 7)
+> แหล่งข้อมูล: `spada-monorepo` @ `206d1f9`, `onemanos-setbox` @ `20471f6`, `onemanos` @ `321490e`, `spada-specs` @ `f795a9d` · รายละเอียดใน [CURRENT-STATE](CURRENT-STATE.md)
 > **ระดับหลักฐาน**: **D** = มี ADR/เอกสารตัดสินแล้ว · **C** = พบโค้ด/เทสต์ (ตรวจระดับโฟลเดอร์หรือคำสำคัญ ยังไม่ได้รันหรืออ่านทั้งหมด) · **?** = ไม่พบหลักฐาน ต้องยืนยัน
 > ผมไม่ได้รันโค้ดหรือเทสต์ใดเลย ทุกสถานะเป็นการอ่านเอกสารและตรวจไฟล์
 
@@ -20,7 +20,7 @@
 
 | # | หัวข้อ | หลักฐาน | ระดับ | Gap ที่เหลือ |
 |---|---|---|---|---|
-| 1 | Constitution + Threat model | ADR 0005, 0014 · **doc 335 (Proposed)** · ทะเบียนความเสี่ยง R-001..R-006 | D | ยกกฎเหล็กข้อ 8–9 จาก doc 335 ให้เป็นทางการ · threat model รวม SetBox/KeySign/network · `specs/security/README.md` ยังเป็นสารบัญ |
+| 1 | Constitution + Threat model | ADR 0005, 0014 · **doc 335 (Proposed)** · ทะเบียนความเสี่ยง R-001..R-006 | D | ยกกฎเหล็กข้อ 8–9 จาก doc 335 ให้เป็นทางการ (D1 ยังไม่มีโค้ด) · threat model รวม SetBox/KeySign/network · `specs/security/README.md` ยังเป็นสารบัญ · ดูข้อ 7.1 |
 | 2 | Identity | ADR 0008/0009/0015/0022/0023 · `identity-service`, `oidc-provider-service` | D+C | ZK ยังเป็น ? · ต้องตรวจว่า OIDC (K1/K2) เสร็จขั้นใด |
 | 3 | Consent | `consent-service`, ADR 0018, `data-share-broker-service` (default-deny, scoped, time-boxed, revocable, ไม่ copy ถาวร) | D+C | Launch gate: DPIA + legal review ก่อนเปิดจริง (ระบุใน README ของ broker) |
 | 4 | Vault/OPOF | ADR 0006/0007, ADR 0005 §13 (ลบข้อมูล/legal hold) · `opof-service` · SetBox ตรวจ H1–H7 "ข้อมูลเป็นของกิจการ" | D+C | ADR 0006 ยัง Proposed · ตัวตรวจ "ไม่มีข้อมูลข้ามเจ้าของ" ระดับ network ต้องยืนยัน |
@@ -29,7 +29,7 @@
 | 7 | Agent/sandbox | ADR 0015/0016/0027, doc 335 D2 · SetBox `human-gate.js` ปฏิเสธชื่อบัญชี agent ที่ตัวโค้ด | D+C | doc 335 D2 (แยก instruction/data, irreversible ต้องมนุษย์ยืนยันทุกระดับ) ยัง Proposed ส่วน D2.1 (L5 = อิสระเฉพาะ reversible) **Accepted** แล้ว |
 | 8 | Digital economy | ADR 0012, 0024 (Proposed), 0026 (Proposed) · `finance-service`, `billing-service`, `metering-service`, `payment-adapter`, `shop-service` | D+C แต่ **ขัดกัน** | ดูข้อ 3 |
 | 9 | Offline/mesh | ADR 0026 (Setbox offline) | D | mesh ระดับ node = ? |
-| 10 | Open standards + exit | ADR 0021 (RFC 8785 + test vectors), ADR 0026 (manifest ต้องมี `export`), SetBox no-dependency + handover H1–H7 | D+C | reproducible build ไม่พบ · sunset plan ไม่พบ |
+| 10 | Open standards + exit | ADR 0021 (RFC 8785 + test vectors), ADR 0026 (manifest ต้องมี `export`), SetBox no-dependency + handover H1–H7 | D+C | reproducible build ไม่พบ · sunset plan ไม่พบ · `spada-specs` ยังไม่มีสเปกเผยแพร่ (ข้อ 7.6) |
 
 ## 3. ข้อค้นพบใหม่ที่สำคัญที่สุด: เอกสารเศรษฐกิจขัดกับสถาปัตยกรรม
 
@@ -71,8 +71,85 @@
 | 6 | Reproducible build, sunset plan, crypto-agility | ตัดสินขอบเขตก่อน (SetBox, KeySign, SPADA) |
 | 7 | Mesh ระดับ node | ความสำคัญต่ำ รอหลัง M3 |
 
-## 6. ขั้นถัดไปและสิ่งที่ยังไม่ได้อ่าน
+## 6. สิ่งที่ยังไม่ได้อ่านและข้อจำกัด
 
-- ยังไม่ได้อ่านเต็ม: ADR 0001–0004/0007/0009–0011/0013, doc 335 ส่วน D4 ขึ้นไป, doc 340/341/342/344/345, SAMTF doc 219, Security Whitepaper, Community Node Governance v1.1, เอกสาร Google Drive, repo `spada-specs`, `ai-platform-kit`
+- ยังไม่ได้อ่านเต็ม: ADR 0001–0004/0007/0009–0011/0013, SAMTF (doc 219), Security Whitepaper, Community Node Governance v1.1, เอกสาร Google Drive, repo `ai-platform-kit`, โค้ดเกือบทั้งหมด
 - ยังตรวจไม่ได้: สถานะการทำงานจริงของ service (ต้องรัน `npm run verify` และอ่านโค้ด) และซอร์สเครื่องมือเตรียมเครื่อง C# ของ SetBox
-- ลำดับแนะนำ: (1) ให้ Lead ตัดสินข้อ 3 และ 4 ในหัวข้อที่ 4 (2) ให้ผู้ดูแลระบบยืนยันแถวระดับ C ด้วยการรันเทสต์ (3) เปิด ADR reconcile เศรษฐกิจ
+- ลำดับแนะนำ: (1) ให้ Lead ตัดสินข้อ 3 และ 4 ในหัวข้อที่ 4 และเรื่อง doc 335 (2) ให้ผู้ดูแลระบบยืนยันแถวระดับ C ด้วยการรันเทสต์ (3) เปิด ADR reconcile เศรษฐกิจ
+
+## 7. ผลการอ่านรอบที่ 3 (doc 335 ทั้งฉบับ, doc 340–347, `spada-specs`)
+
+### 7.1 doc 335 — AI-Adversary Hardening (Proposed, 2026-08-05)
+
+| รายการ | สถานะ | หมายเหตุ |
+|---|---|---|
+| D1 Entropy Integrity (ยกเป็นกฎเหล็กข้อ 8) | Proposed | ห้าม software PRNG fallback, fail loud (`SPADAEntropyError`), บันทึก `ENTROPY_ATTESTATION` ลง IdentityBook |
+| D2 แยก instruction/data ของ MyAI (กฎเหล็กข้อ 9) | Proposed | **D2.1 Accepted**: L5 อิสระเฉพาะ operation ที่ย้อนกลับได้ |
+| D3 Passphrase ที่ระบบสร้าง (diceware ไทย 6 คำ ~77 บิต), Recovery แบบ SLIP-39 3-of-5 | Proposed | ต้องตัดสินเรื่อง wordlist ภาษาไทย (P2) |
+| D4 Anti-deepfake: biometric ต้องคู่กับ device-bound key + liveness | Proposed | ระดับ spec ไม่ใช่กฎเหล็ก |
+| D5 Anomaly → TrustScore freeze | Proposed (P2) | ต้องมีเส้นทาง unfreeze ที่ไม่พึ่งศูนย์กลาง |
+| P1–P5 เงื่อนไขก่อนบังคับใช้ | ค้าง | P1 สำรวจ TRNG อุปกรณ์เป้าหมาย · P2 wordlist · P3 3-Tier Harness กัน approval fatigue · P4 ชุดทดสอบ prompt injection · P5 ตรวจ software PRNG ในโค้ด |
+
+**ผมตรวจ P5 เบื้องต้นในโค้ด (ค้นคำสำคัญ ไม่ได้รัน):**
+- การสร้างกุญแจตัวตน (`modules/place/src/place-crypto-provider.ts`) ใช้ `crypto.subtle.generateKey` แบบ Ed25519 ของ WebCrypto **ไม่พบเส้นทาง fallback ไปใช้ `Math.random`** ในจุดนี้ (สอดคล้องกับ D1 แต่ยังไม่มีการตรวจ TRNG หรือ attestation)
+- **ไม่พบ** `SPADAEntropyError` หรือ `ENTROPY_ATTESTATION` ในโค้ดเลย จึงถือว่า D1 ยังไม่ได้ implement
+- พบ `Math.random()` ใน **ตัวสร้าง ID ค่าเริ่มต้น** ของ `opof-service`, `data-share-broker-service`, `reclaim-connect-service` และ `packages/events` (ID = `prefix_เวลา_สุ่ม`, inject ตัวสร้างอื่นได้) ต้องตรวจว่า ID เหล่านี้ถูกใช้เป็นสิทธิ์เข้าถึง (bearer capability) หรือไม่ ถ้าใช่ ทายได้ง่ายเกินไป · ส่วน `apps/member-portal/app.js` ใช้กับโหมดจำลอง
+- ข้อสังเกต: การสร้างกุญแจส่งออก private key เป็น JWK string ที่ชั้น provider การเก็บรักษาอยู่ที่ชั้นอื่น (ยังไม่ได้ตรวจ)
+
+### 7.2 doc 340 — มาตรฐาน SetBox บน SPADA (SSoT, Lead อนุมัติ 2026-09-01)
+
+- **§6 Trusted Service Gate**: บริการต้องมีเจ้าของบริการและผู้รับ incident, service contract แบบมีเวอร์ชัน, data classification/purpose, residency/retention, consent + least-privilege scopes, package provenance + signature, สถานะช่องโหว่, **ราคาและเงื่อนไขก่อนยืนยัน**, ขั้นตอน suspension/revocation, **export/offboarding**, backup/recovery และโปรไฟล์คู่ค้า/ภาครัฐ (ตรงกับข้อเสนอ M3/M7 ใน MEMBER-ECONOMY)
+- **§5 Command contract**: ทุกคำสั่งเปลี่ยนสถานะมี `idempotencyKey`, `expectedVersion`, `packageHash`, `signatureReference`, `policyDecisionReference` และ default deny · **§8** idempotent, outbox, DLQ, replay ด้วย approval, ทดสอบ restore ตาม RPO/RTO
+- **ข้อห้ามใช้ `T1/T2/T4-S` ในโค้ด SPADA** (เป็นคำของ OneManOS) ตาราง mapping → `deviceAssurance` สูงสุด: T2 → `APPLIANCE`, T1/T4-S → `NATIVE`
+- **ยังบล็อก `APPLIANCE`**: device attestation (ADR 0015 §8 งานที่ 2) และกุญแจรายคน (TPM hierarchy) ยังไม่ครบ · เพดานปัจจุบัน `NATIVE`
+- **§10 เรื่องที่ยังไม่ตัดสิน**: Business/Data/Technical/Support Owner, **SLA/RPO/RTO**, retention/residency, trust tiers ของ Trusted Service, ผู้มีอำนาจพักใช้บริการ, **Pricing และความรับผิดเมื่อบริการภายนอกล้มเหลว**, transaction profile ของหน่วยงานรัฐ · ตัดสินแล้ว: เจ้าของ `did:spada:org` ของ SetBox Factory WorkSpace = NextWaver.Net Co., Ltd.
+
+### 7.3 doc 342–344 — เครือข่ายและทะเบียนฮาร์ดแวร์ SetBox
+
+- **สถาปัตยกรรมเครือข่าย**: VLAN แยก (Management / SetBox / Evidence-Backup / Member / Guest-IoT), ห้าม SetBox รับ inbound จากอินเทอร์เน็ต, บริหารจากภายนอกผ่าน VPN + MFA, ต่อ SPADA ด้วย TLS 1.3/mTLS, egress เริ่มจาก deny, ห้าม fail open
+- **🔴 dTPM/fTPM**: เครื่องใน RFQ (AMD Ryzen 7 PRO) น่าจะเป็น fTPM ซึ่งบางรุ่นไม่มี EK certificate · ถ้าไม่มี `APPLIANCE` เปิดไม่ได้ · ต้องถามผู้ขายเป็นลายลักษณ์อักษรก่อนรับใบเสนอราคา (D11 ค้าง)
+- **doc 344 ทะเบียนเครื่องที่ผ่านรับรอง: ว่างเปล่า** กฎ ADR 0020: **ห้ามติดตั้ง SetBox บนรุ่นที่ไม่อยู่ในทะเบียน** จึงติดตั้งบนเครื่องใดไม่ได้จนกว่าจะมีรายการแรก และสคริปต์รับรองฮาร์ดแวร์ยังไม่มี (ต้องมี WO) · vTPM = REJECTED เสมอ · ทะเบียน append-only
+- ผลต่อธุรกิจ: กฎนี้ใช้กับการติดตั้งที่ SPADA ออกสิทธิ์ (ADR 0017) ส่วนเส้นทางติดตั้ง OneManOS แบบไม่เชื่อม SPADA ผมยังไม่ได้ยืนยันว่าอยู่ภายใต้กฎเดียวกันหรือไม่
+- พอร์ตชนกัน 4106 แก้แล้ว (recovery → 4107) · **ยังเปิดอยู่**: `docker-compose.dev.yml` ผูก `4105:4105` ทุก interface (ควรเป็น `127.0.0.1:4105:4105`) อยู่ในโซนที่ยังไม่มีเจ้าของ claim
+
+### 7.4 doc 343 — คู่มือเจ้าหน้าที่ Node/Network (สำรวจ 2026-09-07, main `39384672`)
+
+ช่องว่างก่อนเปิดบริการ (จากซอร์สและเอกสาร ไม่ใช่ pen-test, **สถานะปัจจุบันไม่ทราบ**):
+
+| ID | เรื่อง | ความสำคัญเชิงเศรษฐกิจ/ความเชื่อถือ |
+|---|---|---|
+| GAP-01 | ชื่อตัวแปร federation peers ไม่ตรงกัน (runbook vs Compose) และ runtime ที่ตรวจไม่อ่าน peers | กระทบ M3 (สอง node แลกเปลี่ยนได้) |
+| GAP-02 | ลำดับทดสอบ key login ก่อนปิด password | ล็อกตัวเองออกจากเครื่อง |
+| GAP-03 | bootstrap เปิด SSH/8443 ไม่จำกัดต้นทาง | ความปลอดภัย |
+| GAP-04 | **Compose ของ recovery มี guardian share ตัวอย่างคงที่** | ต้องใช้ ceremony จริงก่อนใช้กับสมาชิก (เกี่ยวกับ ADR 0005 §9) |
+| GAP-05 | `backup.mjs` คัดลอกเฉพาะไฟล์ตรงใต้ `data/` (รวม SQLite) ไม่ครบ volume | ข้อมูลสมาชิกกู้คืนไม่ครบ |
+| GAP-06 | healthcheck ของ proxy ไม่ตรวจ TLS/routing จริง | ปฏิบัติการ |
+| GAP-07 | WorkSpace และ Bridge ยังไม่มี release ครบที่พิสูจน์ได้ (WO-D ยังเป็นร่าง) | ห้ามอ้างว่า self-service พร้อม |
+| GAP-08 | attestation verifier เริ่มต้นเป็น null (ปฏิเสธ) และ `APPLIANCE` ถูกบล็อก | ตาม ADR 0017 |
+
+### 7.5 doc 345–347 — SPADA KeySign (Personal Key Token, RP2350)
+
+- **สถานะ**: ต้นแบบที่ใช้ได้จริง conformance ผ่าน 10 ข้อ (PKT-R1..R10) เมื่อ 2026-09-13 · ชิป revision A4 (แก้ errata E16/E20/E21/E24 แล้ว)
+- **ทำได้**: พิสูจน์ *user presence* (มีคนกดปุ่มตอนนั้น) · **ทำไม่ได้**: พิสูจน์ว่าอุปกรณ์เป็นของแท้ (ไม่มี vendor attestation root) TPM ในเครื่อง SetBox เป็นตัวพิสูจน์เครื่อง คนละหน้าที่และไม่แทนกัน
+- **ข้อจำกัดที่ต้องบอกผู้ใช้** (doc 346 §9): ยังไม่ล็อก secure boot, debug เปิดอยู่, OTP ยังไม่เขียน (ย้อนไม่ได้ รอ Lead), **ยังไม่ออกแบบ PIN**, ผู้เชี่ยวชาญที่ได้อุปกรณ์นานพออาจอ่านกุญแจได้, อายุราว 100,000 ลายเซ็น, **ไม่ใช่ FIDO2** (ห้ามเรียกว่า FIDO2), เพดาน `NATIVE`
+- OTP bit array vulnerability ของ RP2350 ยังไม่แก้ใน A4 · flash เป็นชิปนอกที่คลิปอ่านได้
+- ผลต่อเอกสารนี้: PROP-0005 (duress/coercion) และข้อเสนอ M8 (คุ้มครองการฉ้อโกง) ต้องไม่พึ่ง KeySign เป็นกลไกป้องกันการขโมยจนกว่าจะมี PIN และผ่านการทบทวนความปลอดภัย
+
+### 7.6 `spada-specs` (private, commit `f795a9d`, 2026-06-12)
+
+- มีเพียง `README.md` (สถานะ DRAFT) ยังไม่มีสเปกใดเข้า repo · ตั้งใจเปิดสาธารณะ: Federation Protocol (sanitized จาก doc 099), Naming Convention Guide, OPOF schema · ทุกฉบับต้อง sanitize + Human approve รายไฟล์ · **ห้ามนำ** `12-business-strategy/`, `14-patents-ip/`, `18-founder-profile/` เข้า repo
+- ผลต่อข้อ 10 (Open standards): ข้ออ้าง "มาตรฐานเปิด" ยังไม่มีสเปกที่เผยแพร่จริงรองรับ (มีเพียง canonical hash C2 พร้อม test vectors ใน monorepo) เป็นช่องว่างที่ชัดเจนและแก้ได้เป็นขั้นๆ
+- doc 100 อยู่ใน `12-business-strategy/` จึงอยู่ในกลุ่มที่ห้ามเปิดสาธารณะ
+
+### 7.7 ช่องว่างที่เพิ่มหรือปรับลำดับหลังรอบนี้
+
+| ลำดับใหม่ | ช่องว่าง | เหตุผล |
+|---|---|---|
+| 1 | Reconcile เศรษฐกิจ (doc 100 vs ADR 0012/0005/0026) | เดิม |
+| 2 | ปิดเงื่อนไขก่อนติดตั้ง SetBox จริง: ทะเบียนฮาร์ดแวร์ว่าง + dTPM/fTPM + P1 ผลตรวจ 2026-09-06 + GAP-01..08 | ตอนนี้ติดตั้งตามกติกาไม่ได้เลย จึงเป็นคอขวดของ E1 |
+| 3 | ตัดสิน doc 335 (D1/D2/D3/D5) และมอบ P1–P5 | ยังเป็น Proposed ทั้งหมดยกเว้น D2.1 · D1 ยังไม่มีโค้ด |
+| 4 | KeySign: PIN, การล็อก secure boot/OTP (ย้อนไม่ได้), review ความปลอดภัย | ก่อนอ้างเป็นกลไกป้องกันมูลค่าจริง |
+| 5 | ตรวจ ID ที่ใช้ `Math.random` ว่าเป็น capability หรือไม่ | ความเสี่ยงต่ำ–กลาง ตรวจได้เร็ว |
+| 6 | ตัดสิน §10 ของ doc 340: SLA/RPO/RTO, ราคาและความรับผิดเมื่อบริการภายนอกล้มเหลว | จำเป็นต่อ Fee Constitution (MEMBER-ECONOMY M3) |
+| 7 | เผยแพร่สเปกแรกใน `spada-specs` (sanitized) | รองรับข้ออ้างมาตรฐานเปิดและ exit |
+| 8 | การแบ่งรายได้, reproducible build, sunset plan, mesh ระดับ node | เดิม |
