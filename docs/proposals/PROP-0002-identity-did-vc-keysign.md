@@ -1,9 +1,12 @@
-# ADR-0002: Identity: DID/VC ร่วมกับ KeySign
+# PROP-0002: Identity: DID/VC ร่วมกับ KeySign
 
-- สถานะ: Proposed
+- สถานะ: Mostly covered — เหลือ ZK selective disclosure (ต้องยืนยัน)
 - วันที่: 2026-09-29
 - ระยะ: P0–P1
 - ผู้ตัดสินใจ: (รอกำหนด)
+
+> **เทียบกับระบบจริง (monorepo `spada-monorepo` @ `206d1f9`, 2026-09-29):** ADR 0008 (DID เป็น canonical address), 0009 (DID type registry), 0015 (deviceAssurance), 0022 (รหัสท้องถิ่น OneVault + ผูก DID ผ่าน OIDC), 0023 (OIDC provider `id.spada.network`) · services `identity-service`, `oidc-provider-service` · KeySign มี firmware guide (doc 345)
+> ข้อเสนอนี้ร่างก่อนเห็นระบบจริง เนื้อหาด้านล่างคงไว้เป็นบันทึกตั้งต้น ให้ยึด ADR จริงเป็นหลัก ดู [CURRENT-STATE](../CURRENT-STATE.md) และ [GAP-ANALYSIS](../GAP-ANALYSIS.md)
 
 ## บริบท
 KeySign (Personal Key Token บน RP2350) ให้การยืนยันด้วยฮาร์ดแวร์ ต้องเชื่อมกับตัวตนที่พกพาได้และไม่รวมโปรไฟล์ข้ามบริบท
@@ -27,6 +30,6 @@ KeySign (Personal Key Token บน RP2350) ให้การยืนยัน�
 ## คำถามที่ยังเปิดอยู่
 - DID method ใด
 - ZK คำนวณที่ใด
-- ขั้นตอนเมื่อกุญแจอุปกรณ์ถูกเพิกถอน (ดู ADR-0005)
+- ขั้นตอนเมื่อกุญแจอุปกรณ์ถูกเพิกถอน (ดู PROP-0005)
 
 อ้างอิง: [Roadmap](../ARCHITECTURE-ROADMAP.md), [Gap Analysis](../GAP-ANALYSIS.md)

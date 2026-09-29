@@ -1,4 +1,4 @@
-# ADR-XXXX: <ชื่อการตัดสินใจ>
+# PROP-XXXX: <ชื่อการตัดสินใจ>
 
 - สถานะ: Proposed | Accepted | Rejected | Superseded by ADR-YYYY
 - วันที่:

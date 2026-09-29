@@ -1,9 +1,12 @@
-# ADR-0006: Node roles, consensus และ governance
+# PROP-0006: Node roles, consensus และ governance
 
-- สถานะ: Proposed
+- สถานะ: Mostly covered — ต้องยืนยันเพดาน 1/3 และ Sybil
 - วันที่: 2026-09-29
 - ระยะ: P1
 - ผู้ตัดสินใจ: (รอกำหนด)
+
+> **เทียบกับระบบจริง (monorepo `spada-monorepo` @ `206d1f9`, 2026-09-29):** ADR 0005 (Hybrid Sovereign Federation, §15 กันการยึดระบบ), ADR 0008, ADR 0025 (Home Node + pointer directory สำหรับ >100 ล้านสมาชิก), `services/federation-gateway` (WO-J N1–N4 + mTLS merge แล้ว), รายงาน BookChain CometBFT probe ใน `reports/`
+> ข้อเสนอนี้ร่างก่อนเห็นระบบจริง เนื้อหาด้านล่างคงไว้เป็นบันทึกตั้งต้น ให้ยึด ADR จริงเป็นหลัก ดู [CURRENT-STATE](../CURRENT-STATE.md) และ [GAP-ANALYSIS](../GAP-ANALYSIS.md)
 
 ## บริบท
 เครือข่ายต้องตรวจสอบย้อนหลังได้และไม่ถูกยึดโดยผู้เล่นรายเดียว

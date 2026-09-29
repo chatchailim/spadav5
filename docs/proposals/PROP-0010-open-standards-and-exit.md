@@ -1,9 +1,12 @@
-# ADR-0010: Open standards และ exit ที่ไม่ต้องขออนุญาต
+# PROP-0010: Open standards และ exit ที่ไม่ต้องขออนุญาต
 
-- สถานะ: Proposed
+- สถานะ: Partially covered — reproducible build เป็นช่องว่าง
 - วันที่: 2026-09-29
 - ระยะ: P0–P2
 - ผู้ตัดสินใจ: (รอกำหนด)
+
+> **เทียบกับระบบจริง (monorepo `spada-monorepo` @ `206d1f9`, 2026-09-29):** ADR 0021 (canonical hash ตาม RFC 8785), ADR 0005 §4 (ย้าย PersonSpace ระหว่าง node โดย DID ไม่เปลี่ยน) และ §14 (ไม่ผูกขาดโดย Foundation) · ไม่พบคำว่า reproducible build ในระบบเลย
+> ข้อเสนอนี้ร่างก่อนเห็นระบบจริง เนื้อหาด้านล่างคงไว้เป็นบันทึกตั้งต้น ให้ยึด ADR จริงเป็นหลัก ดู [CURRENT-STATE](../CURRENT-STATE.md) และ [GAP-ANALYSIS](../GAP-ANALYSIS.md)
 
 ## บริบท
 ระบบที่ล็อกผู้ใช้ไว้ขัดกับหลัก Human sovereignty; การล้มเลิกโครงการต้องไม่ทำให้ผู้ใช้เสียทรัพย์สินหรือข้อมูล

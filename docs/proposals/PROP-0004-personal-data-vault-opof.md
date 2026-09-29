@@ -1,9 +1,12 @@
-# ADR-0004: Personal Data Vault ตามแนว OPOF
+# PROP-0004: Personal Data Vault ตามแนว OPOF
 
-- สถานะ: Proposed
+- สถานะ: Covered — ใช้ ADR 0006/0007 เป็นหลัก
 - วันที่: 2026-09-29
 - ระยะ: P0
 - ผู้ตัดสินใจ: (รอกำหนด)
+
+> **เทียบกับระบบจริง (monorepo `spada-monorepo` @ `206d1f9`, 2026-09-29):** ADR 0006 (OPOF, OMOF, Five Books), ADR 0007 (OMOF/OPOF semantic equivalence), ADR 0005 §13 (การลบข้อมูลและ legal hold) · `services/opof-service` · ข้อเสนอนี้ซ้ำกับของจริง
+> ข้อเสนอนี้ร่างก่อนเห็นระบบจริง เนื้อหาด้านล่างคงไว้เป็นบันทึกตั้งต้น ให้ยึด ADR จริงเป็นหลัก ดู [CURRENT-STATE](../CURRENT-STATE.md) และ [GAP-ANALYSIS](../GAP-ANALYSIS.md)
 
 ## บริบท
 ข้อมูลควรอยู่กับเจ้าของและไม่ข้ามเจ้าของ แต่เรื่องร่วมหลายคน (shared matter) ต้องจัดการโดยไม่ละเมิดขอบเขต

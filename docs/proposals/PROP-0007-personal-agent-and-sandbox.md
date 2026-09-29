@@ -1,9 +1,12 @@
-# ADR-0007: Personal AI Agent และ capability-based sandbox
+# PROP-0007: Personal AI Agent และ capability-based sandbox
 
-- สถานะ: Proposed
+- สถานะ: Covered — ใช้ ADR 0015/0016/0027 เป็นหลัก
 - วันที่: 2026-09-29
 - ระยะ: P1–P2
 - ผู้ตัดสินใจ: (รอกำหนด)
+
+> **เทียบกับระบบจริง (monorepo `spada-monorepo` @ `206d1f9`, 2026-09-29):** ADR 0016 (Team Agent เป็น relying party ภายนอก, human-in-the-loop เป็น UX ของ client, หลักฐานคือ actor assertion), ADR 0015 (device assurance), ADR 0027 (AI Host DGX แยกจาก node) · ข้อเสนอเรื่อง on-device และ capability ตรงกับทิศทางเดิม
+> ข้อเสนอนี้ร่างก่อนเห็นระบบจริง เนื้อหาด้านล่างคงไว้เป็นบันทึกตั้งต้น ให้ยึด ADR จริงเป็นหลัก ดู [CURRENT-STATE](../CURRENT-STATE.md) และ [GAP-ANALYSIS](../GAP-ANALYSIS.md)
 
 ## บริบท
 Agent ที่ทำงานแทนเจ้าของมีความเสี่ยงต่อการทำเกินสิทธิ์ ถูกชักจูง (prompt injection) หรือย้ายทรัพย์สินโดยไม่ตั้งใจ
