@@ -1,5 +1,7 @@
 # ADR (ร่าง): ขอบเขตของ ADR 0020 ต่อการติดตั้ง OneManOS SetBox แบบไม่เชื่อม SPADA และแบบเชื่อม SPADA
 
+- **รหัสเอกสาร: SPD-ADR-D01**
+
 - **สถานะ: Lead อนุมัติแล้ว (2026-09-29, จากบทสนทนา) — ฉบับพร้อมนำเข้า monorepo: [ADR-NEXT-hardware-qualification-scope-import-ready](ADR-NEXT-hardware-qualification-scope-import-ready.md)** · ไฟล์นี้คงไว้เป็นบันทึกที่มาของการตัดสินใจ
 - วันที่: 2026-09-29
 - เลขที่: **ยังไม่กำหนด** (เมื่อนำเข้า `spada-monorepo` ให้ใช้เลขถัดไปที่ว่างจาก 0027 หลังตรวจว่าไม่ชน)

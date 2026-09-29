@@ -1,0 +1,67 @@
+# สารบัญเอกสารและทะเบียนงานค้าง (Document Index & Open Items Register)
+
+- **รหัสเอกสาร: SPD-IDX-001**
+- วันที่: 2026-09-29 · **อัปเดตทุกครั้งที่เพิ่ม/เปลี่ยนสถานะเอกสาร**
+- ใช้อ้างอิงเอกสารด้วยรหัส `SPD-<ประเภท>-<เลข>` เช่น "ตาม SPD-DEC-002" · ประเภท: CUR สถานะปัจจุบัน · GAP ช่องว่าง · ECO เศรษฐกิจ · RDM แผนงาน · DEC การตัดสินใจ · ADR ร่าง ADR · PRC จัดซื้อ · WO ใบงาน · PRP ข้อเสนอ · IDX สารบัญ
+- ระบบจริงและ ADR ต้นฉบับอยู่ใน `chatchailim/spada-monorepo` (private) เอกสารในนี้เป็นสรุป ข้อเสนอ และร่างเพื่อชี้ทาง ไม่ได้รันโค้ดหรือเทสต์ใดๆ
+
+## 1. ทะเบียนเอกสาร
+
+| รหัส | เอกสาร | สถานะ | ไฟล์ |
+|---|---|---|---|
+| SPD-CUR-001 | สถานะสถาปัตยกรรมปัจจุบัน (v0.4) | สรุปจากการอ่าน ไม่ใช่ต้นฉบับ | [CURRENT-STATE](CURRENT-STATE.md) |
+| SPD-GAP-001 | Gap Analysis v0.4 | สรุปจากการอ่าน ยังไม่ยืนยันด้วยการรันโค้ด | [GAP-ANALYSIS](GAP-ANALYSIS.md) |
+| SPD-ECO-001 | เศรษฐกิจดิจิทัลที่สมาชิกได้ประโยชน์สูงสุด | ข้อเสนอ v0.1 (Lead อนุมัติเป็นกรอบทดลอง ไม่ใช่นโยบายที่มีผล) | [MEMBER-ECONOMY](MEMBER-ECONOMY.md) |
+| SPD-RDM-001 | Roadmap เชิงหลักการ | ร่าง v0.1 (เขียนก่อนเห็นระบบจริง) | [ARCHITECTURE-ROADMAP](ARCHITECTURE-ROADMAP.md) |
+| SPD-PRP-000 | ข้อเสนอ PROP-0001..0010 | ร่างเก่า เทียบกับระบบจริงแล้ว | [proposals/README](proposals/README.md) |
+| SPD-DEC-001 | บันทึกคำตัดสินเทคนิค 5 เรื่อง | Lead อนุมัติ 2026-09-29 | [DECISION-MEMO-2026-09-29](decisions/DECISION-MEMO-2026-09-29.md) |
+| SPD-DEC-002 | บันทึกการอนุมัติของ Lead | บันทึกโดย Claude จากข้อความของ Lead | [APPROVAL-LOG](decisions/APPROVAL-LOG-2026-09-29.md) |
+| SPD-DEC-003 | โมเดลเศรษฐกิจ doc 100 ขัดกับสถาปัตยกรรมและเอกสารอื่น | **ร่างรอ Lead ตัดสิน** | [DECISION-MEMO-003](decisions/DECISION-MEMO-003-economic-model-reconciliation.md) |
+| SPD-ADR-D01 | ร่าง ADR ขอบเขตการรับรองฮาร์ดแวร์ (ที่มาการตัดสินใจ) | Lead อนุมัติ | [ADR-DRAFT](decisions/ADR-DRAFT-hardware-qualification-scope.md) |
+| SPD-ADR-D02 | ADR ขอบเขตการรับรองฮาร์ดแวร์ พร้อมนำเข้า monorepo | Accepted (ตามคำอนุมัติ) รอนำเข้า | [ADR-NEXT hardware](decisions/ADR-NEXT-hardware-qualification-scope-import-ready.md) |
+| SPD-ADR-D03 | ADR ปรับโมเดลเศรษฐกิจให้สอดคล้อง พร้อมนำเข้า monorepo | **Proposed รอ Lead** | [ADR-NEXT economic](decisions/ADR-NEXT-economic-model-reconciliation-import-ready.md) |
+| SPD-PRC-001 | มาตรฐานการจัดซื้อ SetBox | Lead อนุมัติ มีผลกับการซื้อหลังระดมทุน | [SETBOX-PROCUREMENT-STANDARD](procurement/SETBOX-PROCUREMENT-STANDARD.md) |
+| SPD-PRC-002 | แม่แบบจดหมายถึงผู้ขาย (RFQ) | Lead อนุมัติให้ใช้ ยังไม่ส่ง | [RFQ-VENDOR-LETTER-TH](procurement/RFQ-VENDOR-LETTER-TH.md) |
+| SPD-PRC-003 | แบบกรอก ณ วันซื้อ | แม่แบบเปล่า | [PURCHASE-TIME-DECISION-SHEET](procurement/PURCHASE-TIME-DECISION-SHEET.md) |
+| SPD-PRC-004 | แม่แบบทะเบียนฮาร์ดแวร์แบบเดี่ยว | แม่แบบเปล่า (ที่ตั้งจริงที่เสนอ: `onemanos-setbox`) | [HARDWARE-REGISTRY-STANDALONE-TEMPLATE](procurement/HARDWARE-REGISTRY-STANDALONE-TEMPLATE.md) |
+| SPD-WO-001 | ร่างใบงาน S1–S3 | Lead อนุมัติให้ออก ยังไม่ออกจริง | [WO-PROPOSAL-S1-S3](work-orders/WO-PROPOSAL-S1-S3.md) |
+| SPD-WO-002 | ใบงานสคริปต์รับรองฮาร์ดแวร์ (WO-HWQ-001) | ร่าง รอผู้ดูแลออกใบงาน | [WO-HWQ-001](work-orders/WO-HWQ-001-hardware-qualification-script.md) |
+
+## 2. การตัดสินใจที่รอ Lead
+
+| # | เรื่อง | เอกสาร | หมายเหตุ |
+|---|---|---|---|
+| 1 | เลือกทางเลือก A/B/C สำหรับ doc 100 และประมาณการที่ขัดกัน | SPD-DEC-003, SPD-ADR-D03 | **เกี่ยวข้องกับการระดมทุน** |
+| 2 | ADR 0024, 0025, 0026 (Proposed) | monorepo | ปลดบล็อกข้อเสนอ M2, M7 |
+| 3 | doc 340 §10: SLA/RPO/RTO, ราคาและความรับผิดเมื่อบริการภายนอกล้มเหลว | monorepo doc 340 | จำเป็นต่อ Fee Constitution |
+| 4 | การแยกทายาท/ผู้พิทักษ์ + ผลประโยชน์ทับซ้อน + alive-check (ADR 0019 / D4) | monorepo | ค้างจาก AGENT_NOTES |
+| 5 | ยืนยันย้อนหลัง ADR 0018–0020 (Cowork ลงนามแทน Lead) | monorepo | กระทบความปลอดภัย SetBox |
+| 6 | ยืนยันสถานะ INCOMPLETE เพิ่มเติมในเกณฑ์รับรองฮาร์ดแวร์ | SPD-WO-002 §6 | ช่องว่างของ ADR 0020 |
+| 7 | ผู้สำรอง/ผู้ตรวจ evidence คนที่สอง ของผู้ลงนามฮาร์ดแวร์ | SPD-ADR-D02 | ลดการรวมอำนาจ |
+| 8 | ล็อก OTP/secure boot ของ KeySign | SPD-DEC-001 ข้อ 3 | **ห้ามทำ** จนครบ 6 เงื่อนไข |
+
+## 3. งานที่รอผู้ลงมือ (ผมทำแทนไม่ได้)
+
+| # | งาน | ผู้ทำ | เอกสาร |
+|---|---|---|---|
+| 1 | ส่งจดหมาย RFQ ให้ผู้ขาย (ไม่ต้องใช้เงิน) | ผู้จัดซื้อ | SPD-PRC-002 |
+| 2 | ออกใบงาน S1–S3 และ WO-HWQ-001 ใน monorepo (ตรวจ ACTIVE CLAIMS) | ผู้ดูแล/agent | SPD-WO-001, SPD-WO-002 |
+| 3 | นำ ADR (D02, D03) เข้า `architecture/adr/` ด้วยเลขที่ว่าง | ผู้ดูแล ADR | SPD-ADR-D02, D03 |
+| 4 | ตั้งทะเบียนฮาร์ดแวร์แบบเดี่ยวใน `onemanos-setbox` | ผู้ดูแล repo | SPD-PRC-004 |
+| 5 | ใส่ banner ที่ doc 100 และตรวจเอกสารลงทุนก่อนเปิดห้องข้อมูล | ผู้ดูแลเอกสาร/ผู้ระดมทุน | SPD-DEC-003 |
+| 6 | กรอกชื่อผู้รับผิดชอบและวันกำหนด (P1–P5, S1–S3, WO-HWQ-001) | Lead | SPD-DEC-001 |
+| 7 | ปรึกษากฎหมาย: จัดซื้อ/ภาษี/ศุลกากร, โทเคน/staking/ตลาดข้อมูล/เครดิต | ที่ปรึกษากฎหมาย | SPD-PRC-001, SPD-DEC-003 |
+| 8 | กรอกแบบ Purchase-Time Decision Sheet ณ วันซื้อ | ผู้จัดซื้อ/ผู้อนุมัติจ่าย | SPD-PRC-003 |
+
+## 4. วิธีใช้สารบัญนี้ต่อไป
+
+- **อ้างอิง**: ใช้รหัสและวันที่ เช่น "SPD-DEC-002 (2026-09-29)" เอกสารเปลี่ยนสถานะให้แก้ที่ตารางข้อ 1 และเพิ่มบรรทัดในข้อ 2–3
+- **เมื่อเรื่องใดปิดแล้ว** ให้ย้ายลงหัวข้อ 5 พร้อมวันที่และหลักฐาน (ห้ามลบแถว)
+- ทุกเอกสารมีบรรทัด "รหัสเอกสาร" ใต้หัวข้อแรก
+
+## 5. เรื่องที่ปิดแล้ว
+
+| วันที่ | เรื่อง | หลักฐาน |
+|---|---|---|
+| 2026-09-29 | Lead ตัดสิน: ขอบเขตการรับรองฮาร์ดแวร์แบบเดี่ยว/เชื่อมต่อ, ผู้ลงนามแบบเดี่ยว, ทะเบียนแยก, เครื่องลูกค้ารายกรณี | SPD-DEC-002, SPD-ADR-D02 |
+| 2026-09-29 | Lead อนุมัติคำตัดสินเทคนิค 5 เรื่อง, มาตรฐานจัดซื้อ, ใบงาน S1–S3 | SPD-DEC-002 |

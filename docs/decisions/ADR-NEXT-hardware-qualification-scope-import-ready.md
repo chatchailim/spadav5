@@ -1,5 +1,7 @@
 # ADR XXXX: ขอบเขตการรับรองฮาร์ดแวร์ SetBox — แบบเดี่ยว (ไม่เชื่อม SPADA) และแบบเชื่อมต่อ (เชื่อม SPADA)
 
+- **รหัสเอกสาร: SPD-ADR-D02**
+
 > **ฉบับพร้อมนำเข้า `architecture/adr/`** ใช้เลขถัดไปที่ว่างต่อจาก 0027 (ตรวจว่าไม่ชนก่อนนำเข้า) · ที่มาของเนื้อหา: [ADR-DRAFT](ADR-DRAFT-hardware-qualification-scope.md) และ [APPROVAL-LOG](APPROVAL-LOG-2026-09-29.md)
 > รูปแบบตามธรรมเนียม ADR ของ monorepo (Status / Date / Authority / Context / Decision / Consequences) · ผมเขียนตามคำอนุมัติของ Lead ในบทสนทนา ผู้นำเข้าควรตรวจถ้อยคำและลิงก์อ้างอิงให้ตรงโครงสร้าง repo
 
