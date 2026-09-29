@@ -1,11 +1,11 @@
 # PROP-0008: Digital economy layer: marketplace, data dividend, payments
 
-- สถานะ: Partially covered — data dividend เป็นช่องว่าง
+- สถานะ: Superseded โดย MEMBER-ECONOMY — พบความขัดแย้งของ doc 100
 - วันที่: 2026-09-29
 - ระยะ: P2
 - ผู้ตัดสินใจ: (รอกำหนด)
 
-> **เทียบกับระบบจริง (monorepo `spada-monorepo` @ `206d1f9`, 2026-09-29):** ADR 0012 (external ledger/sidechain อยู่ที่ service layer), ADR 0026 (App model), ADR 0024 (TrustScore genesis) · services `finance-service`, `payment-adapter`, `shop-service`, `billing-service`, `metering-service` · data dividend พบเพียง 1 ไฟล์ที่กล่าวถึง (ต้องยืนยัน)
+> **เทียบกับระบบจริง (อัปเดต v0.3, 2026-09-29):** ดู [MEMBER-ECONOMY](../MEMBER-ECONOMY.md) และ GAP-ANALYSIS ข้อ 3 · doc 100 (โทเคน/staking/ตลาดข้อมูล) ขัดกับ ADR 0012 · ยังไม่พบโค้ดแบ่งรายได้ตาม ADR 0026 §4
 > ข้อเสนอนี้ร่างก่อนเห็นระบบจริง เนื้อหาด้านล่างคงไว้เป็นบันทึกตั้งต้น ให้ยึด ADR จริงเป็นหลัก ดู [CURRENT-STATE](../CURRENT-STATE.md) และ [GAP-ANALYSIS](../GAP-ANALYSIS.md)
 
 ## บริบท

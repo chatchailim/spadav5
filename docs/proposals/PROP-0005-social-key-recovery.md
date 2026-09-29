@@ -1,11 +1,11 @@
 # PROP-0005: Social key recovery
 
-- สถานะ: Mostly covered — ต้องยืนยันกลไก k-of-n
+- สถานะ: Covered (D+C) — เหลือเรื่องทายาท/ผู้พิทักษ์ที่รอ Lead
 - วันที่: 2026-09-29
 - ระยะ: P1
 - ผู้ตัดสินใจ: (รอกำหนด)
 
-> **เทียบกับระบบจริง (monorepo `spada-monorepo` @ `206d1f9`, 2026-09-29):** มี `services/recovery-service` (openapi, runbook, docker-compose), `services/digital-will-service`, ADR 0005 §9 (ช่วยผู้สูญเสีย key), ADR 0019 (D4 ทายาท/สายผู้สืบทอด) · ยังไม่ได้ตรวจว่าใช้ Shamir k-of-n และ time-lock ตามข้อเสนอหรือไม่
+> **เทียบกับระบบจริง (อัปเดต v0.3, 2026-09-29):** ADR 0005 §9 กำหนด threshold identity recovery, ไม่ reconstruct key เดิม, anti-collusion delay, revoke key เก่า, re-wrap data keys, challenge/appeal window และ emergency freeze เมื่อสงสัยการบีบบังคับ · `recovery-service`, `digital-will-service`, ADR 0019 · มี `tests/unit/place-recovery-r1.test.ts` · การแยกทายาท/ผู้พิทักษ์และผลประโยชน์ทับซ้อนรอ Lead
 > ข้อเสนอนี้ร่างก่อนเห็นระบบจริง เนื้อหาด้านล่างคงไว้เป็นบันทึกตั้งต้น ให้ยึด ADR จริงเป็นหลัก ดู [CURRENT-STATE](../CURRENT-STATE.md) และ [GAP-ANALYSIS](../GAP-ANALYSIS.md)
 
 ## บริบท

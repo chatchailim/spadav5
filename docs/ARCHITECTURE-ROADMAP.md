@@ -1,7 +1,7 @@
 # แผนงานปรับปรุงสถาปัตยกรรม SPADA Node/Network + OneManOS SetBox เพื่อ Digital Economy
 
 > สถานะ: ร่าง v0.1 (Draft) · วันที่: 2026-09-29
-> **อัปเดต 2026-09-29:** ร่างนี้เขียนก่อนเห็นระบบจริง ปัจจุบันมี `spada-monorepo` พร้อม ADR 0001–0027 และ service จำนวนมาก ให้อ่านคู่กับ [CURRENT-STATE](CURRENT-STATE.md) และ [GAP-ANALYSIS](GAP-ANALYSIS.md) ระยะ P0–P3 ด้านล่างเป็นกรอบเชิงหลักการ ยังไม่ได้ผูกกับ milestone M0–M4 ของระบบจริง
+> **อัปเดต 2026-09-29:** ร่างนี้เขียนก่อนเห็นระบบจริง ปัจจุบันมี `spada-monorepo` พร้อม ADR 0001–0027 และ service จำนวนมาก ให้อ่านคู่กับ [CURRENT-STATE](CURRENT-STATE.md), [GAP-ANALYSIS](GAP-ANALYSIS.md) และ [MEMBER-ECONOMY](MEMBER-ECONOMY.md) ระยะ P0–P3 ด้านล่างเป็นกรอบเชิงหลักการ ยังไม่ได้ผูกกับ milestone M0–M4 ของระบบจริง
 > หมายเหตุ: repo นี้เริ่มต้นว่างเปล่า เอกสารนี้จึงเป็นข้อเสนอเชิงหลักการ ต้องตรวจเทียบกับสถาปัตยกรรมปัจจุบันจริงก่อนอนุมัติ (ดูหัวข้อ 9)
 
 ## 1. บทนำ

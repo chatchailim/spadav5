@@ -1,22 +1,23 @@
 # สถานะสถาปัตยกรรมปัจจุบัน SPADA + OneManOS SetBox
 
-> รวบรวมจาก `chatchailim/spada-monorepo` (private) ที่ commit `206d1f9` (merge PR #92, 2026-09-29) และประวัติ session ก่อนหน้า
-> วันที่รวบรวม: 2026-09-29 · เอกสารนี้เป็น **สรุปเพื่อชี้ทาง** ไม่ใช่ต้นฉบับ ให้ยึดไฟล์ต้นทางที่อ้างถึงเป็นหลักเสมอ
+> รวบรวมจาก `spada-monorepo` @ `206d1f9` (merge PR #92, 2026-09-29), `onemanos-setbox` @ `20471f6` (2026-09-22), `onemanos` @ `321490e` (snapshot 2026-07-23) และประวัติ session ก่อนหน้า
+> วันที่รวบรวม: 2026-09-29 · ปรับเป็น v0.3 · เอกสารนี้เป็น **สรุปเพื่อชี้ทาง** ไม่ใช่ต้นฉบับ ให้ยึดไฟล์ต้นทางที่อ้างถึงเป็นหลักเสมอ
 
 ## 1. ขอบเขตของการตรวจ (โปร่งใสว่าอ่านอะไร/ไม่ได้อ่านอะไร)
 
 | แหล่ง | สถานะ |
 |---|---|
-| `spada-monorepo` ระดับโครงสร้าง, README, project-management, `architecture/`, หัวข้อของ ADR 0005–0027 (อ่านส่วนสถานะ/บริบท/คำตัดสิน) | อ่านแล้ว |
-| `AGENT_NOTES.md` (ส่วนท้าย ประมาณ 90 บรรทัดล่าสุด) และ `AGENT_HANDOFF.md` | อ่านแล้ว |
-| ADR 0001–0004, 0007, 0009–0011, 0013 และเนื้อหาเต็มของ ADR ทุกฉบับ | ยังไม่ได้อ่านละเอียด |
-| โค้ดใน `services/`, `packages/`, `modules/` | **ยังไม่ได้อ่าน** ตรวจเพียงรายชื่อโฟลเดอร์และค้นคำสำคัญ |
-| เอกสาร `docs/` (741 ไฟล์ .md) รวมถึง `.docx` ที่ราก repo | ยังไม่ได้อ่าน |
-| Google Drive (พบ PDF/DOCX/PNG/โฟลเดอร์ที่เกี่ยวข้องหลายรายการ) | ค้นเจอรายชื่อ ยังไม่ได้อ่านเนื้อหา |
-| repo `onemanos-setbox`, `OneManOS`, `spada-specs`, `ai-platform-kit`, `spada-onevault-community` | ยังไม่ได้เข้าถึง |
-| ประวัติแชตของ session Opus 5.5 (`session_01YDpVPfbsSAAoLpbubGscCt`) | ไม่มีเครื่องมืออ่านบทสนทนา ใช้ได้เพียง metadata และผลงานที่ลงใน repo |
+| `spada-monorepo`: README, project-management, `architecture/`, ADR 0005–0008, 0012, 0014–0027 (ส่วนสถานะ/บริบท/คำตัดสิน), AGENT_NOTES (ส่วนท้าย), AGENT_HANDOFF | อ่านแล้ว |
+| doc 335 (AI-Adversary Hardening) ถึง D3, doc 189 (Actual Status), doc 100 (Revenue Model: ส่วนสรุป รายได้ operator ตารางค่าธรรมเนียม), doc 247 (Member Value), doc 263 (OPB OS) ส่วนต้น | อ่านแล้ว บางส่วน |
+| บริการ `data-share-broker`, `reclaim-connect` (README) และรายชื่อไฟล์ของ `finance`, `metering`, `billing`, `payment-adapter` | อ่าน README/รายชื่อไฟล์ ไม่ได้อ่านโค้ด |
+| `onemanos-setbox`: README, ROADMAP, ผลตรวจความพร้อม 2026-09-06, หัวไฟล์ handover | อ่านแล้ว |
+| `onemanos`: README ส่วนต้น และรายชื่อไฟล์ | อ่านเล็กน้อย |
+| ADR 0001–0004, 0009–0011, 0013 และเนื้อหาเต็มของ ADR ทุกฉบับ · doc 340–345 · SAMTF (219) · Security Whitepaper | ยังไม่ได้อ่านละเอียด |
+| โค้ดใน `services/`, `packages/`, `modules/` และซอร์สเครื่องมือเตรียมเครื่อง C# ของ SetBox | **ไม่ได้อ่าน/ไม่พบใน repo ที่โคลน** ไม่ได้รันเทสต์ใดเลย |
+| Google Drive (พบรายการที่เกี่ยวข้อง) · repo `spada-specs`, `ai-platform-kit` | ยังไม่ได้อ่าน |
+| ประวัติแชตของ session Opus 5.5 | ไม่มีเครื่องมืออ่านบทสนทนา ได้เพียง metadata และผลงานที่ลง repo |
 
-ดังนั้นข้อความในเอกสารนี้ที่ระบุว่า "มี service X" หมายถึงพบโฟลเดอร์ ไม่ได้แปลว่าตรวจแล้วว่าทำงานครบตามสเปก
+ดังนั้นข้อความที่ระบุว่า "มี service X" หมายถึงพบโฟลเดอร์หรือไฟล์ ไม่ได้แปลว่าตรวจแล้วว่าทำงานครบตามสเปก
 
 ## 2. โครงสร้างหลัก
 
@@ -88,6 +89,9 @@
 | WO-B2 ข้อ B2-b (ตาราง attestation ref), B2-c (prune claims), B2-e (ตัวนับความพยายาม) | เปิดอยู่ · ต้องเสร็จก่อนเปิด `APPLIANCE` |
 | WO-N1 (agent key) | PR #92 merge แล้ว · session ก่อนหน้าสรุปว่าต้อง **ตั้งค่า N00-K ก่อน** agent จึงทำต่อได้ |
 | `nextwaver.com` (ใช้ทดสอบ INET) | สำรวจ 13 ก.ค. ระบุหมดอายุ 2026-07-18 และ auto-renew ปิด ยังไม่ยืนยันสถานะล่าสุด |
+| doc 335: กฎเหล็กข้อ 8 (Entropy Integrity) และข้อ 9 (แยก instruction/data ของ MyAI) | Proposed ยังไม่บังคับใช้ (D2.1 Accepted แล้ว: L5 อิสระเฉพาะ operation ที่ย้อนกลับได้) |
+| SetBox ผลตรวจ 2026-09-06 = CONDITIONAL (P1 สี่ข้อ) | ไม่ทราบสถานะการแก้ ต้องยืนยันก่อนส่งมอบลูกค้าจริง |
+| doc 100 ขัดกับ ADR 0012 | ต้อง reconcile (ดู GAP-ANALYSIS ข้อ 3) |
 | `spada-onevault-community` เป็น public ตั้งแต่ 1 ส.ค. | Lead ตัดสิน 2026-09-22 ว่าคงเดิม ไม่ต้องตรวจเทียบสิทธิบัตร |
 
 หมายเหตุ: `AGENT_HANDOFF.md` ระบุเองว่าเป็น snapshot อัตโนมัติ ไม่ใช่ ground truth ให้ตรวจ `AGENT_NOTES.md` ก่อนลงมือ
@@ -98,7 +102,23 @@
 - M0 Repository Foundation, M1 Layer Contracts, M2 Community Pilot (5 จาก 8 บริการพื้นฐาน), M3 Node Federation (สอง node แลกเปลี่ยนบันทึกได้) และ M4 (WO-J, mTLS) (`milestones.md`, AGENT_NOTES)
 - ความเสี่ยงที่ทีมลงทะเบียนไว้: R-005 การอ้างความพร้อมของ node เกินจริง, R-006 CI ผ่านเชิงโครงสร้างแต่ไม่ผ่านรันไทม์ (`risk-register.md`)
 
-## 9. เอกสารอื่นที่พบ (ยังไม่ได้อ่านเนื้อหา)
+## 9. OneManOS SetBox (repo `onemanos-setbox` และ `onemanos`)
+
+- **คืออะไร**: คลังเอกสารและเครื่องยนต์ธุรกิจของกิจการเดียว ทำงานบนเครื่องเดียว ไม่ต้องต่ออินเทอร์เน็ต ไม่มี dependency ภายนอก (ต้องการเพียง Node.js 22+) ข้อมูลอยู่ในไฟล์เดียวที่เจ้าของหยิบไปได้
+- **ขอบเขต**: `business-api.js` 171 เส้นทาง (ขาย ซื้อ สต็อก บัญชี ภาษี เงินเดือน), โมดูลภาษีไทย (`vat-return.js`, `salary-withholding.js`, `allowance-declaration.js` แบบ ล.ย.01), `onevault-mcp` ให้ AI agent ใช้เครื่องมือที่กำหนด 25 ตัว, `setup/` ติดตั้ง/ดูแล/ตรวจก่อนส่งมอบ
+- **หลักการที่บังคับที่โค้ด**: Human Gate (`human-gate.js` ปฏิเสธชื่อบัญชี agent), การสำรองต้องซ้อมกู้คืนอัตโนมัติ (`onemanos-care.js`), คำเตือนไม่มีปุ่มปิด, ตรวจก่อนส่งมอบ H1–H7 ("เครื่องนี้เป็นของเขาแล้วจริงหรือยัง")
+- **สถานะ**: ROADMAP แยกสองเส้นทาง: (ก) ขายเป็นบริการ (ยังขาด: ส่งมอบลูกค้านอกกิจการผู้พัฒนา ≥ 1 ราย, ตัวเลขจริงในเอกสารเชิงพาณิชย์, รอบดูแลจริง 1 ไตรมาส) (ข) เปิดสาธารณะ (ยังขาด: เจ้าของยืนยันสิทธิบัตร/เครื่องหมายการค้า, ผู้ดูแลโครงการ, branch protection, สแกนประวัติ git)
+- **ผลตรวจ 2026-09-06**: **CONDITIONAL** ใช้ซ้อมด้วยข้อมูลสังเคราะห์เท่านั้น ยังไม่รับรองเป็นชุดมาตรฐานสำหรับลูกค้าจริง พบ P1 สี่ข้อในเครื่องมือเตรียมเครื่อง C# (signature/manifest ไม่ fail-closed, export ไม่บังคับ preflight, ผล encryption/release PASS เกินหลักฐาน, network policy ปฏิเสธแล้วยังเชื่อมต่อ) และ P2 อีกหลายข้อ · **ยังไม่ทราบว่าแก้แล้วหรือไม่**
+- `onemanos` (snapshot 2026-07-23): โปรเจกต์ TypeScript (`src/`, `runbooks/`, `work-orders/`) มี Physical Worker Fleet (Windows/Linux slot PC1..PCn), Governed Installation Control Plane, Digital Twin e-bike (ข้อมูลสังเคราะห์) · README ระบุว่า Windows PC1 ตรวจกับเครื่องจริงแล้ว ส่วน Linux ผ่านเพียง contract test
+
+## 10. เอกสารเศรษฐกิจและสถานะโครงการที่ขัดกัน (สรุป)
+
+- **doc 189 (Actual Status SSoT)** ทะเบียนความขัดแย้ง: MVP 100% vs 20%, patents 73 vs filing 50%, ทีม 23 คน vs 40%, Series A readiness 91 vs 72%, **user/LOI = 0**, Financial Model 0%, BookChain 65/100, MyAI 60/100 (ณ พ.ค.–มิ.ย. 2569 ตัวเลขอาจเปลี่ยนแล้ว)
+- **doc 100 (Revenue Model, ม.ค. 2569)**: smart contract เก็บค่าธรรมเนียม, treasury, โทเคน + staking 2% APY, DAO กำหนดค่าธรรมเนียม, operator ได้ 40% ของทุกค่าธรรมเนียม, ตลาดข้อมูล anonymized 15%, ประมาณการผู้ใช้ 100K→100M และ break-even ปีที่ 3 · **ขัดกับ ADR 0012** และควร reconcile (ดู [GAP-ANALYSIS](GAP-ANALYSIS.md) ข้อ 3)
+- **doc 247 (Member Value Catalog)**: สมาชิกเป็นเจ้าของตัวตน ข้อมูล และ AI · บริการ 🟢 ใน MVP มีเพียง Identity, PersonSpace (stub), TrustScore ส่วน 🟡 เป็น roadmap ห้ามสัญญาเป็นของวันแรก
+- **doc 263 (One Person Business OS)**: รวมแนวคิด OMC→OPB ระบุเองว่าเป็น concept SSoT ไม่ใช่หลักฐานว่าระบบรันได้
+
+## 11. เอกสารอื่นที่พบ (ยังไม่ได้อ่านเนื้อหา)
 
 - ใน monorepo: SPADA-STD-NET-001 (topology), SPADA-Security-Privacy-Whitepaper.docx, SPADA-Community-Node-Governance-v1.1.docx, SPADA-Roadmap-MVP-to-ASEAN.docx, ไดอะแกรม node-network `.svg` (ฉบับ current: `spada-node-network-circle-mesh-current.svg`, `...role-hierarchy.svg`)
 - ใน Google Drive: SPADA Node Network Topology Diagram (v5.1 SAMTF).png, คู่มือสถาปัตยกรรมและการรวมระบบอธิปไตยดิจิทัล (SPADA Framework & Data Vault Patent Suite).docx, SPADA-OneVault-Prototype-Demo-and-Test-Guide (.pdf/.docx/.md), โน้ต Gemini เรื่อง onemanos (2026-09-10)

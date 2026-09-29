@@ -1,11 +1,11 @@
 # PROP-0007: Personal AI Agent และ capability-based sandbox
 
-- สถานะ: Covered — ใช้ ADR 0015/0016/0027 เป็นหลัก
+- สถานะ: Covered — ใช้ ADR 0015/0016/0027 และ doc 335 เป็นหลัก
 - วันที่: 2026-09-29
 - ระยะ: P1–P2
 - ผู้ตัดสินใจ: (รอกำหนด)
 
-> **เทียบกับระบบจริง (monorepo `spada-monorepo` @ `206d1f9`, 2026-09-29):** ADR 0016 (Team Agent เป็น relying party ภายนอก, human-in-the-loop เป็น UX ของ client, หลักฐานคือ actor assertion), ADR 0015 (device assurance), ADR 0027 (AI Host DGX แยกจาก node) · ข้อเสนอเรื่อง on-device และ capability ตรงกับทิศทางเดิม
+> **เทียบกับระบบจริง (อัปเดต v0.3, 2026-09-29):** ADR 0016 (Team Agent อยู่นอก SPADA, human-in-the-loop), ADR 0015, ADR 0027 · SetBox `human-gate.js` บังคับที่โค้ด · doc 335 D2 (แยก instruction/data) ยัง Proposed ส่วน D2.1 (L5 อิสระเฉพาะ reversible) Accepted
 > ข้อเสนอนี้ร่างก่อนเห็นระบบจริง เนื้อหาด้านล่างคงไว้เป็นบันทึกตั้งต้น ให้ยึด ADR จริงเป็นหลัก ดู [CURRENT-STATE](../CURRENT-STATE.md) และ [GAP-ANALYSIS](../GAP-ANALYSIS.md)
 
 ## บริบท

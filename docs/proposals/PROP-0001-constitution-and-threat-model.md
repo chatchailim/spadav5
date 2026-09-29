@@ -1,11 +1,11 @@
 # PROP-0001: Constitution และ Threat model
 
-- สถานะ: Partially covered — เหลือ threat model รวมศูนย์
+- สถานะ: Partially covered — doc 335 เป็น Proposed, ยังไม่ครอบคลุมทั้งระบบ
 - วันที่: 2026-09-29
 - ระยะ: P0
 - ผู้ตัดสินใจ: (รอกำหนด)
 
-> **เทียบกับระบบจริง (monorepo `spada-monorepo` @ `206d1f9`, 2026-09-29):** หลักการอธิปไตยและขอบเขตมีใน ADR 0005 (Sovereign Community Node Governance) และ ADR 0014 (ขอบเขต SPADA↔OneManOS) · ยังไม่พบ threat model รวมศูนย์ (`specs/security/README.md` เป็นหน้าสารบัญ) จึงเป็นช่องว่างที่ต้องยืนยัน
+> **เทียบกับระบบจริง (อัปเดต v0.3, 2026-09-29):** หลักการอยู่ใน ADR 0005/0014 · **doc 335 (AI-Adversary Hardening, Proposed)** ระบุ threat T1–T5 และ decision D1–D3 (entropy integrity, แยก instruction/data ของ MyAI, passphrase) · ยังขาด threat model รวม SetBox/KeySign/network และการยกกฎเหล็กข้อ 8–9 ให้เป็นทางการ
 > ข้อเสนอนี้ร่างก่อนเห็นระบบจริง เนื้อหาด้านล่างคงไว้เป็นบันทึกตั้งต้น ให้ยึด ADR จริงเป็นหลัก ดู [CURRENT-STATE](../CURRENT-STATE.md) และ [GAP-ANALYSIS](../GAP-ANALYSIS.md)
 
 ## บริบท
