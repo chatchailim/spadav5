@@ -13,6 +13,7 @@
 - [แม่แบบทะเบียนฮาร์ดแวร์แบบเดี่ยว (Track S)](docs/procurement/HARDWARE-REGISTRY-STANDALONE-TEMPLATE.md)
 - [ร่าง ADR: ขอบเขต ADR 0020 (Track S ไม่เชื่อม SPADA / Track C เชื่อม SPADA)](docs/decisions/ADR-DRAFT-hardware-qualification-scope.md)
 - [ร่างใบงาน S1–S3](docs/work-orders/WO-PROPOSAL-S1-S3.md) · [ใบงานสคริปต์รับรองฮาร์ดแวร์ WO-HWQ-001](docs/work-orders/WO-HWQ-001-hardware-qualification-script.md)
+- **[รายการตรวจเอกสารลงทุนก่อนเปิดห้องข้อมูล (SPD-INV-001)](docs/investor-review/INVESTOR-DATAROOM-REVIEW-CHECKLIST.md)** · [ทะเบียนข้ออ้าง (SPD-INV-002)](docs/investor-review/INVESTOR-CLAIM-REGISTER.md)
 - [บันทึกเสนอคำตัดสิน: โมเดลเศรษฐกิจ doc 100 (SPD-DEC-003, รอ Lead)](docs/decisions/DECISION-MEMO-003-economic-model-reconciliation.md)
 - [ข้อเสนอ PROP-0001..0010](docs/proposals/README.md)
 

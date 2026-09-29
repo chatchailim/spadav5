@@ -24,6 +24,8 @@
 | SPD-PRC-002 | แม่แบบจดหมายถึงผู้ขาย (RFQ) | Lead อนุมัติให้ใช้ ยังไม่ส่ง | [RFQ-VENDOR-LETTER-TH](procurement/RFQ-VENDOR-LETTER-TH.md) |
 | SPD-PRC-003 | แบบกรอก ณ วันซื้อ | แม่แบบเปล่า | [PURCHASE-TIME-DECISION-SHEET](procurement/PURCHASE-TIME-DECISION-SHEET.md) |
 | SPD-PRC-004 | แม่แบบทะเบียนฮาร์ดแวร์แบบเดี่ยว | แม่แบบเปล่า (ที่ตั้งจริงที่เสนอ: `onemanos-setbox`) | [HARDWARE-REGISTRY-STANDALONE-TEMPLATE](procurement/HARDWARE-REGISTRY-STANDALONE-TEMPLATE.md) |
+| SPD-INV-001 | รายการตรวจเอกสารลงทุนก่อนเปิดห้องข้อมูล (Go/No-Go) | **ผลตรวจรอบแรก: NO-GO ในสถานะปัจจุบัน** | [INVESTOR-DATAROOM-REVIEW-CHECKLIST](investor-review/INVESTOR-DATAROOM-REVIEW-CHECKLIST.md) |
+| SPD-INV-002 | ทะเบียนข้ออ้างในเอกสารลงทุน (INV-C01..C38) | ผลตรวจรอบแรก (อ่านและค้นไฟล์ ไม่ได้รันระบบ) | [INVESTOR-CLAIM-REGISTER](investor-review/INVESTOR-CLAIM-REGISTER.md) |
 | SPD-WO-001 | ร่างใบงาน S1–S3 | Lead อนุมัติให้ออก ยังไม่ออกจริง | [WO-PROPOSAL-S1-S3](work-orders/WO-PROPOSAL-S1-S3.md) |
 | SPD-WO-002 | ใบงานสคริปต์รับรองฮาร์ดแวร์ (WO-HWQ-001) | ร่าง รอผู้ดูแลออกใบงาน | [WO-HWQ-001](work-orders/WO-HWQ-001-hardware-qualification-script.md) |
 
@@ -38,6 +40,8 @@
 | 5 | ยืนยันย้อนหลัง ADR 0018–0020 (Cowork ลงนามแทน Lead) | monorepo | กระทบความปลอดภัย SetBox |
 | 6 | ยืนยันสถานะ INCOMPLETE เพิ่มเติมในเกณฑ์รับรองฮาร์ดแวร์ | SPD-WO-002 §6 | ช่องว่างของ ADR 0020 |
 | 7 | ผู้สำรอง/ผู้ตรวจ evidence คนที่สอง ของผู้ลงนามฮาร์ดแวร์ | SPD-ADR-D02 | ลดการรวมอำนาจ |
+| 9 | **ประกาศว่าข้อเสนอระดมทุน "ฉบับปัจจุบัน" คือฉบับใด** (ผมสมมติว่า angel 30 ส.ค. 3.0 ลบ.) และถอนเอกสารระดมทุนฉบับอื่น | SPD-INV-001 G1, SPD-INV-002 INV-C01 | **ก่อนเปิดห้องข้อมูล** |
+| 10 | ตัดสินเงื่อนไขจริงของเงินกู้แปลงสภาพ (ดอกเบี้ย 3% หรือ 5%, อายุ 24 เดือนหรือ 1.5 ปี, เพดาน pre/post-money) | SPD-INV-002 INV-C06, C07 | deck กับโมเดลขัดกัน |
 | 8 | ล็อก OTP/secure boot ของ KeySign | SPD-DEC-001 ข้อ 3 | **ห้ามทำ** จนครบ 6 เงื่อนไข |
 
 ## 3. งานที่รอผู้ลงมือ (ผมทำแทนไม่ได้)
@@ -51,6 +55,11 @@
 | 5 | ใส่ banner ที่ doc 100 และตรวจเอกสารลงทุนก่อนเปิดห้องข้อมูล | ผู้ดูแลเอกสาร/ผู้ระดมทุน | SPD-DEC-003 |
 | 6 | กรอกชื่อผู้รับผิดชอบและวันกำหนด (P1–P5, S1–S3, WO-HWQ-001) | Lead | SPD-DEC-001 |
 | 7 | ปรึกษากฎหมาย: จัดซื้อ/ภาษี/ศุลกากร, โทเคน/staking/ตลาดข้อมูล/เครดิต | ที่ปรึกษากฎหมาย | SPD-PRC-001, SPD-DEC-003 |
+| 9 | ทำ PDF ฉบับนักลงทุนของ deck (ลบ speaker notes) และโมเดลฉบับนักลงทุน (ลบหมายเหตุเชิงต่อรอง) | ผู้ระดมทุน | SPD-INV-001 §3 |
+| 10 | ขอใบเสนอราคา pen-test (อย่างน้อย 2 ราย) และฮาร์ดแวร์ แล้วปรับโมเดล | ผู้จัดซื้อ | SPD-INV-002 INV-C10 |
+| 11 | ให้ที่ปรึกษากฎหมายตรวจ: เงินกู้แปลงสภาพ, IP ของโค้ด AI, ข้ออ้างกฎหมายภายนอก | ที่ปรึกษากฎหมาย | SPD-INV-002 INV-C27–C31 |
+| 12 | วิศวกรอิสระทำ evidence pack ข้ออ้างเชิงเทคนิคในสไลด์ 4 และแก้ข้ออ้าง quantum-safe | วิศวกรอิสระ + ผู้ดูแลความปลอดภัย | SPD-INV-002 INV-C17, C23 |
+| 13 | สแกนความลับ/ข้อมูลภายในของไฟล์ที่จะเปิด และสแกนประวัติ git | ผู้ดูแลความปลอดภัย | SPD-INV-002 INV-C33–C34 |
 | 8 | กรอกแบบ Purchase-Time Decision Sheet ณ วันซื้อ | ผู้จัดซื้อ/ผู้อนุมัติจ่าย | SPD-PRC-003 |
 
 ## 4. วิธีใช้สารบัญนี้ต่อไป
