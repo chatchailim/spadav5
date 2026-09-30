@@ -2,7 +2,8 @@
 
 - **รหัสเอกสาร: SPD-ADR-D04**
 - **สถานะ: ร่าง (Draft)** · 2026-09-30 · Lead อนุมัติ **ทิศทาง** (เริ่มที่ Team Agent + ออก ADR Responsibility) ใน [SPD-DEC-005](APPROVAL-LOG-2026-09-30-FINAL-ADJUSTMENT.md) ข้อ 2 · **ข้อความนี้ Lead ยังไม่ได้ตรวจและยังไม่ใช่ ADR ที่ Accepted** · ยังไม่ได้นำเข้า repo ปลายทาง (ผู้ดูแล ADR ต้องกำหนดเลขที่ว่าง)
-- ที่ตั้งที่เสนอ: `onemanos-setbox` (ฝั่ง OneManOS ตาม ADR 0014 ที่ OneManOS/OneVault/SetBox อยู่นอก SPADA)
+- ที่ตั้งที่เสนอ: `onemanos-setbox` (ฝั่ง OneManOS ตาม ADR 0014 ที่ OneManOS/OneVault/SetBox อยู่นอก SPADA) · **เลขที่ว่างที่ตรวจแล้ว (2026-09-30):** ชุด ADR ของ `onemanos-setbox` มี `docs/ADR-005`..`ADR-007` จึงเสนอ **`ADR-008`** (ตรวจที่ `ce692ca`) · ส่วน `spada-monorepo/architecture/adr/` ล่าสุดคือ 0027 (เลขถัดไป 0028 หากผู้ดูแลเห็นว่าควรอยู่ฝั่ง monorepo) · การนำเข้าต้องทำโดยผู้ดูแล repo (DCO, branch protection) ผมมีสิทธิ์อ่านอย่างเดียว
+- **ผลทบทวนรอบ 2 (2026-09-30):** เทียบกับ ADR 0016 ฉบับเต็มแล้ว พบ 4 จุดที่ต้องปรับ ดูหัวข้อ "ผลทบทวนรอบ 2" ท้ายเอกสาร (ปรับกติกาข้อ 2 แล้ว)
 - ที่มา: [SPD-ANL-002](../MYAI-TEAMAGENT-DOT-PARITY-BUILD-LIST.md) ชิ้นงานที่ 1 · [SPD-ANL-003](../ALIGNMENT-CHECK-AGENTIC-BUSINESS-OS.md) · [SPD-REV-002](../work-orders/REVIEW-POO-WO-005-round2-2026-09-30.md)
 - ข้อจำกัด: เขียนจากเอกสารสรุปใน repo นี้ ยังไม่ได้อ่านโค้ด `onevault-mcp` หรือ ADR 0014/0016 ฉบับเต็ม ผู้ตรวจต้องเทียบต้นฉบับก่อนรับ
 
@@ -33,7 +34,10 @@ Team Agent ปัจจุบันเป็นเอเจนต์ภายน
 ### กติกาที่ต้องบังคับ
 
 1. **ไม่มี DID ของ Team Agent** ทุกอย่างเป็นการกระทำในนามเจ้าของ (ADR 0016)
-2. **เพดานอิสระ** `Steward` ใช้ได้เฉพาะ operation ที่ย้อนกลับได้จริง (D2.1) การกระทำที่ย้อนไม่ได้ (เงิน สัญญา การเผยแพร่ออกนอก การลบ) ต้องมีลายเซ็นเจ้าของ ผูก `payloadDigest` และ `nonce` ผ่าน actor assertion ตาม ADR 0016
+2. **เพดานอิสระแยกตามเขตอำนาจ** (ปรับตาม ADR 0016 §7 ในรอบ 2):
+   - **การกระทำภายใน OneVault/SetBox** (ไม่เรียก SPADA): `Steward` ใช้ได้เฉพาะ operation ที่ย้อนกลับได้จริง (D2.1) การกระทำที่ย้อนไม่ได้ (เงิน สัญญา การเผยแพร่ออกนอก การลบ) ต้องมีลายเซ็นเจ้าของ
+   - **การกระทำที่เรียก SPADA** (ADR 0016 §7 บังคับ): การ **อ่าน** ที่ TrustScore ของเจ้าของ < 500 ทำผ่าน *delegated grant* ได้ (มี `purpose`, `expiresAt` แนะนำ ≤ 24 ชม., ผูก `client_id` และ scope เดียว, เพิกถอนได้ทันที, บันทึกว่าใช้ grant ไม่ใช่ลายเซ็นสด) · **เขียน แชร์ และ operation sensitive (TrustScore ≥ 500) ต้องมีลายเซ็นสดของเจ้าของเสมอ** ผูก `payloadDigest` และ `nonce` ผ่าน actor assertion ห้ามใช้ grant แทน
+   - grant ไม่ยกระดับสิ่งที่เจ้าของเองทำไม่ได้ และ Team Agent ที่ถือ grant ของสมาชิกเข้า **WorkSpace** ไม่ได้ถ้าองค์กรเจ้าของไม่อนุญาต delegation (ADR 0016 §5)
 3. **ไม่เปิดอนุมัติอัตโนมัติ** จนกว่าเส้นทางกุญแจครบ (A6) และ human gate พิสูจน์ตัวตนได้ (SPD-DEC-005 ข้อ 6)
 4. **ทุก action** ผ่าน policy engine ก่อนเรียก tool ของ `onevault` MCP และก่อนส่งข้ามไป SPADA · default deny
 5. **Audit** บันทึก agent, responsibility, action, input/output (เท่าที่จำเป็น), tool, **เวอร์ชัน skill/policy/โมเดล**, ผลลัพธ์ และผู้อนุมัติ (ช่องว่างปัจจุบัน: `audit_events` ยังไม่มี hash chain POO-WO-003 และไม่บันทึกเวอร์ชันโมเดล)
@@ -57,6 +61,17 @@ Team Agent ปัจจุบันเป็นเอเจนต์ภายน
 - ทดสอบว่า action ย้อนไม่ได้ไม่ผ่านโดยไม่มี actor assertion ที่ตรวจตัวตนได้
 - ทดสอบ kill switch และรายงานย้อนหลัง
 - ตัวเลขและเกณฑ์อื่นต้องตกลงร่วมกันก่อนเริ่ม ผมไม่ได้กำหนดเพิ่ม
+
+## ผลทบทวนรอบ 2 (เทียบ ADR 0016 ฉบับเต็ม, 2026-09-30)
+
+| # | ข้อค้นพบ | ผลต่อร่าง |
+|---|---|---|
+| R1 | ADR 0016 §7 กำหนดแล้วว่า unattended operation = delegated grant แคบและมีอายุ เฉพาะความเสี่ยงต่ำ ส่วนเขียน/แชร์/sensitive ต้องลายเซ็นสดเสมอ ร่างรอบแรกเขียนเพดานตาม D2.1 อย่างเดียว | แก้กติกาข้อ 2 ให้แยกเขตอำนาจ (ทำแล้ว) |
+| R2 | Responsibility ที่มี `triggers` แบบ cron/เหตุการณ์ หมายถึงการทำงานตอนเจ้าของไม่อยู่ แต่อายุ grant แนะนำ ≤ 24 ชม. | **เพิ่มข้อกำหนด:** Responsibility ที่เรียก SPADA ต้องผูกกับ grant ที่ยังมีอายุ และมีขั้น **ต่ออายุโดยเจ้าของ** เมื่อ grant หมด ไม่ทำงานต่อเงียบ ๆ · `expiresAt` ของ Responsibility ไม่เท่ากับอายุ grant (Responsibility อายุยาวได้ แต่การใช้สิทธิ์ต่อ SPADA ต้องอยู่ในอายุ grant) |
+| R3 | consent model ปัจจุบัน `granteeDid` รับเฉพาะ `did:spada:person:*` ไม่มี purpose/expiry/recipient (ADR 0016 §6, ADR 0018 แก้ให้เป็น discriminated union แล้วตามทะเบียน) | **dependency:** ต้องตรวจว่า ADR 0018 implement แล้วเพียงใดก่อนเริ่ม F1 (ผมยังไม่ได้ตรวจโค้ด consent-service) |
+| R4 | นโยบาย delegation ระดับ WorkSpace ของ `did:spada:org` ยังเป็นงานค้าง (ADR 0016 "ต้องทำ" ข้อ 2) | **dependency** ของ Responsibility ที่แตะข้อมูลองค์กร |
+| R5 | ADR 0016 §4 ห้ามนับ Human Gate/UX บน Setbox เป็นหลักฐานของ SPADA ต้อง materialize เป็น actor assertion ผูก payload | ตรงกับกติกาข้อ 3 ของร่างอยู่แล้ว |
+| R6 | ชื่อ "Steward" ในระดับ autonomy อาจชนกับบทบาท Steward ของโครงการ (Lead ถือบทบาท Steward ฝั่ง SPADA) | คำถามเปิดข้อ 1 มีผลจริง ควรเลือกชื่อระดับที่ไม่ชนบทบาทบุคคล |
 
 ## คำถามเปิดสำหรับ Lead
 

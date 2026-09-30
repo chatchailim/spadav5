@@ -7,7 +7,7 @@
 - [Gap Analysis v0.4 (เทียบกับระบบจริง)](docs/GAP-ANALYSIS.md)
 - [เศรษฐกิจดิจิทัลที่สมาชิกได้ประโยชน์สูงสุด (ข้อเสนอ v0.1)](docs/MEMBER-ECONOMY.md)
 - [Roadmap เชิงหลักการ](docs/ARCHITECTURE-ROADMAP.md) (เฟส P0–P3 ถูกแทนที่ด้วยเส้นเวลารวม)
-- **[เส้นเวลารวมบนแกน M0–M4 + ภาพและศัพท์มาตรฐาน + เส้นทางวิกฤต (SPD-RDM-002)](docs/UNIFIED-TIMELINE-M0-M4.md)** · [บันทึกอนุมัติ 2026-09-30 (SPD-DEC-005)](docs/decisions/APPROVAL-LOG-2026-09-30-FINAL-ADJUSTMENT.md) · [ร่าง ADR Responsibility (SPD-ADR-D04)](docs/decisions/ADR-NEXT-responsibility-record-draft.md)
+- **[เส้นเวลารวมบนแกน M0–M4 + ภาพและศัพท์มาตรฐาน + เส้นทางวิกฤต (SPD-RDM-002)](docs/UNIFIED-TIMELINE-M0-M4.md)** · [บันทึกอนุมัติ 2026-09-30 (SPD-DEC-005)](docs/decisions/APPROVAL-LOG-2026-09-30-FINAL-ADJUSTMENT.md) · [ร่าง ADR Responsibility (SPD-ADR-D04)](docs/decisions/ADR-NEXT-responsibility-record-draft.md) · [คำตัดสิน ADR 0024–0026 และ doc 340 §10 (SPD-DEC-006)](docs/decisions/DECISION-MEMO-006-adr-0024-0026-and-doc340-s10.md) · [ผลตรวจ SetBox P1/GAP (SPD-REV-003)](docs/work-orders/REVIEW-SETBOX-P1-GAP-STATUS-2026-09-30.md) · [สภาพแวดล้อมทดสอบสไปก์ (SPD-WO-004)](docs/work-orders/SPIKE-TEST-ENVIRONMENT-SPEC-POO-WO-005.md)
 - [บันทึกการอนุมัติของ Lead 2026-09-29 (อนุมัติอะไร/ยังต้องทำอะไร)](docs/decisions/APPROVAL-LOG-2026-09-29.md)
 - [บันทึกคำตัดสินสำหรับ Lead (5 เรื่องเทคนิคที่ค้าง)](docs/decisions/DECISION-MEMO-2026-09-29.md) · [ADR พร้อมนำเข้า monorepo](docs/decisions/ADR-NEXT-hardware-qualification-scope-import-ready.md)
 - [มาตรฐานการจัดซื้อ SetBox (ร่าง)](docs/procurement/SETBOX-PROCUREMENT-STANDARD.md) · [แม่แบบจดหมายถึงผู้ขาย](docs/procurement/RFQ-VENDOR-LETTER-TH.md) · [แบบกรอก ณ วันซื้อ](docs/procurement/PURCHASE-TIME-DECISION-SHEET.md)

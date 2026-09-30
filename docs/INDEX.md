@@ -37,6 +37,9 @@
 | SPD-ANL-003 | ตรวจความสอดคล้องข้อเสนอ Agentic Business OS (MyAI/OneManOS/OneVault/Agent Team) กับ ADR และงานปัจจุบัน | ตรวจแล้ว: สอดคล้องระดับแนวคิด, ขัด ADR 0014/0016 ในแผนภาพหลัก 5 จุด | [ALIGNMENT-CHECK-AGENTIC-BUSINESS-OS](ALIGNMENT-CHECK-AGENTIC-BUSINESS-OS.md) |
 | SPD-DEC-005 | บันทึกการอนุมัติของ Lead 2026-09-30: การปรับระบบครั้งสุดท้าย ข้อ 1–8 (ขอบเขต/ผลดำเนินการ/สิ่งที่ไม่ครอบคลุม) | บันทึกโดย Claude จากข้อความของ Lead · ข้อ 5 (ADR 0024–0026) **ยังไม่ตัดสิน** | [APPROVAL-LOG-2026-09-30](decisions/APPROVAL-LOG-2026-09-30-FINAL-ADJUSTMENT.md) |
 | SPD-ADR-D04 | ร่าง ADR: Responsibility record ของ Team Agent (ฝั่ง OneManOS) | **ร่าง รอ Lead ตรวจ** (อนุมัติเฉพาะทิศทาง) ยังไม่นำเข้า repo ปลายทาง | [ADR-NEXT-responsibility-record-draft](decisions/ADR-NEXT-responsibility-record-draft.md) |
+| SPD-DEC-006 | บันทึกคำตัดสิน ADR 0024, 0025, 0026 และ doc 340 §10 | **ตัดสินโดย Claude ตามอำนาจที่ Lead มอบ (2026-09-30)** ยังไม่มีผลใน monorepo จนผู้ดูแลนำสถานะไปใช้ · Lead ควรยืนยันย้อนหลัง | [DECISION-MEMO-006](decisions/DECISION-MEMO-006-adr-0024-0026-and-doc340-s10.md) |
+| SPD-REV-003 | ผลตรวจสถานะ P1 ของ SetBox, GAP-04/05, ทะเบียนฮาร์ดแวร์ และงานจัดซื้อ | ตรวจแล้ว: GAP-04 ยังเปิด · P1 ยืนยันไม่ได้ (ไม่พบซอร์ส C#) · RFQ/pen-test ยังไม่ส่ง | [REVIEW-SETBOX-P1-GAP-STATUS](work-orders/REVIEW-SETBOX-P1-GAP-STATUS-2026-09-30.md) |
+| SPD-WO-004 | ข้อกำหนดสภาพแวดล้อมทดสอบสไปก์ POO-WO-005 (B2, B4, A6) | ร่าง รอกรอกค่า [●] โดยผู้มีอำนาจ | [SPIKE-TEST-ENVIRONMENT-SPEC](work-orders/SPIKE-TEST-ENVIRONMENT-SPEC-POO-WO-005.md) |
 | SPD-WO-001 | ร่างใบงาน S1–S3 | Lead อนุมัติให้ออก ยังไม่ออกจริง | [WO-PROPOSAL-S1-S3](work-orders/WO-PROPOSAL-S1-S3.md) |
 | SPD-WO-003a | ใบงาน POO-WO-005 ฉบับรายละเอียดพร้อมนำเข้า (วิธีทำ แม่แบบรายงาน เกณฑ์รับงาน) ร่างโดย Claude แทน Lead | ออกแล้ว รอ Lead ตรวจข้อความและมอบงาน | [POO-WO-005](work-orders/POO-WO-005-teamagent-mcp-scheduler-spike.md) |
 | SPD-WO-003 | ใบงานสำรวจ onevault-mcp และตัวตั้งเวลา (spike, เสนอเลข POO-WO-005) | **Lead ตัดสินให้ออก 2026-09-30** นำเข้า `onemanos-setbox` แล้ว (branch `docs/poo-wo-005` ce692ca ยังไม่ merge) รอ Lead merge + มอบผู้ทำ | [WO-SPIKE-TEAMAGENT-MCP-SCHEDULER](work-orders/WO-SPIKE-TEAMAGENT-MCP-SCHEDULER.md) |
@@ -49,8 +52,8 @@
 | # | เรื่อง | เอกสาร | หมายเหตุ |
 |---|---|---|---|
 | 1 | **ยืนยันตัวเลขเฉพาะของเงินกู้แปลงสภาพ** (3%, 24 เดือน, pre-money 15 ลบ., แบ่งงวด 2.0/1.0, ช่วงต่อรอง) | SPD-DEC-004 ข้อ 3–4 | ทนายต้องร่างสัญญาต่อ |
-| 2 | ADR 0024, 0025, 0026 (Proposed) | monorepo | ปลดบล็อกข้อเสนอ M2, M7 |
-| 3 | doc 340 §10: SLA/RPO/RTO, ราคาและความรับผิดเมื่อบริการภายนอกล้มเหลว | monorepo doc 340 | จำเป็นต่อ Fee Constitution |
+| 2 | ~~ADR 0024, 0025, 0026 (Proposed)~~ → ตัดสินแล้ว SPD-DEC-006 (รอผู้ดูแลนำสถานะไปใช้ + Lead ยืนยันย้อนหลัง) · **ค้างเฉพาะ:** สัดส่วนรายได้ และนโยบายเซ็นไฟล์ Setbox App | SPD-DEC-006 | ปลดบล็อก A1–A2 ของ ADR 0026 แล้ว · A3–A4 ยังรอ |
+| 3 | doc 340 §10 ส่วนที่ค้าง: ผู้รับผิดชอบรายบุคคล, ราคาและความรับผิดเมื่อบริการภายนอกล้มเหลว, โปรไฟล์รัฐ (RPO/RTO และ retention ตัดสินเป็นค่าตั้งต้นแล้ว) | SPD-DEC-006 §4 | จำเป็นต่อ Fee Constitution |
 | 4 | การแยกทายาท/ผู้พิทักษ์ + ผลประโยชน์ทับซ้อน + alive-check (ADR 0019 / D4) | monorepo | ค้างจาก AGENT_NOTES |
 | 5 | ยืนยันย้อนหลัง ADR 0018–0020 (Cowork ลงนามแทน Lead) | monorepo | กระทบความปลอดภัย SetBox |
 | 6 | ยืนยันสถานะ INCOMPLETE เพิ่มเติมในเกณฑ์รับรองฮาร์ดแวร์ | SPD-WO-002 §6 | ช่องว่างของ ADR 0020 |
@@ -59,7 +62,7 @@
 | 8 | ล็อก OTP/secure boot ของ KeySign | SPD-DEC-001 ข้อ 3 | **ห้ามทำ** จนครบ 6 เงื่อนไข |
 | 10 | ตรวจ/รับ SPD-ADR-D04 (Responsibility record) แล้วให้ผู้ดูแลนำเข้าด้วยเลขที่ว่าง | SPD-DEC-005 ข้อ 2 | ปลดบล็อก F1 |
 | 11 | ทบทวนการจับคู่ E/F/เงินทุนกับ M0–M4 และเทียบ `milestones.md` ต้นฉบับ | SPD-RDM-002 | แผนรวม |
-| 12 | ให้ผมเข้าถึงข้อความ ADR 0024–0026 และ doc 340 §10 เพื่อเตรียมบันทึกคำตัดสินรายฉบับ (หรือ Lead ตัดสินเอง) | SPD-DEC-005 ข้อ 5 | ยังไม่ตัดสิน |
+| 12 | ~~ให้เข้าถึง ADR 0024–0026~~ → ทำแล้ว (อ่านอย่างเดียว) · **ใหม่:** แจ้งที่อยู่ซอร์สเครื่องมือเตรียมเครื่อง C# (P1 สี่ข้อ) ชื่อผู้ขายฮาร์ดแวร์/ผู้ให้บริการ pen-test และกรอกค่าใน SPD-WO-004 | SPD-REV-003, SPD-WO-004 | ปลดบล็อกการตรวจ P1, RFQ และสไปก์ |
 
 ## 3. งานที่รอผู้ลงมือ (ผมทำแทนไม่ได้)
 
