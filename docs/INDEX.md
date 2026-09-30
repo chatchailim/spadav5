@@ -31,6 +31,7 @@
 | SPD-INV-004 | ร่างข้อความสไลด์ v1.1 ทีละหน้า + คำอธิบายโมเดลฉบับนักลงทุน | ร่างพร้อมใส่สไลด์ (Lead อนุมัติตัวเลข 2026-09-30) | [DECK-V1.1-SLIDE-TEXT](investor-review/DECK-V1.1-SLIDE-TEXT.md) |
 | SPD-INV-005 | บันทึกผู้นำเสนอ v1.1 (**ภายในเท่านั้น ห้ามส่งนักลงทุน**) | ร่าง | [DECK-V1.1-INTERNAL-SPEAKER-NOTES](investor-review/DECK-V1.1-INTERNAL-SPEAKER-NOTES.md) |
 | SPADA-DOC-FUND-003 v1.1 | โมเดลการเงินฉบับนักลงทุน (946 สูตร 0 error ตรวจกับการจำลองอิสระ) | Lead อนุมัติตัวเลข 2026-09-30; จำนวนหุ้นเป็น placeholder | [xlsx](investor-review/models/SPADA-DOC-FUND-003-v1.1-investor-model.xlsx) · [สคริปต์สร้าง](investor-review/models/build_model_v1.1.py) |
+| SPD-ANL-001 | เทียบเคียง OpenAI dots กับ MyAI และ Team Agent พร้อมแนวทางปรับใช้ | ร่างวิเคราะห์ (ฝั่ง dots ยืนยันบางส่วน) | [DOT-VS-MYAI-TEAMAGENT-COMPARISON](DOT-VS-MYAI-TEAMAGENT-COMPARISON.md) |
 | SPD-WO-001 | ร่างใบงาน S1–S3 | Lead อนุมัติให้ออก ยังไม่ออกจริง | [WO-PROPOSAL-S1-S3](work-orders/WO-PROPOSAL-S1-S3.md) |
 | SPD-WO-002 | ใบงานสคริปต์รับรองฮาร์ดแวร์ (WO-HWQ-001) | ร่าง รอผู้ดูแลออกใบงาน | [WO-HWQ-001](work-orders/WO-HWQ-001-hardware-qualification-script.md) |
 
