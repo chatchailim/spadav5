@@ -37,6 +37,7 @@
 | SPD-WO-003a | ใบงาน POO-WO-005 ฉบับรายละเอียดพร้อมนำเข้า (วิธีทำ แม่แบบรายงาน เกณฑ์รับงาน) ร่างโดย Claude แทน Lead | ออกแล้ว รอ Lead ตรวจข้อความและมอบงาน | [POO-WO-005](work-orders/POO-WO-005-teamagent-mcp-scheduler-spike.md) |
 | SPD-WO-003 | ใบงานสำรวจ onevault-mcp และตัวตั้งเวลา (spike, เสนอเลข POO-WO-005) | **Lead ตัดสินให้ออก 2026-09-30** นำเข้า `onemanos-setbox` แล้ว (branch `docs/poo-wo-005` ce692ca ยังไม่ merge) รอ Lead merge + มอบผู้ทำ | [WO-SPIKE-TEAMAGENT-MCP-SCHEDULER](work-orders/WO-SPIKE-TEAMAGENT-MCP-SCHEDULER.md) |
 | SPD-REV-001 | ผลตรวจรับรอบกลางของรายงานสำรวจ POO-WO-005 (checkpoint ที่ commit 594d47e) | รอบกลาง: ยังไม่รับขั้นสุดท้าย รอผู้ทำทำงานค้างและส่งรอบสอง | [REVIEW-POO-WO-005-interim](work-orders/REVIEW-POO-WO-005-interim-2026-09-30.md) |
+| SPD-REV-002 | ผลตรวจรับรอบที่ 2 ของรายงานสำรวจ POO-WO-005 (commit 4331192) | แก้ตามรอบกลางครบ; ยังไม่รับขั้นสุดท้าย รอ Lead กำหนด VM + บัญชีทดสอบ/วงเงิน | [REVIEW-POO-WO-005-round2](work-orders/REVIEW-POO-WO-005-round2-2026-09-30.md) |
 | SPD-WO-002 | ใบงานสคริปต์รับรองฮาร์ดแวร์ (WO-HWQ-001) | ร่าง รอผู้ดูแลออกใบงาน | [WO-HWQ-001](work-orders/WO-HWQ-001-hardware-qualification-script.md) |
 
 ## 2. การตัดสินใจที่รอ Lead
@@ -66,6 +67,7 @@
 | 5.2 | ให้ทนายร่างสัญญาจาก Term Sheet | ที่ปรึกษากฎหมาย | SPD-INV-003 |
 | 5.3 | แทนจำนวนหุ้น placeholder ด้วยตัวเลข บอจ.5 จริง, กรอกเงินสดตั้งต้นและวันออกเอกสารในโมเดล, ตรวจว่า SPD-INV-005 ไม่ถูกแนบ | ผู้ระดมทุน | SPD-INV-004 ข้อ 4 |
 | 5.4 | ~~นำ SPD-WO-003 เข้า onemanos-setbox~~ **เสร็จแล้ว 2026-09-30**: branch `docs/poo-wo-005` commit `ce692ca` (DCO) ยังไม่ merge · **เหลือ**: Lead ตรวจ diff และ merge, กรอกตารางมอบงาน (วันที่มอบ/รับงาน/กำหนดส่ง), มอบ Codex/Cowork | Lead / ผู้ดูแล repo | SPD-WO-003 |
+| 5.5 | กำหนด VM ทดสอบแบบใช้แล้วทิ้ง (B2) และบัญชีทดสอบ+วงเงิน (B4, A6) ให้ผู้ทำใบงาน POO-WO-005 | Lead | SPD-REV-002 |
 | 6 | กรอกชื่อผู้รับผิดชอบและวันกำหนด (P1–P5, S1–S3, WO-HWQ-001) | Lead | SPD-DEC-001 |
 | 7 | ปรึกษากฎหมาย: จัดซื้อ/ภาษี/ศุลกากร, โทเคน/staking/ตลาดข้อมูล/เครดิต | ที่ปรึกษากฎหมาย | SPD-PRC-001, SPD-DEC-003 |
 | 9 | ทำ PDF ฉบับนักลงทุนของ deck (ลบ speaker notes) และโมเดลฉบับนักลงทุน (ลบหมายเหตุเชิงต่อรอง) | ผู้ระดมทุน | SPD-INV-001 §3 |
