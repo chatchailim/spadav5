@@ -12,7 +12,8 @@
 | SPD-CUR-001 | สถานะสถาปัตยกรรมปัจจุบัน (v0.4) | สรุปจากการอ่าน ไม่ใช่ต้นฉบับ | [CURRENT-STATE](CURRENT-STATE.md) |
 | SPD-GAP-001 | Gap Analysis v0.4 | สรุปจากการอ่าน ยังไม่ยืนยันด้วยการรันโค้ด | [GAP-ANALYSIS](GAP-ANALYSIS.md) |
 | SPD-ECO-001 | เศรษฐกิจดิจิทัลที่สมาชิกได้ประโยชน์สูงสุด | ข้อเสนอ v0.1 (Lead อนุมัติเป็นกรอบทดลอง ไม่ใช่นโยบายที่มีผล) | [MEMBER-ECONOMY](MEMBER-ECONOMY.md) |
-| SPD-RDM-001 | Roadmap เชิงหลักการ | ร่าง v0.1 (เขียนก่อนเห็นระบบจริง) | [ARCHITECTURE-ROADMAP](ARCHITECTURE-ROADMAP.md) |
+| SPD-RDM-001 | Roadmap เชิงหลักการ | ร่าง v0.1 (เขียนก่อนเห็นระบบจริง) · **ใช้เป็นกรอบหลักการเท่านั้น ส่วนเฟส P0–P3 ถูกแทนที่ด้วย SPD-RDM-002 (2026-09-30)** | [ARCHITECTURE-ROADMAP](ARCHITECTURE-ROADMAP.md) |
+| SPD-RDM-002 | เส้นทางเวลารวมบนแกน M0–M4 (ผลิตภัณฑ์ เศรษฐกิจสมาชิก Team Agent เงินทุน) + ภาพและศัพท์มาตรฐาน + เส้นทางวิกฤต | **ร่าง v0.1 รอ Lead ทบทวน** (อนุมัติทิศทางตาม SPD-DEC-005) · นิยาม M0–M4 ยังไม่เทียบ `milestones.md` ต้นฉบับ | [UNIFIED-TIMELINE-M0-M4](UNIFIED-TIMELINE-M0-M4.md) |
 | SPD-PRP-000 | ข้อเสนอ PROP-0001..0010 | ร่างเก่า เทียบกับระบบจริงแล้ว | [proposals/README](proposals/README.md) |
 | SPD-DEC-001 | บันทึกคำตัดสินเทคนิค 5 เรื่อง | Lead อนุมัติ 2026-09-29 | [DECISION-MEMO-2026-09-29](decisions/DECISION-MEMO-2026-09-29.md) |
 | SPD-DEC-002 | บันทึกการอนุมัติของ Lead | บันทึกโดย Claude จากข้อความของ Lead | [APPROVAL-LOG](decisions/APPROVAL-LOG-2026-09-29.md) |
@@ -34,6 +35,8 @@
 | SPD-ANL-001 | เทียบเคียง OpenAI dots กับ MyAI และ Team Agent พร้อมแนวทางปรับใช้ | ร่างวิเคราะห์ (ฝั่ง dots ยืนยันบางส่วน) | [DOT-VS-MYAI-TEAMAGENT-COMPARISON](DOT-VS-MYAI-TEAMAGENT-COMPARISON.md) |
 | SPD-ANL-002 | รายการที่ต้องเพิ่มให้ MyAI/Team Agent ทำงานแบบเอเจนต์ต่อเนื่อง (12 ชิ้น 5 เฟส) | ร่าง รอ Lead ตัดสิน 5 ข้อ | [MYAI-TEAMAGENT-DOT-PARITY-BUILD-LIST](MYAI-TEAMAGENT-DOT-PARITY-BUILD-LIST.md) |
 | SPD-ANL-003 | ตรวจความสอดคล้องข้อเสนอ Agentic Business OS (MyAI/OneManOS/OneVault/Agent Team) กับ ADR และงานปัจจุบัน | ตรวจแล้ว: สอดคล้องระดับแนวคิด, ขัด ADR 0014/0016 ในแผนภาพหลัก 5 จุด | [ALIGNMENT-CHECK-AGENTIC-BUSINESS-OS](ALIGNMENT-CHECK-AGENTIC-BUSINESS-OS.md) |
+| SPD-DEC-005 | บันทึกการอนุมัติของ Lead 2026-09-30: การปรับระบบครั้งสุดท้าย ข้อ 1–8 (ขอบเขต/ผลดำเนินการ/สิ่งที่ไม่ครอบคลุม) | บันทึกโดย Claude จากข้อความของ Lead · ข้อ 5 (ADR 0024–0026) **ยังไม่ตัดสิน** | [APPROVAL-LOG-2026-09-30](decisions/APPROVAL-LOG-2026-09-30-FINAL-ADJUSTMENT.md) |
+| SPD-ADR-D04 | ร่าง ADR: Responsibility record ของ Team Agent (ฝั่ง OneManOS) | **ร่าง รอ Lead ตรวจ** (อนุมัติเฉพาะทิศทาง) ยังไม่นำเข้า repo ปลายทาง | [ADR-NEXT-responsibility-record-draft](decisions/ADR-NEXT-responsibility-record-draft.md) |
 | SPD-WO-001 | ร่างใบงาน S1–S3 | Lead อนุมัติให้ออก ยังไม่ออกจริง | [WO-PROPOSAL-S1-S3](work-orders/WO-PROPOSAL-S1-S3.md) |
 | SPD-WO-003a | ใบงาน POO-WO-005 ฉบับรายละเอียดพร้อมนำเข้า (วิธีทำ แม่แบบรายงาน เกณฑ์รับงาน) ร่างโดย Claude แทน Lead | ออกแล้ว รอ Lead ตรวจข้อความและมอบงาน | [POO-WO-005](work-orders/POO-WO-005-teamagent-mcp-scheduler-spike.md) |
 | SPD-WO-003 | ใบงานสำรวจ onevault-mcp และตัวตั้งเวลา (spike, เสนอเลข POO-WO-005) | **Lead ตัดสินให้ออก 2026-09-30** นำเข้า `onemanos-setbox` แล้ว (branch `docs/poo-wo-005` ce692ca ยังไม่ merge) รอ Lead merge + มอบผู้ทำ | [WO-SPIKE-TEAMAGENT-MCP-SCHEDULER](work-orders/WO-SPIKE-TEAMAGENT-MCP-SCHEDULER.md) |
@@ -54,6 +57,9 @@
 | 7 | ผู้สำรอง/ผู้ตรวจ evidence คนที่สอง ของผู้ลงนามฮาร์ดแวร์ | SPD-ADR-D02 | ลดการรวมอำนาจ |
 | 9 | ระบุผู้ตรวจเอกสารลงทุนก่อนเปิดห้องข้อมูลและกำหนดวัน | SPD-DEC-003 / SPD-DEC-004 ข้อ 8 | ก่อนเปิดห้องข้อมูล |
 | 8 | ล็อก OTP/secure boot ของ KeySign | SPD-DEC-001 ข้อ 3 | **ห้ามทำ** จนครบ 6 เงื่อนไข |
+| 10 | ตรวจ/รับ SPD-ADR-D04 (Responsibility record) แล้วให้ผู้ดูแลนำเข้าด้วยเลขที่ว่าง | SPD-DEC-005 ข้อ 2 | ปลดบล็อก F1 |
+| 11 | ทบทวนการจับคู่ E/F/เงินทุนกับ M0–M4 และเทียบ `milestones.md` ต้นฉบับ | SPD-RDM-002 | แผนรวม |
+| 12 | ให้ผมเข้าถึงข้อความ ADR 0024–0026 และ doc 340 §10 เพื่อเตรียมบันทึกคำตัดสินรายฉบับ (หรือ Lead ตัดสินเอง) | SPD-DEC-005 ข้อ 5 | ยังไม่ตัดสิน |
 
 ## 3. งานที่รอผู้ลงมือ (ผมทำแทนไม่ได้)
 
@@ -88,6 +94,7 @@
 
 | วันที่ | เรื่อง | หลักฐาน |
 |---|---|---|
+| 2026-09-30 | Lead อนุมัติทิศทางการปรับระบบครั้งสุดท้ายข้อ 1–8 (แกน M0–M4, เริ่มที่ Team Agent, ภาพมาตรฐานตาม ADR, กฎไม่เปิดอนุมัติอัตโนมัติ) · **เฉพาะทิศทาง**: ร่างเอกสารที่เกี่ยวข้องยังรอ Lead ตรวจ | SPD-DEC-005 |
 | 2026-09-29 | Lead ประกาศข้อเสนอระดมทุนฉบับปัจจุบัน (Angel 3.0 ลบ.) และถอน/ติดป้ายฉบับอื่น | SPD-DEC-004 ข้อ 1 |
 | 2026-09-29 | Lead ตัดสิน SPD-DEC-003: ทางเลือก A แล้ว C | SPD-DEC-004 ข้อ 8, SPD-DEC-002 รอบ 2 |
 | 2026-09-29 | กำหนดเงื่อนไขเงินกู้แปลงสภาพ (ทิศทางอนุมัติ; ตัวเลขเฉพาะรอยืนยัน) | SPD-DEC-004 ข้อ 3 |
