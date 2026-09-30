@@ -25,12 +25,12 @@
 | SPD-PRC-003 | แบบกรอก ณ วันซื้อ | แม่แบบเปล่า | [PURCHASE-TIME-DECISION-SHEET](procurement/PURCHASE-TIME-DECISION-SHEET.md) |
 | SPD-PRC-004 | แม่แบบทะเบียนฮาร์ดแวร์แบบเดี่ยว | แม่แบบเปล่า (ที่ตั้งจริงที่เสนอ: `onemanos-setbox`) | [HARDWARE-REGISTRY-STANDALONE-TEMPLATE](procurement/HARDWARE-REGISTRY-STANDALONE-TEMPLATE.md) |
 | SPD-INV-001 | รายการตรวจเอกสารลงทุนก่อนเปิดห้องข้อมูล (Go/No-Go) | **ผลตรวจรอบแรก: NO-GO ในสถานะปัจจุบัน** | [INVESTOR-DATAROOM-REVIEW-CHECKLIST](investor-review/INVESTOR-DATAROOM-REVIEW-CHECKLIST.md) |
-| SPD-DEC-004 | คำตัดสิน: ข้อเสนอระดมทุนฉบับปัจจุบัน เงื่อนไขเงินกู้แปลงสภาพ ทะเบียนการถอน และ SPD-DEC-003 | Lead อนุมัติทิศทาง; **ตัวเลขเฉพาะรอ Lead ยืนยัน + ทนาย** | [DECISION-004](decisions/DECISION-004-current-fundraising-offer-and-terms.md) |
+| SPD-DEC-004 | คำตัดสิน: ข้อเสนอระดมทุนฉบับปัจจุบัน เงื่อนไขเงินกู้แปลงสภาพ ทะเบียนการถอน และ SPD-DEC-003 | Lead อนุมัติทิศทาง; **Lead อนุมัติตัวเลข 2026-09-30; รอทนายร่างสัญญา** | [DECISION-004](decisions/DECISION-004-current-fundraising-offer-and-terms.md) |
 | SPD-INV-003 | ร่าง Term Sheet เงินกู้แปลงสภาพ (สำหรับทนาย) | ร่าง ยังไม่ส่งนักลงทุน | [CONVERTIBLE-LOAN-TERM-SHEET-DRAFT](investor-review/CONVERTIBLE-LOAN-TERM-SHEET-DRAFT.md) |
 | SPD-INV-002 | ทะเบียนข้ออ้างในเอกสารลงทุน (INV-C01..C38) | ผลตรวจรอบแรก (อ่านและค้นไฟล์ ไม่ได้รันระบบ) | [INVESTOR-CLAIM-REGISTER](investor-review/INVESTOR-CLAIM-REGISTER.md) |
-| SPD-INV-004 | ร่างข้อความสไลด์ v1.1 ทีละหน้า + คำอธิบายโมเดลฉบับนักลงทุน | ร่างพร้อมใส่สไลด์ รอ Lead ยืนยันตัวเลข | [DECK-V1.1-SLIDE-TEXT](investor-review/DECK-V1.1-SLIDE-TEXT.md) |
+| SPD-INV-004 | ร่างข้อความสไลด์ v1.1 ทีละหน้า + คำอธิบายโมเดลฉบับนักลงทุน | ร่างพร้อมใส่สไลด์ (Lead อนุมัติตัวเลข 2026-09-30) | [DECK-V1.1-SLIDE-TEXT](investor-review/DECK-V1.1-SLIDE-TEXT.md) |
 | SPD-INV-005 | บันทึกผู้นำเสนอ v1.1 (**ภายในเท่านั้น ห้ามส่งนักลงทุน**) | ร่าง | [DECK-V1.1-INTERNAL-SPEAKER-NOTES](investor-review/DECK-V1.1-INTERNAL-SPEAKER-NOTES.md) |
-| SPADA-DOC-FUND-003 v1.1 | โมเดลการเงินฉบับนักลงทุน (946 สูตร 0 error ตรวจกับการจำลองอิสระ) | ตัวเลขรอ Lead ยืนยัน; จำนวนหุ้นเป็น placeholder | [xlsx](investor-review/models/SPADA-DOC-FUND-003-v1.1-investor-model.xlsx) · [สคริปต์สร้าง](investor-review/models/build_model_v1.1.py) |
+| SPADA-DOC-FUND-003 v1.1 | โมเดลการเงินฉบับนักลงทุน (946 สูตร 0 error ตรวจกับการจำลองอิสระ) | Lead อนุมัติตัวเลข 2026-09-30; จำนวนหุ้นเป็น placeholder | [xlsx](investor-review/models/SPADA-DOC-FUND-003-v1.1-investor-model.xlsx) · [สคริปต์สร้าง](investor-review/models/build_model_v1.1.py) |
 | SPD-WO-001 | ร่างใบงาน S1–S3 | Lead อนุมัติให้ออก ยังไม่ออกจริง | [WO-PROPOSAL-S1-S3](work-orders/WO-PROPOSAL-S1-S3.md) |
 | SPD-WO-002 | ใบงานสคริปต์รับรองฮาร์ดแวร์ (WO-HWQ-001) | ร่าง รอผู้ดูแลออกใบงาน | [WO-HWQ-001](work-orders/WO-HWQ-001-hardware-qualification-script.md) |
 
