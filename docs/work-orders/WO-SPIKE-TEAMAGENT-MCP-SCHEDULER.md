@@ -1,6 +1,7 @@
 # ใบงานสำรวจ: `onevault-mcp` และตัวตั้งเวลา สำหรับ Team Agent แบบทำงานต่อเนื่อง
 
 - **รหัสเอกสาร: SPD-WO-003** · **Lead ตัดสินให้ออกใบงาน 2026-09-30** · สถานะ: **ออกแล้ว (ในเอกสารนี้) รอนำเข้า `onemanos-setbox` และมอบผู้ทำ**
+- **ฉบับรายละเอียดพร้อมนำเข้า: [POO-WO-005-teamagent-mcp-scheduler-spike.md](POO-WO-005-teamagent-mcp-scheduler-spike.md)** (ใช้ฉบับนั้นเป็นตัวมอบงาน)
 - เมื่อนำเข้า `onemanos-setbox` เสนอเลข **POO-WO-005** (ต่อจาก POO-WO-004; ตรวจ `work-orders/README.md` ก่อนใช้เลข)
 - ประเภท: **สำรวจ (spike) ห้ามแก้โค้ดผลิตภัณฑ์** ผลงานคือรายงานหนึ่งฉบับ
 - ที่มา: [SPD-ANL-002](../MYAI-TEAMAGENT-DOT-PARITY-BUILD-LIST.md) ข้อ 1, 2, 4, 5, 10 · [SPD-ANL-001](../DOT-VS-MYAI-TEAMAGENT-COMPARISON.md)

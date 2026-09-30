@@ -34,6 +34,7 @@
 | SPD-ANL-001 | เทียบเคียง OpenAI dots กับ MyAI และ Team Agent พร้อมแนวทางปรับใช้ | ร่างวิเคราะห์ (ฝั่ง dots ยืนยันบางส่วน) | [DOT-VS-MYAI-TEAMAGENT-COMPARISON](DOT-VS-MYAI-TEAMAGENT-COMPARISON.md) |
 | SPD-ANL-002 | รายการที่ต้องเพิ่มให้ MyAI/Team Agent ทำงานแบบเอเจนต์ต่อเนื่อง (12 ชิ้น 5 เฟส) | ร่าง รอ Lead ตัดสิน 5 ข้อ | [MYAI-TEAMAGENT-DOT-PARITY-BUILD-LIST](MYAI-TEAMAGENT-DOT-PARITY-BUILD-LIST.md) |
 | SPD-WO-001 | ร่างใบงาน S1–S3 | Lead อนุมัติให้ออก ยังไม่ออกจริง | [WO-PROPOSAL-S1-S3](work-orders/WO-PROPOSAL-S1-S3.md) |
+| SPD-WO-003a | ใบงาน POO-WO-005 ฉบับรายละเอียดพร้อมนำเข้า (วิธีทำ แม่แบบรายงาน เกณฑ์รับงาน) ร่างโดย Claude แทน Lead | ออกแล้ว รอ Lead ตรวจข้อความและมอบงาน | [POO-WO-005](work-orders/POO-WO-005-teamagent-mcp-scheduler-spike.md) |
 | SPD-WO-003 | ใบงานสำรวจ onevault-mcp และตัวตั้งเวลา (spike, เสนอเลข POO-WO-005) | **Lead ตัดสินให้ออก 2026-09-30** รอนำเข้า onemanos-setbox + มอบผู้ทำ | [WO-SPIKE-TEAMAGENT-MCP-SCHEDULER](work-orders/WO-SPIKE-TEAMAGENT-MCP-SCHEDULER.md) |
 | SPD-WO-002 | ใบงานสคริปต์รับรองฮาร์ดแวร์ (WO-HWQ-001) | ร่าง รอผู้ดูแลออกใบงาน | [WO-HWQ-001](work-orders/WO-HWQ-001-hardware-qualification-script.md) |
 
