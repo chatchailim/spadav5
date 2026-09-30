@@ -34,7 +34,7 @@
 | SPD-ANL-001 | เทียบเคียง OpenAI dots กับ MyAI และ Team Agent พร้อมแนวทางปรับใช้ | ร่างวิเคราะห์ (ฝั่ง dots ยืนยันบางส่วน) | [DOT-VS-MYAI-TEAMAGENT-COMPARISON](DOT-VS-MYAI-TEAMAGENT-COMPARISON.md) |
 | SPD-ANL-002 | รายการที่ต้องเพิ่มให้ MyAI/Team Agent ทำงานแบบเอเจนต์ต่อเนื่อง (12 ชิ้น 5 เฟส) | ร่าง รอ Lead ตัดสิน 5 ข้อ | [MYAI-TEAMAGENT-DOT-PARITY-BUILD-LIST](MYAI-TEAMAGENT-DOT-PARITY-BUILD-LIST.md) |
 | SPD-WO-001 | ร่างใบงาน S1–S3 | Lead อนุมัติให้ออก ยังไม่ออกจริง | [WO-PROPOSAL-S1-S3](work-orders/WO-PROPOSAL-S1-S3.md) |
-| SPD-WO-003 | ใบงานสำรวจ onevault-mcp และตัวตั้งเวลา (spike, เสนอเลข POO-WO-005) | ร่าง รอ Lead อนุมัติออก | [WO-SPIKE-TEAMAGENT-MCP-SCHEDULER](work-orders/WO-SPIKE-TEAMAGENT-MCP-SCHEDULER.md) |
+| SPD-WO-003 | ใบงานสำรวจ onevault-mcp และตัวตั้งเวลา (spike, เสนอเลข POO-WO-005) | **Lead ตัดสินให้ออก 2026-09-30** รอนำเข้า onemanos-setbox + มอบผู้ทำ | [WO-SPIKE-TEAMAGENT-MCP-SCHEDULER](work-orders/WO-SPIKE-TEAMAGENT-MCP-SCHEDULER.md) |
 | SPD-WO-002 | ใบงานสคริปต์รับรองฮาร์ดแวร์ (WO-HWQ-001) | ร่าง รอผู้ดูแลออกใบงาน | [WO-HWQ-001](work-orders/WO-HWQ-001-hardware-qualification-script.md) |
 
 ## 2. การตัดสินใจที่รอ Lead
@@ -63,6 +63,7 @@
 | 5.1 | แก้ deck/โมเดลออก v1.1 ตาม SPD-DEC-004 ข้อ 6 และทำฉบับนักลงทุน | ผู้ระดมทุน | SPD-DEC-004 ข้อ 6 |
 | 5.2 | ให้ทนายร่างสัญญาจาก Term Sheet | ที่ปรึกษากฎหมาย | SPD-INV-003 |
 | 5.3 | แทนจำนวนหุ้น placeholder ด้วยตัวเลข บอจ.5 จริง, กรอกเงินสดตั้งต้นและวันออกเอกสารในโมเดล, ตรวจว่า SPD-INV-005 ไม่ถูกแนบ | ผู้ระดมทุน | SPD-INV-004 ข้อ 4 |
+| 5.4 | นำ SPD-WO-003 เข้า `onemanos-setbox/work-orders/` เป็น POO-WO-005 (ตรวจเลขว่างที่ remote) แล้วมอบผู้ทำและกำหนดวันรับงาน | ผู้ดูแล repo/Lead | SPD-WO-003 |
 | 6 | กรอกชื่อผู้รับผิดชอบและวันกำหนด (P1–P5, S1–S3, WO-HWQ-001) | Lead | SPD-DEC-001 |
 | 7 | ปรึกษากฎหมาย: จัดซื้อ/ภาษี/ศุลกากร, โทเคน/staking/ตลาดข้อมูล/เครดิต | ที่ปรึกษากฎหมาย | SPD-PRC-001, SPD-DEC-003 |
 | 9 | ทำ PDF ฉบับนักลงทุนของ deck (ลบ speaker notes) และโมเดลฉบับนักลงทุน (ลบหมายเหตุเชิงต่อรอง) | ผู้ระดมทุน | SPD-INV-001 §3 |
