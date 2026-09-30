@@ -14,7 +14,7 @@
 - [ร่าง ADR: ขอบเขต ADR 0020 (Track S ไม่เชื่อม SPADA / Track C เชื่อม SPADA)](docs/decisions/ADR-DRAFT-hardware-qualification-scope.md)
 - [ร่างใบงาน S1–S3](docs/work-orders/WO-PROPOSAL-S1-S3.md) · [ใบงานสคริปต์รับรองฮาร์ดแวร์ WO-HWQ-001](docs/work-orders/WO-HWQ-001-hardware-qualification-script.md)
 - **[รายการตรวจเอกสารลงทุนก่อนเปิดห้องข้อมูล (SPD-INV-001)](docs/investor-review/INVESTOR-DATAROOM-REVIEW-CHECKLIST.md)** · [ทะเบียนข้ออ้าง (SPD-INV-002)](docs/investor-review/INVESTOR-CLAIM-REGISTER.md)
-- **[คำตัดสิน: ข้อเสนอระดมทุนฉบับปัจจุบัน เงื่อนไขเงินกู้ และทะเบียนการถอน (SPD-DEC-004)](docs/decisions/DECISION-004-current-fundraising-offer-and-terms.md)** · [ร่าง Term Sheet (SPD-INV-003)](docs/investor-review/CONVERTIBLE-LOAN-TERM-SHEET-DRAFT.md)
+- **[คำตัดสิน: ข้อเสนอระดมทุนฉบับปัจจุบัน เงื่อนไขเงินกู้ และทะเบียนการถอน (SPD-DEC-004)](docs/decisions/DECISION-004-current-fundraising-offer-and-terms.md)** · [ร่าง Term Sheet (SPD-INV-003)](docs/investor-review/CONVERTIBLE-LOAN-TERM-SHEET-DRAFT.md) · [ข้อความสไลด์ v1.1 (SPD-INV-004)](docs/investor-review/DECK-V1.1-SLIDE-TEXT.md) · [โมเดลนักลงทุน v1.1](docs/investor-review/models/SPADA-DOC-FUND-003-v1.1-investor-model.xlsx)
 - [โมเดลเศรษฐกิจ doc 100 (SPD-DEC-003, อนุมัติทางเลือก A แล้ว C)](docs/decisions/DECISION-MEMO-003-economic-model-reconciliation.md)
 - [ข้อเสนอ PROP-0001..0010](docs/proposals/README.md)
 

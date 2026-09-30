@@ -28,6 +28,9 @@
 | SPD-DEC-004 | คำตัดสิน: ข้อเสนอระดมทุนฉบับปัจจุบัน เงื่อนไขเงินกู้แปลงสภาพ ทะเบียนการถอน และ SPD-DEC-003 | Lead อนุมัติทิศทาง; **ตัวเลขเฉพาะรอ Lead ยืนยัน + ทนาย** | [DECISION-004](decisions/DECISION-004-current-fundraising-offer-and-terms.md) |
 | SPD-INV-003 | ร่าง Term Sheet เงินกู้แปลงสภาพ (สำหรับทนาย) | ร่าง ยังไม่ส่งนักลงทุน | [CONVERTIBLE-LOAN-TERM-SHEET-DRAFT](investor-review/CONVERTIBLE-LOAN-TERM-SHEET-DRAFT.md) |
 | SPD-INV-002 | ทะเบียนข้ออ้างในเอกสารลงทุน (INV-C01..C38) | ผลตรวจรอบแรก (อ่านและค้นไฟล์ ไม่ได้รันระบบ) | [INVESTOR-CLAIM-REGISTER](investor-review/INVESTOR-CLAIM-REGISTER.md) |
+| SPD-INV-004 | ร่างข้อความสไลด์ v1.1 ทีละหน้า + คำอธิบายโมเดลฉบับนักลงทุน | ร่างพร้อมใส่สไลด์ รอ Lead ยืนยันตัวเลข | [DECK-V1.1-SLIDE-TEXT](investor-review/DECK-V1.1-SLIDE-TEXT.md) |
+| SPD-INV-005 | บันทึกผู้นำเสนอ v1.1 (**ภายในเท่านั้น ห้ามส่งนักลงทุน**) | ร่าง | [DECK-V1.1-INTERNAL-SPEAKER-NOTES](investor-review/DECK-V1.1-INTERNAL-SPEAKER-NOTES.md) |
+| SPADA-DOC-FUND-003 v1.1 | โมเดลการเงินฉบับนักลงทุน (946 สูตร 0 error ตรวจกับการจำลองอิสระ) | ตัวเลขรอ Lead ยืนยัน; จำนวนหุ้นเป็น placeholder | [xlsx](investor-review/models/SPADA-DOC-FUND-003-v1.1-investor-model.xlsx) · [สคริปต์สร้าง](investor-review/models/build_model_v1.1.py) |
 | SPD-WO-001 | ร่างใบงาน S1–S3 | Lead อนุมัติให้ออก ยังไม่ออกจริง | [WO-PROPOSAL-S1-S3](work-orders/WO-PROPOSAL-S1-S3.md) |
 | SPD-WO-002 | ใบงานสคริปต์รับรองฮาร์ดแวร์ (WO-HWQ-001) | ร่าง รอผู้ดูแลออกใบงาน | [WO-HWQ-001](work-orders/WO-HWQ-001-hardware-qualification-script.md) |
 
@@ -56,6 +59,7 @@
 | 5 | ใส่ banner SUPERSEDED/WITHDRAWN ตามทะเบียนการถอน และตรวจเอกสารลงทุนที่ยังไม่ได้อ่านเต็ม | ผู้ดูแลเอกสาร/ผู้ระดมทุน | SPD-DEC-004 ข้อ 1 |
 | 5.1 | แก้ deck/โมเดลออก v1.1 ตาม SPD-DEC-004 ข้อ 6 และทำฉบับนักลงทุน | ผู้ระดมทุน | SPD-DEC-004 ข้อ 6 |
 | 5.2 | ให้ทนายร่างสัญญาจาก Term Sheet | ที่ปรึกษากฎหมาย | SPD-INV-003 |
+| 5.3 | แทนจำนวนหุ้น placeholder ด้วยตัวเลข บอจ.5 จริง, กรอกเงินสดตั้งต้นและวันออกเอกสารในโมเดล, ตรวจว่า SPD-INV-005 ไม่ถูกแนบ | ผู้ระดมทุน | SPD-INV-004 ข้อ 4 |
 | 6 | กรอกชื่อผู้รับผิดชอบและวันกำหนด (P1–P5, S1–S3, WO-HWQ-001) | Lead | SPD-DEC-001 |
 | 7 | ปรึกษากฎหมาย: จัดซื้อ/ภาษี/ศุลกากร, โทเคน/staking/ตลาดข้อมูล/เครดิต | ที่ปรึกษากฎหมาย | SPD-PRC-001, SPD-DEC-003 |
 | 9 | ทำ PDF ฉบับนักลงทุนของ deck (ลบ speaker notes) และโมเดลฉบับนักลงทุน (ลบหมายเหตุเชิงต่อรอง) | ผู้ระดมทุน | SPD-INV-001 §3 |
