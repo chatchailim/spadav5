@@ -2,6 +2,8 @@
 
 - **รหัสเอกสาร: SPD-HND-004** · ร่างโดย Claude ตามที่ Lead สั่ง "ดำเนินการตามข้อเสนอแนะ" · **Claude ไม่ได้ merge ไม่ได้ส่งข้อความ และไม่ได้แก้ repo ใด** (สิทธิ์อ่านอย่างเดียวบน `onemanos-setbox`/`spada-monorepo`; การ merge เป็นการตัดสินของ Lead) · ข้อมูลอ้างอิง [SPD-REV-007](REVIEW-IMPORT-PRS-2026-10-01.md) §2.1–2.4
 
+> **อัปเดต 2026-10-01 (หลัง Lead รายงาน):** PR #1 **merge แล้ว** · PR #93 ยัง Draft/Blocked รอคำตอบข้อถ้อยคำ ADR 0024–0026 และผู้อนุมัติ 1 คน + required checks · ข้อความมอบ POO-WO-006 (ข้อ 2) **ยังไม่ได้ส่ง/ยังไม่เริ่มงาน** ตามที่ Lead แจ้ง · ดู [SPD-REV-007 §2.5](REVIEW-IMPORT-PRS-2026-10-01.md)
+
 ## 1. เช็กลิสต์ก่อน merge (Lead ทำเอง)
 
 ### PR #1 — `onemanos-setbox` (head `88e49ab`, Draft)

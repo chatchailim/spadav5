@@ -73,6 +73,21 @@
 
 **ยังเปิดอยู่:** ข้อความเก่าในไฟล์ที่นำเข้า (ข้อ 2) · ถ้อยคำสถานะ ADR 0024–0026 (ข้อ 3) · ผู้ตรวจอิสระ ADR 0028 (ข้อ 4) · การ merge เป็นของ Lead
 
+## 2.5 สถานะหลัง Lead merge PR #1 (2026-10-01)
+
+ผมตรวจสถานะผ่าน GitHub API (อ่านอย่างเดียว):
+
+| PR | สถานะที่ตรวจพบ |
+|---|---|
+| [onemanos-setbox#1](https://github.com/chatchailim/onemanos-setbox/pull/1) | **merged** เมื่อ 08:13:12 UTC โดย `chatchailim` · head ของ PR = `d4e4abe` (3 commits) · 5 ไฟล์เอกสาร · body ระบุว่า Lead อนุญาตให้ merge โดยรับทราบ CI ที่ล้ม ไม่ข้ามเทสต์ ไม่เปลี่ยน branch protection · **ผมไม่ได้ตรวจ merge commit `f6f9292` ที่ Lead แจ้ง** |
+| [spada-monorepo#93](https://github.com/chatchailim/spada-monorepo/pull/93) | **ยังเปิดและเป็น Draft** · head `34d181e` (3 commits) · check `quality` ยัง in_progress ตอนผมตรวจ (08:15) |
+
+**ข้อสังเกต**
+- PR #1: commit หลัง `88e49ab` (ถึง `d4e4abe`) ปรับข้อความเก่า (ข้อ 2) **ผมยังไม่ได้อ่าน diff ส่วนนี้** ที่ผมตรวจรับไว้ (§2.4) คือ head `88e49ab` · PR body ระบุไม่ได้รัน `npm test` ซ้ำหลังแก้ถ้อยคำ (เป็นเอกสารล้วน) และ kit ที่ head `88e49ab` = 339 ไฟล์ hash เท่า base
+- PR #93: commit `517b4d4` (ปรับสถานะ/ลิงก์) ถูกบันทึก author และ sign-off เป็น **"Antigravity"** (ใช้ git config ที่แชร์ในเครื่อง) ซึ่งไม่ตรงกับผู้ทำจริง (Codex ในนามเจ้าของ) · commit `34d181e` ยืนยันใหม่ (re-attest) ด้วยตัวตนเจ้าของโดยไม่แก้ประวัติ · **ประวัติของ PR จึงยังมี commit ที่ระบุผู้ทำผิดตัว** (เรื่องบันทึกที่มา ไม่ใช่เรื่องความปลอดภัย) ผู้ดูแลควรรับทราบก่อน merge และควรตั้งค่า git identity ต่อ agent ในอนาคต
+- ถ้อยคำสถานะ ADR 0024 บน head `34d181e` ยัง **เหมือนเดิม**: "Accepted (delegated decision, SPD-DEC-006, 2026-09-30) — มีเงื่อนไข; Lead may reverse" (อ่านจากไฟล์ที่ head) · **ข้อ 3 ยังรอ Lead** ตามที่ Lead แจ้งว่า #93 ยัง Blocked รอคำตอบนี้
+- PR #93 ต้องการผู้อนุมัติ 1 คนและ required checks ตามกติกา repo (ตามที่ Lead แจ้ง ผมไม่ได้ตรวจกติกา)
+
 ## 3. สิ่งที่ยังไม่ได้ตรวจ
 
 - ชื่อเทสต์ที่ล้มใน CI ของ #93 และ check ของ #1
