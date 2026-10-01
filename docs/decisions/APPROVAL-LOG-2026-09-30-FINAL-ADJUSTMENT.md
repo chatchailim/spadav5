@@ -119,3 +119,15 @@
 - **ผลที่ Lead รายงาน:** Setbox [PR #1](https://github.com/chatchailim/onemanos-setbox/pull/1) · monorepo [PR #93](https://github.com/chatchailim/spada-monorepo/pull/93) (Draft ทั้งคู่ ยังไม่ merge)
 - **ที่ Claude ทำ:** อ่าน diff/สถานะ PR และเตรียมบันทึก [SPD-REV-007](../work-orders/REVIEW-IMPORT-PRS-2026-10-01.md) พบ CI `quality` ของ #93 ล้ม (สาเหตุยังไม่ทราบ)
 - **ที่ Claude ไม่ได้ทำ:** ไม่ได้รีวิว/โพสต์ความเห็น/อนุมัติ/merge บน PR (สิทธิ์อ่านอย่างเดียว และการตัดสินเป็นของ Lead) ไม่ได้รับ ADR 0028 หรือ ADR-008
+
+## รอบที่ 8 (2026-10-01): ดำเนินการตามข้อเสนอแนะหลังเทียบ CI ของ PR #1/#93
+
+**ข้อความของ Lead (อ้างตามต้นฉบับ):** "ดำเนินการตามข้อเสนอแนะได้เลย" (ตอบข้อเสนอใน [SPD-REV-007](../work-orders/REVIEW-IMPORT-PRS-2026-10-01.md) §2.3)
+
+| # | ข้อเสนอที่ Lead ให้ดำเนินการ | ที่ Claude ทำ | สถานะ |
+|---|---|---|---|
+| 1 | ร่าง ADR-008 ไม่เข้า kit (ย้าย/เปลี่ยนชื่อโดยไม่แก้ `build-kit.js`) | เขียนคำสั่งให้ Codex ใน [SPD-HND-003](../work-orders/CODEX-HANDOFF-2026-10-01-PR-FIXES.md) | **ยังไม่ได้ส่งถึง Codex และยังไม่ได้แก้ PR #1** (Claude ไม่มีสิทธิ์เขียน repo นั้น) |
+| 2 | ลำดับ merge #1 แล้ว #93 โดย Lead รับทราบว่า CI ยังแดงเท่า base | บันทึกลำดับใน SPD-HND-003 | **Claude ไม่ได้ merge** Lead เป็นผู้ merge |
+| 3 | ใบงานแยก 4 เรื่อง ห้ามรวมกับ PR และห้ามข้ามเทสต์ | ร่าง [SPD-WO-009 A–D](../work-orders/WO-PROPOSAL-CI-STABILITY-2026-10-01.md) | ร่าง ยังไม่นำเข้า/มอบ |
+
+- **ที่ Claude ไม่ได้ทำ:** ไม่ได้โพสต์ความเห็นหรือ merge บน PR ใด · ไม่ได้ตัดสินถ้อยคำ "Accepted (delegated decision)" ของ ADR 0024–0026 แทน Lead (ข้อ 3 ของ SPD-REV-007 ยังเปิด)
