@@ -71,6 +71,7 @@ Team Agent ปัจจุบันเป็นเอเจนต์ภายน
 | R3 | consent model ปัจจุบัน `granteeDid` รับเฉพาะ `did:spada:person:*` ไม่มี purpose/expiry/recipient (ADR 0016 §6, ADR 0018 แก้ให้เป็น discriminated union แล้วตามทะเบียน) | **dependency:** ต้องตรวจว่า ADR 0018 implement แล้วเพียงใดก่อนเริ่ม F1 (ผมยังไม่ได้ตรวจโค้ด consent-service) |
 | R4 | นโยบาย delegation ระดับ WorkSpace ของ `did:spada:org` ยังเป็นงานค้าง (ADR 0016 "ต้องทำ" ข้อ 2) | **dependency** ของ Responsibility ที่แตะข้อมูลองค์กร |
 | R5 | ADR 0016 §4 ห้ามนับ Human Gate/UX บน Setbox เป็นหลักฐานของ SPADA ต้อง materialize เป็น actor assertion ผูก payload | ตรงกับกติกาข้อ 3 ของร่างอยู่แล้ว |
+| R7 | ผลสไปก์ B2 ([SPD-REV-004](../work-orders/REVIEW-POO-WO-005-round3-2026-10-01.md)): crash หลัง effect ก่อน complete ทำให้ effect ซ้ำ (2 effects, 1 complete) และ backoff ไม่ถูกบังคับ → Responsibility ที่มี trigger ต้องมี **durable job + idempotency key ต่อ attempt** ก่อนเปิดเขียน | **เพิ่มเป็นเงื่อนไขของเฟส F1** (ยังไม่ได้ใส่ในกติกาของร่าง ต้องเพิ่มเมื่อ Lead ตรวจร่าง) |
 | R6 | ชื่อ "Steward" ในระดับ autonomy อาจชนกับบทบาท Steward ของโครงการ (Lead ถือบทบาท Steward ฝั่ง SPADA) | คำถามเปิดข้อ 1 มีผลจริง ควรเลือกชื่อระดับที่ไม่ชนบทบาทบุคคล |
 
 ## คำถามเปิดสำหรับ Lead
