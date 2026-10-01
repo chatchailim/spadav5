@@ -1,7 +1,7 @@
 # ใบงานร่าง: ตัวตรวจ actor assertion แบบ KeySign (PKT-v1) ฝั่ง SPADA
 
 - **รหัสเอกสาร: SPD-WO-008** (ยังไม่มีเลขใบงานจริง ผู้ดูแล monorepo กำหนดตอนนำเข้า) · ร่างโดย Claude ตามที่ Lead อนุมัติให้ร่าง (2026-10-01) · **ร่าง Lead ยังไม่ได้ตรวจ ยังไม่มอบผู้ทำ**
-- **ห้ามเริ่มจน Lead ตรวจและรับ [SPD-ADR-D05](../decisions/ADR-NEXT-keysign-actor-assertion-bridge-draft.md)** และผู้ดูแลนำเข้า ADR สู่ monorepo
+- **Lead ตอบ Q1–Q5 ของ ADR แล้ว (ตามข้อเสนอเริ่มต้น: challenge สุ่มโดย host, algorithm `ed25519-pkt-v1`, อายุ assertion ใช้ค่าเดิม, ใบงานตรวจ migration ของ counter, ต้องมีผู้ตรวจอิสระ) · ยังห้ามเริ่มจนผู้ดูแลนำเข้าและรับ [SPD-ADR-D05](../decisions/ADR-NEXT-keysign-actor-assertion-bridge-draft.md)** และผู้ดูแลนำเข้า ADR สู่ monorepo
 - ผู้ทำ: ผู้ดูแลมอบ · ผู้ตรวจ: Cowork + ผู้ตรวจความปลอดภัยอิสระ · ผู้ตัดสิน: Lead
 - ขนาด: **กลางถึงใหญ่** (identity path) · แยกจาก spike POO-WO-005 ทั้งหมด · branch แยกใน `spada-monorepo`
 - เป้าหมาย: ปิดช่วง "actor assertion ผ่าน SPADA node" ของ A6-full
