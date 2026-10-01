@@ -51,6 +51,16 @@ setTimeout(() => {
 
 เก็บหลักฐานเป็นไฟล์ `operations-events.jsonl` ดิบ พร้อมตารางเวลา scheduled เทียบ start จริง ทดสอบทั้ง Windows และ Linux และบันทึกค่า config ที่ใช้
 
+### กรณีเพิ่มจากร่างของผู้ทำ (`follow-up-fix-drafts.md` ใน `f1927b5`..`03fbed1`, รับเข้ามาแล้ว 2026-10-01)
+
+- policy เริ่ม/restart **จุดเดียว** ครอบคลุม timer, health loop, dependency และ control resume
+- หลาย trigger ในเวลาเดียวกัน (timer + health + dependency พร้อมกัน) ต้องเริ่มบริการได้ไม่เกินหนึ่งครั้ง
+- dependency flap (ขึ้น/ล้มซ้ำ) ระหว่างรอ backoff
+- stop/maintenance/resume: **callback เก่าหลัง stop ต้องไม่ปลุกบริการกลับมา**
+- process spawn ล้มเหลว (ไม่ใช่เฉพาะ process ที่ exit): นับโควตาอย่างไรต้องกำหนดและทดสอบ
+- พฤติกรรมเมื่อนาฬิการะบบเปลี่ยน (clock shift) และเทียบ timestamps จริงกับขอบเขตเวลา ไม่อ่านเฉพาะ `delayMs` ในเหตุการณ์
+- ห้ามแก้ด้วยการเพิ่มความถี่ monitor แทนการบังคับ policy
+
 ## ความเสี่ยง
 
 - เทสต์ที่อิงเวลาจริงอาจผันผวน ให้ใช้ความคลาดเคลื่อนที่กำหนดล่วงหน้าและทำซ้ำหลายรอบ ไม่ใช้ sleep เปล่า

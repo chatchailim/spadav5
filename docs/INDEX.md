@@ -50,6 +50,7 @@
 | SPD-WO-006 (POO-WO-007) | ใบงานกลาง: บังคับ `nextRestartAt` และนับโควตา restart เฉพาะการเริ่มจริง | ร่างพร้อมนำเข้า รอ Lead | [POO-WO-007](work-orders/POO-WO-007-supervisor-restart-backoff-enforcement.md) |
 | SPD-WO-007 (POO-WO-008) | ใบงานใหญ่: durable job + idempotency key ผูกกับ Responsibility | ร่างพร้อมนำเข้า **ห้ามเริ่มจน Lead รับ SPD-ADR-D04** | [POO-WO-008](work-orders/POO-WO-008-durable-job-idempotency.md) |
 | SPD-HND-001 | ข้อความส่งต่อให้ Codex: A1, raw log VM รอบเมื่อวาน, เก็บกวาดเครื่อง lab | ร่าง **ยังไม่ได้ส่งถึง Codex** | [CODEX-HANDOFF-2026-10-01](work-orders/CODEX-HANDOFF-2026-10-01.md) |
+| SPD-REV-005 | ผลตรวจรับรอบที่ 4 ของรายงานสำรวจ POO-WO-005 (commit 03fbed1: A1 ไล่ 171 business routes) | **รับ A1 เป็นหลักฐาน ยังไม่รับขั้นสุดท้าย** · ตรวจ route list และ probe ซ้ำเองตรงทุกค่า · GET ไม่เท่าอ่านอย่างเดียว · ไม่มี route พิสูจน์ reversible · ค้าง: A6, B4, raw log VM เดิม | [REVIEW-POO-WO-005-round4](work-orders/REVIEW-POO-WO-005-round4-2026-10-01.md) |
 | SPD-WO-002 | ใบงานสคริปต์รับรองฮาร์ดแวร์ (WO-HWQ-001) | ร่าง รอผู้ดูแลออกใบงาน | [WO-HWQ-001](work-orders/WO-HWQ-001-hardware-qualification-script.md) |
 
 ## 2. การตัดสินใจที่รอ Lead

@@ -41,6 +41,16 @@ supervisor + worker ปัจจุบันไม่มีกลไกกัน
 5. ไม่แก้ตาราง/สัญญาเดิม (Fact v0, C2) พิสูจน์ด้วยการรันชุดทดสอบเดิมไม่เปลี่ยนผล
 6. รายงานแยก "ลองแล้ว / อ่านแล้ว / ไม่ทราบ" และระบุข้อจำกัด (ข้อมูลสังเคราะห์, ยังไม่ใช่ network จริง)
 
+## เกณฑ์เพิ่มจากร่างของผู้ทำ (`follow-up-fix-drafts.md` รับเข้าแล้ว 2026-10-01)
+
+- **atomic claim + lease + fencing token:** worker เก่า (stale) ที่ lease หมดแล้วต้องเขียนผลไม่ได้
+- identity ของ trigger/job และ idempotency key ผูก **Responsibility + trigger + operation digest**
+- การจัดการ **ผลไม่แน่ชัด** (effect อาจเกิดแล้วแต่ไม่ได้รับ ack): outbox และ reconciliation
+- **ไม่อ้าง exactly-once** สำหรับ effect ภายนอกที่ปลายทางไม่มี idempotency
+- cancellation, revoke ระหว่างงาน, budget exhaustion, clock shift, offline recovery
+- เกณฑ์ตรวจ: crash ก่อน effect / หลัง effect ก่อน ack / หลัง ack · trigger ซ้ำ · lease หมดอายุ · ใช้ข้อมูลสังเคราะห์พร้อม **independent verifier**
+- ข้อกำหนดตั้งต้น: policy authorization, หลักฐานมนุษย์ผูก identity/content ตาม ADR 0016, เงื่อนไข TLS/audit-chain ของ POO-WO-003 และ D2.1 · autonomous writes ยังปิด
+
 ## ข้อกำหนดสภาพแวดล้อม
 
 ใช้เครื่อง/บัญชีทดสอบตาม [SPD-WO-004](SPIKE-TEST-ENVIRONMENT-SPEC-POO-WO-005.md) · ไม่ใช้ข้อมูลลูกค้า · ไม่เรียกโมเดลเสียเงินเกินวงเงินที่ระบุ
