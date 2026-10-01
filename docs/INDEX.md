@@ -55,6 +55,7 @@
 | SPD-HND-005 | ชุดข้อมูลและร่างข้อความเชิญผู้ตรวจความปลอดภัยอิสระ ADR 0028 (ไม่ระบุชื่อ) | ส่งอีเมลเชิญแล้ว 2 ฉบับ (Lead สั่ง) รอคำตอบ | [REVIEWER-BRIEF-ADR-0028](work-orders/REVIEWER-BRIEF-ADR-0028.md) |
 | SPD-REV-008 | ผลตรวจ POO-WO-006 (Draft PR #2, `bcf5c90`) | **merged แล้ว** (`7d57e4a`, Lead อนุมัติเฉพาะ PR) · PID 17/17 ทั้งเครื่องผมและ CI · full CI แดงเท่า base | [REVIEW-POO-WO-006-2026-10-01](work-orders/REVIEW-POO-WO-006-2026-10-01.md) |
 | SPD-HND-006 | ข้อความส่งต่อ Codex: เตรียม Node B ต่อจากเชื่อม tailnet (Lead ตัดสินไม่เปลี่ยนรหัส root ช่วงทดลอง + เงื่อนไขชดเชย) | ร่าง **ยังไม่ได้ส่ง** | [CODEX-HANDOFF-NODE-B-BOOTSTRAP-2026-10-01](work-orders/CODEX-HANDOFF-NODE-B-BOOTSTRAP-2026-10-01.md) |
+| SPD-HND-007 | ขั้นตอน S14 ออกและส่งใบรับรอง federation (Lead ทำเอง บน Windows) พร้อมข้อสังเกต `ca.key` ของ dev cert | ร่าง | [S14-CA-ISSUANCE-RUNBOOK-2026-10-01](work-orders/S14-CA-ISSUANCE-RUNBOOK-2026-10-01.md) |
 | SPD-HND-002 | ข้อความขอให้ผู้ดูแลนำเข้า ADR-D05, WO-008, POO-WO-006/007, M4 patch, status patch ADR 0024–0026 | ร่าง **ยังไม่ได้ส่ง** | [MAINTAINER-IMPORT-REQUEST-2026-10-01](work-orders/MAINTAINER-IMPORT-REQUEST-2026-10-01.md) |
 | SPD-WO-005 (POO-WO-006) | ใบงานเล็ก: ตรวจ PID ก่อน `isAlive` ใน supervisor (แก้บั๊ก PID 0) | ร่างพร้อมนำเข้า รอ Lead ตรวจ/มอบ Codex | [POO-WO-006](work-orders/POO-WO-006-supervisor-pid-validation.md) |
 | SPD-WO-006 (POO-WO-007) | ใบงานกลาง: บังคับ `nextRestartAt` และนับโควตา restart เฉพาะการเริ่มจริง | ร่างพร้อมนำเข้า รอ Lead | [POO-WO-007](work-orders/POO-WO-007-supervisor-restart-backoff-enforcement.md) |
