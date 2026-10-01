@@ -13,7 +13,7 @@
 - [ ] ตั้ง Ready for review เองและ merge ตามนโยบาย branch protection ของ repo (Claude ไม่ทราบเงื่อนไขที่ repo บังคับ)
 
 ### PR #93 — `spada-monorepo` (head `4dc1839`, Draft)
-- [ ] **ตอบคำถามเดียว:** ยอมรับถ้อยคำ "Accepted (delegated decision, SPD-DEC-006) … Lead may reverse" ของ ADR 0024–0026 หรือไม่ (ใช่ / ขอแก้ถ้อยคำเป็น ______) — *ผมไม่ได้ถือคำสั่งล่าสุดเป็นการตอบข้อนี้*
+- [x] *(Lead ตอบแล้ว 2026-10-01: ยอมรับถ้อยคำเดิม)* **ตอบคำถามเดียว:** ยอมรับถ้อยคำ "Accepted (delegated decision, SPD-DEC-006) … Lead may reverse" ของ ADR 0024–0026 หรือไม่ (ใช่ / ขอแก้ถ้อยคำเป็น ______) — *ผมไม่ได้ถือคำสั่งล่าสุดเป็นการตอบข้อนี้*
 - [ ] รับทราบว่า CI ของ #93 ล้มเหมือน base (เทสต์ MyAI ผูกเดือน, [run 36586813474](https://github.com/chatchailim/spada-monorepo/actions/runs/36586813474)) ไม่ใช่ผลของ PR
 - [ ] รับทราบว่า ADR 0028 และ SPD-WO-008 เป็นร่าง **ห้ามเริ่มงาน** และผู้ตรวจอิสระของ ADR 0028 ยังไม่ได้ตั้ง (การ merge เอกสารร่างไม่ใช่การรับ ADR)
 - [ ] merge หลัง #1
