@@ -38,7 +38,7 @@
 | SPD-DEC-005 | บันทึกการอนุมัติของ Lead 2026-09-30: การปรับระบบครั้งสุดท้าย ข้อ 1–8 (ขอบเขต/ผลดำเนินการ/สิ่งที่ไม่ครอบคลุม) | บันทึกโดย Claude จากข้อความของ Lead · ข้อ 5 (ADR 0024–0026) **ยังไม่ตัดสิน** | [APPROVAL-LOG-2026-09-30](decisions/APPROVAL-LOG-2026-09-30-FINAL-ADJUSTMENT.md) |
 | SPD-ADR-D04 | ร่าง ADR: Responsibility record ของ Team Agent (ฝั่ง OneManOS) | **ร่าง รอ Lead ตรวจ** (อนุมัติเฉพาะทิศทาง) ยังไม่นำเข้า repo ปลายทาง | [ADR-NEXT-responsibility-record-draft](decisions/ADR-NEXT-responsibility-record-draft.md) |
 | SPD-DEC-006 | บันทึกคำตัดสิน ADR 0024, 0025, 0026 และ doc 340 §10 | **ตัดสินโดย Claude ตามอำนาจที่ Lead มอบ (2026-09-30)** ยังไม่มีผลใน monorepo จนผู้ดูแลนำสถานะไปใช้ · Lead ควรยืนยันย้อนหลัง | [DECISION-MEMO-006](decisions/DECISION-MEMO-006-adr-0024-0026-and-doc340-s10.md) |
-| SPD-REV-003 | ผลตรวจสถานะ P1 ของ SetBox, GAP-04/05, ทะเบียนฮาร์ดแวร์ และงานจัดซื้อ | ตรวจแล้ว: GAP-04 ยังเปิด · P1 ยืนยันไม่ได้ (ไม่พบซอร์ส C#) · RFQ/pen-test ยังไม่ส่ง | [REVIEW-SETBOX-P1-GAP-STATUS](work-orders/REVIEW-SETBOX-P1-GAP-STATUS-2026-09-30.md) |
+| SPD-REV-003 | ผลตรวจสถานะ P1 ของ SetBox, GAP-04/05, ทะเบียนฮาร์ดแวร์ และงานจัดซื้อ | ตรวจกับซอร์สแล้ว (ฉบับแก้ 2026-10-01): P1 สี่ข้อและ P2 ยังเปิด · GAP-04 ยังเปิด · ทะเบียนฮาร์ดแวร์ 0 รายการ · RFQ/pen-test ยังไม่ทราบสถานะส่ง | [REVIEW-SETBOX-P1-GAP-STATUS](work-orders/REVIEW-SETBOX-P1-GAP-STATUS-2026-09-30.md) |
 | SPD-WO-004 | ข้อกำหนดสภาพแวดล้อมทดสอบสไปก์ POO-WO-005 (B2, B4, A6) | ร่าง รอกรอกค่า [●] โดยผู้มีอำนาจ | [SPIKE-TEST-ENVIRONMENT-SPEC](work-orders/SPIKE-TEST-ENVIRONMENT-SPEC-POO-WO-005.md) |
 | SPD-WO-001 | ร่างใบงาน S1–S3 | Lead อนุมัติให้ออก ยังไม่ออกจริง | [WO-PROPOSAL-S1-S3](work-orders/WO-PROPOSAL-S1-S3.md) |
 | SPD-WO-003a | ใบงาน POO-WO-005 ฉบับรายละเอียดพร้อมนำเข้า (วิธีทำ แม่แบบรายงาน เกณฑ์รับงาน) ร่างโดย Claude แทน Lead | ออกแล้ว รอ Lead ตรวจข้อความและมอบงาน | [POO-WO-005](work-orders/POO-WO-005-teamagent-mcp-scheduler-spike.md) |
@@ -62,7 +62,7 @@
 | 8 | ล็อก OTP/secure boot ของ KeySign | SPD-DEC-001 ข้อ 3 | **ห้ามทำ** จนครบ 6 เงื่อนไข |
 | 10 | ตรวจ/รับ SPD-ADR-D04 (Responsibility record) แล้วให้ผู้ดูแลนำเข้าด้วยเลขที่ว่าง | SPD-DEC-005 ข้อ 2 | ปลดบล็อก F1 |
 | 11 | ทบทวนการจับคู่ E/F/เงินทุนกับ M0–M4 และเทียบ `milestones.md` ต้นฉบับ | SPD-RDM-002 | แผนรวม |
-| 12 | ~~ให้เข้าถึง ADR 0024–0026~~ → ทำแล้ว (อ่านอย่างเดียว) · **ใหม่:** แจ้งที่อยู่ซอร์สเครื่องมือเตรียมเครื่อง C# (P1 สี่ข้อ) ชื่อผู้ขายฮาร์ดแวร์/ผู้ให้บริการ pen-test และกรอกค่าใน SPD-WO-004 | SPD-REV-003, SPD-WO-004 | ปลดบล็อกการตรวจ P1, RFQ และสไปก์ |
+| 12 | ~~ให้เข้าถึง ADR 0024–0026~~ → ทำแล้ว (อ่านอย่างเดียว) · พบซอร์ส C# แล้ว (repo `onemanos` สาขา wip) · **ใหม่:** ชื่อผู้ขายฮาร์ดแวร์ (ไม่มีในเอกสาร) ยืนยันให้ตรวจ/ส่ง RFQ pen-test ผ่าน Gmail หรือไม่ ระบุสาขาพัฒนา P1 ที่ถูกต้อง และกรอกค่าใน SPD-WO-004 | SPD-REV-003, SPD-WO-004 | ปลดบล็อกการตรวจ P1, RFQ และสไปก์ |
 
 ## 3. งานที่รอผู้ลงมือ (ผมทำแทนไม่ได้)
 
