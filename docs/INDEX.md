@@ -51,6 +51,7 @@
 | SPD-WO-007 (POO-WO-008) | ใบงานใหญ่: durable job + idempotency key ผูกกับ Responsibility | ร่างพร้อมนำเข้า **ห้ามเริ่มจน Lead รับ SPD-ADR-D04** | [POO-WO-008](work-orders/POO-WO-008-durable-job-idempotency.md) |
 | SPD-HND-001 | ข้อความส่งต่อให้ Codex: A1, raw log VM รอบเมื่อวาน, เก็บกวาดเครื่อง lab | ร่าง **ยังไม่ได้ส่งถึง Codex** | [CODEX-HANDOFF-2026-10-01](work-orders/CODEX-HANDOFF-2026-10-01.md) |
 | SPD-REV-005 | ผลตรวจรับรอบที่ 4 ของรายงานสำรวจ POO-WO-005 (commit 03fbed1: A1 ไล่ 171 business routes) | **รับ A1 เป็นหลักฐาน ยังไม่รับขั้นสุดท้าย** · ตรวจ route list และ probe ซ้ำเองตรงทุกค่า · GET ไม่เท่าอ่านอย่างเดียว · ไม่มี route พิสูจน์ reversible · ค้าง: A6, B4, raw log VM เดิม | [REVIEW-POO-WO-005-round4](work-orders/REVIEW-POO-WO-005-round4-2026-10-01.md) |
+| SPD-REV-006 | ผลตรวจรับรอบที่ 5 ของ POO-WO-005 (commit 0854503: หลักฐาน A6-lite บนหน่วยจริง) | **รับช่วงอุปกรณ์→CLI เป็นหลักฐาน** ตรวจ hash/DCO/manifest และรันตัวตรวจลายเซ็นซ้ำเองผ่าน · ช่องว่างที่เหลือ: ข้อความที่เซ็นไม่ตรง actor assertion (เสนอ 3 ทางเลือก รอ Lead) | [REVIEW-POO-WO-005-round5](work-orders/REVIEW-POO-WO-005-round5-2026-10-01.md) |
 | SPD-WO-002 | ใบงานสคริปต์รับรองฮาร์ดแวร์ (WO-HWQ-001) | ร่าง รอผู้ดูแลออกใบงาน | [WO-HWQ-001](work-orders/WO-HWQ-001-hardware-qualification-script.md) |
 
 ## 2. การตัดสินใจที่รอ Lead
