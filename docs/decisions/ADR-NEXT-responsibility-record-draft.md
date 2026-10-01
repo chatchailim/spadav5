@@ -44,6 +44,8 @@ Team Agent ปัจจุบันเป็นเอเจนต์ภายน
 6. **Kill switch** หยุดเอเจนต์ทันทีและยกเลิก Responsibility ทั้งชุด พร้อมรายงาน "ทำอะไรไปบ้าง"
 7. **แยก instruction กับ data** ข้อความจากอีเมล/เว็บ/เอกสารสั่ง tool โดยตรงไม่ได้ (doc 335 ข้อ 9 ยัง Proposed ต้องตัดสินก่อนบังคับ)
 8. **ไม่แตะ Fact v0 และสัญญา C2 (fact hash)** ชนิดใหม่ (Responsibility, Event, Decision) เป็นตารางแยกและผ่านใบงาน/ADR ฝั่ง OneManOS
+9. **Durable job + idempotency key (เงื่อนไขของเฟส F1 — Lead อนุมัติ 2026-10-01, SPD-DEC-005 รอบ 4):** Responsibility ที่มี `triggers` ต้องมีงานที่ทนการล้ม: key กำหนดจาก `(responsibilityId, ช่องเวลา/เหตุการณ์, ชนิด action)` ไม่ใช่จาก attempt · ตรวจ key ใน effect ledger ก่อนทำ effect · crash หลัง effect ก่อน complete ต้องไม่ทำ effect ซ้ำ · นโยบายรอบที่พลาดระบุต่อ Responsibility และแจ้งเจ้าของ · รายละเอียดใน [POO-WO-008](../work-orders/POO-WO-008-durable-job-idempotency.md)
+10. **ไม่เปิดการเขียนหรืออนุมัติอัตโนมัติของเอเจนต์** จนกว่า (ก) A6 ปิด (ข) human gate พิสูจน์ตัวตน (ค) ข้อ 9 ผ่านเทสต์ (Lead อนุมัติเป็นกฎถาวร 2026-10-01)
 
 ### สิ่งที่ไม่ทำใน ADR นี้
 
@@ -71,7 +73,7 @@ Team Agent ปัจจุบันเป็นเอเจนต์ภายน
 | R3 | consent model ปัจจุบัน `granteeDid` รับเฉพาะ `did:spada:person:*` ไม่มี purpose/expiry/recipient (ADR 0016 §6, ADR 0018 แก้ให้เป็น discriminated union แล้วตามทะเบียน) | **dependency:** ต้องตรวจว่า ADR 0018 implement แล้วเพียงใดก่อนเริ่ม F1 (ผมยังไม่ได้ตรวจโค้ด consent-service) |
 | R4 | นโยบาย delegation ระดับ WorkSpace ของ `did:spada:org` ยังเป็นงานค้าง (ADR 0016 "ต้องทำ" ข้อ 2) | **dependency** ของ Responsibility ที่แตะข้อมูลองค์กร |
 | R5 | ADR 0016 §4 ห้ามนับ Human Gate/UX บน Setbox เป็นหลักฐานของ SPADA ต้อง materialize เป็น actor assertion ผูก payload | ตรงกับกติกาข้อ 3 ของร่างอยู่แล้ว |
-| R7 | ผลสไปก์ B2 ([SPD-REV-004](../work-orders/REVIEW-POO-WO-005-round3-2026-10-01.md)): crash หลัง effect ก่อน complete ทำให้ effect ซ้ำ (2 effects, 1 complete) และ backoff ไม่ถูกบังคับ → Responsibility ที่มี trigger ต้องมี **durable job + idempotency key ต่อ attempt** ก่อนเปิดเขียน | **เพิ่มเป็นเงื่อนไขของเฟส F1** (ยังไม่ได้ใส่ในกติกาของร่าง ต้องเพิ่มเมื่อ Lead ตรวจร่าง) |
+| R7 | ผลสไปก์ B2 ([SPD-REV-004](../work-orders/REVIEW-POO-WO-005-round3-2026-10-01.md)): crash หลัง effect ก่อน complete ทำให้ effect ซ้ำ (2 effects, 1 complete) และ backoff ไม่ถูกบังคับ → Responsibility ที่มี trigger ต้องมี **durable job + idempotency key ต่อ attempt** ก่อนเปิดเขียน | **เพิ่มเป็นกติกาข้อ 9 แล้ว (2026-10-01)** ตามที่ Lead อนุมัติ |
 | R6 | ชื่อ "Steward" ในระดับ autonomy อาจชนกับบทบาท Steward ของโครงการ (Lead ถือบทบาท Steward ฝั่ง SPADA) | คำถามเปิดข้อ 1 มีผลจริง ควรเลือกชื่อระดับที่ไม่ชนบทบาทบุคคล |
 
 ## คำถามเปิดสำหรับ Lead
