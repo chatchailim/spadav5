@@ -41,6 +41,7 @@
 | SPD-MED-003 | บทวิดีโอ Use Case: ชุมชน และสำนักงานบัญชี (DID → SetBox) เรื่องสมมติ | ร่างเพื่อทบทวน ยังไม่ผ่านผู้ตรวจและยังไม่อนุมัติ | [USECASE-COMMUNITY-ACCOUNTING-SCRIPT-TH](media/USECASE-COMMUNITY-ACCOUNTING-SCRIPT-TH.md) |
 | SPD-MED-004 | บทวิดีโอนักลงทุน: การขยายสเกลสู่ระดับโลก (ซื่อตรง: พิสูจน์แล้ว/ต้องพิสูจน์/เกณฑ์ขยาย) ไม่มีตัวเลขการลงทุน | ร่างเพื่อทบทวน รอ Lead อนุมัติ | [INVESTOR-GLOBAL-SCALE-SCRIPT-TH](media/INVESTOR-GLOBAL-SCALE-SCRIPT-TH.md) |
 | SPD-MED-005 | บทวิดีโอวิสัยทัศน์: ตัวตนดิจิทัลและ MyAI "ธรรมชาติและค่านิยมของคุณ" (แนวนอน 7 นาที) แยกความฝัน/ความจริง | ร่างเพื่อทบทวน | [VISION-MYAI-SCRIPT-TH](media/VISION-MYAI-SCRIPT-TH.md) |
+| SPD-MED-006 | ผลทดสอบ motion graphics + เพลงซิงก์จังหวะ (GSAP/librosa/ffmpeg) พร้อมสคริปต์ตัวอย่าง | ผลทดสอบเบื้องต้น รอ Lead ดูเดโม | [MOTION-MUSIC-TEST-TH](media/MOTION-MUSIC-TEST-TH.md) |
 | SPD-WO-001 | ร่างใบงาน S1–S3 | Lead อนุมัติให้ออก ยังไม่ออกจริง | [WO-PROPOSAL-S1-S3](work-orders/WO-PROPOSAL-S1-S3.md) |
 | SPD-WO-003a | ใบงาน POO-WO-005 ฉบับรายละเอียดพร้อมนำเข้า (วิธีทำ แม่แบบรายงาน เกณฑ์รับงาน) ร่างโดย Claude แทน Lead | ออกแล้ว รอ Lead ตรวจข้อความและมอบงาน | [POO-WO-005](work-orders/POO-WO-005-teamagent-mcp-scheduler-spike.md) |
 | SPD-WO-003 | ใบงานสำรวจ onevault-mcp และตัวตั้งเวลา (spike, เสนอเลข POO-WO-005) | **Lead ตัดสินให้ออก 2026-09-30** นำเข้า `onemanos-setbox` แล้ว (branch `docs/poo-wo-005` ce692ca ยังไม่ merge) รอ Lead merge + มอบผู้ทำ | [WO-SPIKE-TEAMAGENT-MCP-SCHEDULER](work-orders/WO-SPIKE-TEAMAGENT-MCP-SCHEDULER.md) |
