@@ -355,4 +355,11 @@ flowchart LR
 5. SetBox รุ่นที่ขายหรือส่งมอบเป็นแบบ Track S หรือ Track C ก่อน
 6. เนื้อหาที่ห้ามเผยแพร่ภายนอก: อย่าส่งเอกสารกลุ่ม business-strategy/patents/founder-profile (ตามข้อกำหนดของ `spada-specs`) ก่อน Lead อนุมัติ
 
+## ข้อแก้ไข (errata) หลังเทียบโค้ด 2026-10-03
+ดู SPD-ARC-002 สำหรับรายละเอียดทั้งหมด ข้อที่กระทบภาพในเอกสารนี้
+- ภาพที่ 2, 7: `onevault-mcp` มีเครื่องมือ **31 ตัว** (ไม่ใช่ 25) รวมกลุ่ม `onevault_app_*` 9 ตัว
+- ภาพที่ 1, 4, 11: OIDC provider ของ SPADA **มีโค้ดและเทสต์แล้ว** ใน `spada-monorepo` (ข้อความ "ยังไม่มี provider" ล้าสมัย) แต่ **SetBox ยังไม่ได้เชื่อม** (OIDC ฝั่ง SetBox เป็นแบบทั่วไป ไม่มี SubjectBinding)
+- ภาพที่ 5: ฝั่ง SPADA มี `ProvisioningClaim` (ต้อง TrustScore ≥ 500) แต่ **ตัวตรวจ EK certificate ยังไม่มี** (มีเฉพาะ interface และ Null verifier)
+- ภาพที่ 3: พอร์ต 4105/4106/4107 ไม่พบในโค้ด (อยู่ใน doc 342)
+
 *ฉบับร่าง v0.1 เขียนโดย Claude เพื่อให้ Lead ตรวจ ยังไม่ผ่านการลงนามหรือรับรอง*
