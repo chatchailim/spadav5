@@ -2,7 +2,7 @@
 
 - **รหัสเอกสาร: SPD-IDX-001**
 - วันที่: 2026-09-29 (ปรับล่าสุด 2026-10-08) · **อัปเดตทุกครั้งที่เพิ่ม/เปลี่ยนสถานะเอกสาร**
-- ใช้อ้างอิงเอกสารด้วยรหัส `SPD-<ประเภท>-<เลข>` เช่น "ตาม SPD-DEC-002" · ประเภท: CUR สถานะปัจจุบัน · GAP ช่องว่าง · ECO เศรษฐกิจ · RDM แผนงาน · DEC การตัดสินใจ · ADR ร่าง ADR · PRC จัดซื้อ · WO ใบงาน · PRP ข้อเสนอ · IDX สารบัญ
+- ใช้อ้างอิงเอกสารด้วยรหัส `SPD-<ประเภท>-<เลข>` เช่น "ตาม SPD-DEC-002" · ประเภท: CUR สถานะปัจจุบัน · GAP ช่องว่าง · ECO เศรษฐกิจ · RDM แผนงาน · DEC การตัดสินใจ · ADR ร่าง ADR · PRC จัดซื้อ · WO ใบงาน · PRP ข้อเสนอ · IDX สารบัญ · SPC สเปก/กรอบโครงการ
 - ระบบจริงและ ADR ต้นฉบับอยู่ใน `chatchailim/spada-monorepo` (private) เอกสารในนี้เป็นสรุป ข้อเสนอ และร่างเพื่อชี้ทาง ไม่ได้รันโค้ดหรือเทสต์ใดๆ
 
 ## 1. ทะเบียนเอกสาร
@@ -54,6 +54,7 @@
 | SPD-ARC-002 | ผลเทียบโค้ดกับสถาปัตยกรรม SetBox: รันเทสต์ 3 โปรเจกต์ เทียบทีละภาพ พบ 10 gap + แผนปิด WP1–WP12 + ผลดำเนินการ (3 branch) + ส่งต่อ Codex (POO-WO-006) | ร่าง v0.3 ผู้ตรวจเป็น AI ยังไม่มีมนุษย์ทวน | [SETBOX-CODE-GAP-ANALYSIS-TH](SETBOX-CODE-GAP-ANALYSIS-TH.md) |
 | SPD-RDY-001 | สรุปความพร้อมส่งมอบ: พร้อมนำเสนออะไร ยังไม่พร้อมใช้งานจริงอะไร และ Lead ต้องตัดสินอะไร | ร่าง 2026-10-08 ไม่ได้ตรวจ branch/CI ของ repo อื่น | [DELIVERY-READINESS-TH](DELIVERY-READINESS-TH.md) |
 | SPD-TST-001 | แผนทดสอบรับงาน T0–T5 ก่อนส่งมอบ + ผลที่ Claude รันเอง + ใบคะแนนความก้าวหน้า (52/100 ตามเกณฑ์ที่เสนอเอง) | ร่าง 2026-10-08 ผลรันบน Linux เท่านั้น | [ACCEPTANCE-TEST-PLAN-TH](ACCEPTANCE-TEST-PLAN-TH.md) |
+| SPD-SPC-001 | **Design Spec & Project Framework** (designspec.md): แม่แบบเริ่มโครงการซ้ำได้ + บทบาท/RACI + ระยะ P0–P7 + ทะเบียนความต้องการ + การออกแบบ + UX/UI Spec + CI/CD + ความเสี่ยง + แม่แบบ | ร่าง v0.1 2026-10-08 ผู้ร่างเป็น AI ยังไม่มีมนุษย์ทวน; RACI/ระยะ/ตัวเลข NFR เป็นข้อเสนอ | [designspec](designspec.md) |
 | SPD-WO-001 | ร่างใบงาน S1–S3 | Lead อนุมัติให้ออก ยังไม่ออกจริง | [WO-PROPOSAL-S1-S3](work-orders/WO-PROPOSAL-S1-S3.md) |
 | SPD-WO-003a | ใบงาน POO-WO-005 ฉบับรายละเอียดพร้อมนำเข้า (วิธีทำ แม่แบบรายงาน เกณฑ์รับงาน) ร่างโดย Claude แทน Lead | ออกแล้ว รอ Lead ตรวจข้อความและมอบงาน | [POO-WO-005](work-orders/POO-WO-005-teamagent-mcp-scheduler-spike.md) |
 | SPD-WO-003 | ใบงานสำรวจ onevault-mcp และตัวตั้งเวลา (spike, เสนอเลข POO-WO-005) | **Lead ตัดสินให้ออก 2026-09-30** นำเข้า `onemanos-setbox` แล้ว (branch `docs/poo-wo-005` ce692ca ยังไม่ merge) รอ Lead merge + มอบผู้ทำ | [WO-SPIKE-TEAMAGENT-MCP-SCHEDULER](work-orders/WO-SPIKE-TEAMAGENT-MCP-SCHEDULER.md) |
