@@ -2,7 +2,7 @@
 
 - **รหัสเอกสาร: SPD-IDX-001**
 - วันที่: 2026-09-29 (ปรับล่าสุด 2026-10-08) · **อัปเดตทุกครั้งที่เพิ่ม/เปลี่ยนสถานะเอกสาร**
-- ใช้อ้างอิงเอกสารด้วยรหัส `SPD-<ประเภท>-<เลข>` เช่น "ตาม SPD-DEC-002" · ประเภท: CUR สถานะปัจจุบัน · GAP ช่องว่าง · ECO เศรษฐกิจ · RDM แผนงาน · DEC การตัดสินใจ · ADR ร่าง ADR · PRC จัดซื้อ · WO ใบงาน · PRP ข้อเสนอ · IDX สารบัญ · SPC สเปก/กรอบโครงการ · HLP คู่มือผู้ใช้
+- ใช้อ้างอิงเอกสารด้วยรหัส `SPD-<ประเภท>-<เลข>` เช่น "ตาม SPD-DEC-002" · ประเภท: CUR สถานะปัจจุบัน · GAP ช่องว่าง · ECO เศรษฐกิจ · RDM แผนงาน · DEC การตัดสินใจ · ADR ร่าง ADR · PRC จัดซื้อ · WO ใบงาน · PRP ข้อเสนอ · IDX สารบัญ · SPC สเปก/กรอบโครงการ · HLP คู่มือผู้ใช้ · TST การทดสอบ
 - ระบบจริงและ ADR ต้นฉบับอยู่ใน `chatchailim/spada-monorepo` (private) เอกสารในนี้เป็นสรุป ข้อเสนอ และร่างเพื่อชี้ทาง ไม่ได้รันโค้ดหรือเทสต์ใดๆ
 
 ## 1. ทะเบียนเอกสาร
@@ -56,6 +56,7 @@
 | SPD-TST-001 | แผนทดสอบรับงาน T0–T5 ก่อนส่งมอบ + ผลที่ Claude รันเอง + ใบคะแนนความก้าวหน้า (52/100 ตามเกณฑ์ที่เสนอเอง) | ร่าง 2026-10-08 ผลรันบน Linux เท่านั้น | [ACCEPTANCE-TEST-PLAN-TH](ACCEPTANCE-TEST-PLAN-TH.md) |
 | SPD-SPC-001 | **Design Spec & Project Framework** (designspec.md): แม่แบบเริ่มโครงการซ้ำได้ + บทบาท/RACI + ระยะ P0–P7 + ทะเบียนความต้องการ + การออกแบบ + UX/UI Spec + CI/CD + ความเสี่ยง + แม่แบบ | ร่าง v0.1 2026-10-08 ผู้ร่างเป็น AI ยังไม่มีมนุษย์ทวน; RACI/ระยะ/ตัวเลข NFR เป็นข้อเสนอ | [designspec](designspec.md) |
 | SPD-HLP-001 | **คู่มือผู้ใช้งานผู้เริ่มต้น OneManOS Setbox / SPADA OneVault** (readme.md): กระบวนการ ขั้นตอนติดตั้งทีละขั้น การใช้หน้าจอ ประตูมนุษย์ สำรอง/กู้คืน แก้ปัญหา อภิธานศัพท์ ตารางคำสั่ง + แผนภาพ Mermaid 13 แบบ + หน้า View ปุ่ม Help (index.html) + **patch หน้า Help ออฟไลน์สำหรับ Setbox** (docs/patches/setbox-offline-help.patch, ยังไม่ถูกนำไปใช้) | ร่าง v0.1 2026-10-08 สรุปจาก `onemanos-setbox` master `e706ed1`; แผนภาพเรนเดอร์ทดสอบแล้ว แต่ยังไม่ได้ทดสอบทำตามขั้นตอนกับผู้ใช้มือใหม่/เครื่อง Windows จริง | [help/readme](help/readme.md) · [help/index.html](help/index.html) |
+| SPD-TST-002 | **Test Spec** (TestSpec.md): ทะเบียนฟังก์ชัน 22 กลุ่ม กลยุทธ์/เกณฑ์เข้า-ออก สภาพแวดล้อม ข้อมูลทดสอบ 9 ชุด Use Case 16 แบบ ทะเบียน TC พร้อมสถานะรันจริง ข้อสังเกตที่ทราบ 6 ข้อ แม่แบบ + ไฟล์ข้อมูลและสคริปต์ควัน 40 ข้อ (`testdata/`) | ร่าง v0.1 2026-10-08 ผู้ร่างเป็น AI; TC ระดับมือยังไม่ได้รัน; เกณฑ์ตัวเลขรอตัดสิน | [TestSpec](TestSpec.md) · [testdata](testdata/README.md) |
 | SPD-WO-001 | ร่างใบงาน S1–S3 | Lead อนุมัติให้ออก ยังไม่ออกจริง | [WO-PROPOSAL-S1-S3](work-orders/WO-PROPOSAL-S1-S3.md) |
 | SPD-WO-003a | ใบงาน POO-WO-005 ฉบับรายละเอียดพร้อมนำเข้า (วิธีทำ แม่แบบรายงาน เกณฑ์รับงาน) ร่างโดย Claude แทน Lead | ออกแล้ว รอ Lead ตรวจข้อความและมอบงาน | [POO-WO-005](work-orders/POO-WO-005-teamagent-mcp-scheduler-spike.md) |
 | SPD-WO-003 | ใบงานสำรวจ onevault-mcp และตัวตั้งเวลา (spike, เสนอเลข POO-WO-005) | **Lead ตัดสินให้ออก 2026-09-30** นำเข้า `onemanos-setbox` แล้ว (branch `docs/poo-wo-005` ce692ca ยังไม่ merge) รอ Lead merge + มอบผู้ทำ | [WO-SPIKE-TEAMAGENT-MCP-SCHEDULER](work-orders/WO-SPIKE-TEAMAGENT-MCP-SCHEDULER.md) |

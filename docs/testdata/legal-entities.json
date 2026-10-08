@@ -1,0 +1,7 @@
+{
+  "_comment": "นิติบุคคลสมมติสำหรับทดสอบ (SYNTHETIC) เลขผู้เสียภาษีต้องไม่ซ้ำกัน ระบบปฏิเสธเลขซ้ำ (LEGAL_ENTITY_TAX_ID_TAKEN) เลข 13 หลักนี้ไม่ใช่เลขของนิติบุคคลจริง",
+  "entities": [
+    { "entityId": "co-alpha", "displayName": "บริษัท อัลฟ่า จำกัด", "taxId": "0000000000001" },
+    { "entityId": "co-beta",  "displayName": "บริษัท เบต้า จำกัด",  "taxId": "0000000000002" }
+  ]
+}
