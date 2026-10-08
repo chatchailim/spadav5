@@ -187,6 +187,14 @@ const check = (id, title, ok, observed, known = false) => {
       check(`TC-NEG-00${i + 1}`, `ข้อมูลที่ต้องถูกปฏิเสธ: ${n.name}`, r.status >= 400, `${r.status} ${r.text.slice(0, 120)}`);
     }
 
+    r = await call("POST", "/api/business/admin/users", { token: a.token, body: { subjectId: "did:test:short-pw", displayName: "รหัสสั้น", legalEntityIds: ["co-alpha"], password: "สั้นเกินไป" } });
+    check("TC-AUTH-009", "สร้างผู้ใช้ด้วยรหัสผ่านสั้นกว่า 12 ตัวอักษรต้องถูกปฏิเสธ (LOCAL_PASSWORD_TOO_SHORT)", r.status >= 400 && /LOCAL_PASSWORD_TOO_SHORT/.test(r.text), `${r.status} ${r.text.slice(0, 160)}`);
+    r = await call("POST", "/api/business/admin/users", { token: a.token, body: { subjectId: "did:test:lock-user", displayName: "ผู้ใช้ทดสอบการล็อก", legalEntityIds: ["co-alpha"], password: adminCreatedUser.initialPassword } });
+    let lastWrong;
+    for (let i = 0; i < 5; i += 1) lastWrong = await call("POST", "/api/dms/login/password", { body: { subjectId: "did:test:lock-user", password: adminCreatedUser.wrongPassword } });
+    r = await call("POST", "/api/dms/login/password", { body: { subjectId: "did:test:lock-user", password: adminCreatedUser.initialPassword } });
+    check("TC-AUTH-010", "ใส่รหัสผิดครบ 5 ครั้ง บัญชีถูกล็อก: แม้ครั้งที่ 6 ใส่รหัสถูกก็เข้าไม่ได้ (ล็อก 15 นาทีตามโค้ด)", r.status >= 400 && !r.json?.token, `${r.status} ${r.text.slice(0, 200)}`);
+
     // --- ออกจากระบบ
     r = await call("POST", "/api/dms/logout", { token: alpha.token });
     const after = await call("GET", "/api/dms/me", { token: alpha.token });

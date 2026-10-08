@@ -5,3 +5,4 @@
 - กรอบเวลาทำงานตามโปรโตคอล: จันทร์–ศุกร์ 09:00–18:00 (Asia/Bangkok)
 - ขอบเขตงานทั้งสองเป็นข้อเสนอของ Claude ให้ Lead แก้ได้ก่อนส่ง
 - ใบมอบหมายที่ 3 (2026-10-08): `20261008-1800-cowork-codex-testspec-followup.md` ถึง Codex เรื่องข้อมูลทดสอบโมดูลธุรกิจ แมตทริกซ์สิทธิ์ ตามรอยเส้นทาง และสืบสวน KI-01/KI-02 · รายละเอียดอยู่ที่ `docs/work-orders/WO-TST-001-codex-test-data-and-matrices.md` (ใบงานฉบับเต็ม) · ต้องมี Lead นำเข้า (`requires_human: true`)
+- ใบมอบหมายที่ 4 (2026-10-08): `20261008-1830-cowork-antigravity-testspec-ui.md` ถึง Antigravity (**แทนที่ฉบับ 20261008-1630**) เรื่องทดสอบหน้าจอในเบราว์เซอร์ การยืนยัน KI-02 และการเข้าถึง · ใบงานฉบับเต็ม `docs/work-orders/WO-TST-002-antigravity-browser-verification.md` · ต้องมี Lead นำเข้า (`requires_human: true`)
