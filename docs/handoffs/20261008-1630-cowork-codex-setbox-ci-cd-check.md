@@ -20,8 +20,8 @@ Lead บอกว่าใช้ patch แล้ว (`push: branches: [main, mas
 
 1. ยืนยันว่า patch อยู่ที่ไหน (branch/PR) และหลัง merge เข้า `master` มีรอบ CI แบบ `push` จริงและผ่าน แนบลิงก์ run
 2. ถ้ามี branch protection แบบ required check ตรวจว่าชื่อ check ยังตรงหลังแก้
-3. ร่างทางเลือก CD ของ setbox (เอกสาร ไม่ลงมือ): ปล่อยชุดส่งมอบ (`scripts/build-kit.js`) เป็น GitHub Release พร้อม checksum, หรือ push อิมเมจ พร้อมข้อดีข้อเสียและความเสี่ยง ปลายทางใดต้องให้ Lead เลือกก่อน
+3. **Lead เลือกปลายทาง CD แล้ว (2026-10-08): GitHub Release + checksum** ตรวจและปรับ `docs/patches/setbox-release-kit-workflow.patch` (workflow_dispatch เท่านั้น สร้าง draft pre-release ที่ยังไม่ลงลายมือชื่อ) แล้วเปิด PR (ไม่ merge) ห้ามให้ workflow ลงลายมือชื่อหรือเผยแพร่เอง: `sign-kit` เป็นขั้นของ Release Owner ที่ออฟฟิศ
 
 ## สิ่งที่ต้องการกลับ
 
-ไฟล์รายงานสั้น (≤1 หน้า) + ลิงก์ run หลักฐาน ระบุ "ตรวจแล้ว" แยกจาก "อ่านอย่างเดียว" ข้อ 3 ส่งเป็น `type: answer` ที่มี `requires_human: true` เพื่อให้ Lead เลือกปลายทาง
+ไฟล์รายงานสั้น (≤1 หน้า) + ลิงก์ run หลักฐาน ระบุ "ตรวจแล้ว" แยกจาก "อ่านอย่างเดียว" ข้อ 3 รายงานว่ารัน workflow จริงแล้วได้ draft release ที่ตรวจ `sha256sum -c` ผ่านหรือไม่

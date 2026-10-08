@@ -22,3 +22,14 @@ git push -u origin ci/run-on-push-to-master          # แล้วเปิด 
 ## สิ่งที่ควรดูหลังใช้
 
 หลัง merge ให้เปิดแท็บ Actions ว่ามีรอบ CI แบบ `push` บน `master` และผ่าน ถ้า repo ตั้ง branch protection แบบ required check ชื่อ check ไม่เปลี่ยน
+
+---
+
+# Patch 2: workflow ปล่อยชุดส่งมอบเป็นร่าง Release (`setbox-release-kit-workflow.patch`)
+
+- Lead เลือกปลายทาง CD เป็น GitHub Release + checksum (2026-10-08) ไฟล์ใหม่ `.github/workflows/release-kit.yml` ใน `onemanos-setbox`
+- รันเฉพาะเมื่อสั่งเอง (`workflow_dispatch`) รับ `release_id` ประกอบชุดด้วย `scripts/build-kit.js` (รวมขั้นตรวจในตัว) แล้ว tar.gz + `sha256sum` และสร้าง **draft pre-release** ที่ระบุว่ายังไม่ลงลายมือชื่อ
+- ไม่ลงลายมือชื่อและไม่เผยแพร่ให้: `sign-kit.js` เป็นขั้นที่ Release Owner ทำที่ออฟฟิศ (ข้อความท้าย `build-kit.js`) ให้สิทธิ์ `contents: write` เฉพาะ job นี้
+- ทดสอบแล้วในเครื่อง: `build-kit.js --out <scratch>` ประกอบสำเร็จ (356 ไฟล์ ผ่านขั้นตรวจ) → tar.gz → `sha256sum -c` ผ่าน, YAML อ่านได้, `git apply --check` ผ่านกับ `master` `e706ed1`
+- **ยังไม่ได้ทดสอบ:** การรันบน GitHub Actions จริงและขั้น `gh release create` (ต้องรันหลัง merge) ถ้า repo ตั้งนโยบายจำกัดสิทธิ์ `GITHUB_TOKEN` เป็นอ่านอย่างเดียว ขั้นสุดท้ายจะล้ม ต้องเปิดสิทธิ์เขียนของ workflow
+- ใช้: `git apply docs/patches/setbox-release-kit-workflow.patch` แล้วคอมมิตด้วย `-s` เปิด PR เข้า `master`
