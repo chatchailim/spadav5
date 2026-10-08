@@ -1,0 +1,58 @@
+diff --git a/.github/workflows/release-kit.yml b/.github/workflows/release-kit.yml
+new file mode 100644
+index 0000000..d054cd8
+--- /dev/null
++++ b/.github/workflows/release-kit.yml
+@@ -0,0 +1,52 @@
++name: Release kit (draft)
++
++# ประกอบชุดส่งมอบแล้วแนบเป็น "ร่าง" Release พร้อม SHA-256 เฉพาะเมื่อสั่งรันเอง
++# ชุดนี้ยังไม่ลงลายมือชื่อ: ขั้น sign-kit ต้องทำที่ออฟฟิศโดย Release Owner
++# (ดูข้อความท้าย scripts/build-kit.js) workflow นี้จึงไม่เผยแพร่และไม่ลงลายมือชื่อให้
++
++on:
++  workflow_dispatch:
++    inputs:
++      release_id:
++        description: รหัสรุ่นที่ Release Owner อนุมัติ (เช่น onemanos-setbox-2026-10-08)
++        required: true
++        type: string
++
++permissions:
++  contents: read
++
++jobs:
++  build-draft:
++    runs-on: ubuntu-latest
++    timeout-minutes: 30
++    permissions:
++      contents: write
++    env:
++      RELEASE_ID: ${{ inputs.release_id }}
++    steps:
++      - uses: actions/checkout@v4
++      - uses: actions/setup-node@v4
++        with:
++          node-version: 22
++
++      - name: Assemble and verify kit
++        run: node scripts/build-kit.js --name "$RELEASE_ID" --release "$RELEASE_ID" --out "$RUNNER_TEMP/kit/$RELEASE_ID"
++
++      - name: Package and checksum
++        working-directory: ${{ runner.temp }}/kit
++        run: |
++          tar -czf "$RELEASE_ID.tar.gz" "$RELEASE_ID"
++          sha256sum "$RELEASE_ID.tar.gz" > "$RELEASE_ID.tar.gz.sha256"
++          cat "$RELEASE_ID.tar.gz.sha256"
++
++      - name: Create draft pre-release (not published, not signed)
++        env:
++          GH_TOKEN: ${{ github.token }}
++        working-directory: ${{ runner.temp }}/kit
++        run: |
++          gh release create "kit-$RELEASE_ID" \
++            "$RELEASE_ID.tar.gz" "$RELEASE_ID.tar.gz.sha256" \
++            --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" \
++            --draft --prerelease \
++            --title "Kit $RELEASE_ID (unsigned draft)" \
++            --notes "Built from $GITHUB_SHA. NOT SIGNED. Release Owner must run scripts/sign-kit.js and verify before any customer delivery."
