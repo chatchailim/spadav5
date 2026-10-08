@@ -5,6 +5,7 @@
 - **[สารบัญเอกสารและทะเบียนงานค้าง (เริ่มที่นี่)](docs/INDEX.md)** รหัส SPD-IDX-001
 - **[สรุปความพร้อมส่งมอบ (SPD-RDY-001)](docs/DELIVERY-READINESS-TH.md)** · [ผลเทียบโค้ดกับสถาปัตยกรรม SetBox (SPD-ARC-002)](docs/SETBOX-CODE-GAP-ANALYSIS-TH.md)
 - **[Design Spec & Project Framework (SPD-SPC-001)](docs/designspec.md)** · [แผนทดสอบรับงานและใบคะแนน (SPD-TST-001)](docs/ACCEPTANCE-TEST-PLAN-TH.md)
+- **[คู่มือผู้ใช้งานผู้เริ่มต้น (SPD-HLP-001)](docs/help/readme.md)** · หน้า View ปุ่ม Help: `docs/help/index.html` (เปิดผ่าน web server)
 - [สถานะปัจจุบัน v0.4 (สรุปจาก spada-monorepo, onemanos-setbox, onemanos, spada-specs)](docs/CURRENT-STATE.md)
 - [Gap Analysis v0.4 (เทียบกับระบบจริง)](docs/GAP-ANALYSIS.md)
 - [เศรษฐกิจดิจิทัลที่สมาชิกได้ประโยชน์สูงสุด (ข้อเสนอ v0.1)](docs/MEMBER-ECONOMY.md)
