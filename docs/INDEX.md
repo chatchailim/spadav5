@@ -64,6 +64,7 @@
 | SPD-WO-003 | ใบงานสำรวจ onevault-mcp และตัวตั้งเวลา (spike, เสนอเลข POO-WO-005) | **Lead ตัดสินให้ออก 2026-09-30** นำเข้า `onemanos-setbox` แล้ว (branch `docs/poo-wo-005` ce692ca ยังไม่ merge) รอ Lead merge + มอบผู้ทำ | [WO-SPIKE-TEAMAGENT-MCP-SCHEDULER](work-orders/WO-SPIKE-TEAMAGENT-MCP-SCHEDULER.md) |
 | SPD-REV-001 | ผลตรวจรับรอบกลางของรายงานสำรวจ POO-WO-005 (checkpoint ที่ commit 594d47e) | รอบกลาง: ยังไม่รับขั้นสุดท้าย รอผู้ทำทำงานค้างและส่งรอบสอง | [REVIEW-POO-WO-005-interim](work-orders/REVIEW-POO-WO-005-interim-2026-09-30.md) |
 | SPD-REV-002 | ผลตรวจรับรอบที่ 2 ของรายงานสำรวจ POO-WO-005 (commit 4331192) | แก้ตามรอบกลางครบ; ยังไม่รับขั้นสุดท้าย รอ Lead กำหนด VM + บัญชีทดสอบ/วงเงิน | [REVIEW-POO-WO-005-round2](work-orders/REVIEW-POO-WO-005-round2-2026-09-30.md) |
+| SPD-DEC-001 | สรุปเรื่องที่ Lead ต้องตัดสิน ฉบับตอบสั้น: DCO แยกรายการ, KI-01/KI-02, ลำดับ merge PR #12–#22, คำถาม maker-checker, กำหนดส่ง, การให้ AI เขียน mailbox | ร่าง 2026-10-09 ข้อเสนอเป็นความเห็นของ AI รอ Lead ตอบ | [LEAD-DECISION-BRIEF-TH](LEAD-DECISION-BRIEF-TH.md) |
 | SPD-WO-002 | ใบงานสคริปต์รับรองฮาร์ดแวร์ (WO-HWQ-001) | ร่าง รอผู้ดูแลออกใบงาน | [WO-HWQ-001](work-orders/WO-HWQ-001-hardware-qualification-script.md) |
 
 ## 2. การตัดสินใจที่รอ Lead
