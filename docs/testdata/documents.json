@@ -1,0 +1,16 @@
+{
+  "_comment": "ข้อมูลเอกสารสมมติ ใช้กับ POST /api/dms/documents (ต้องมีหัว Idempotency-Key) ทุกค่าเป็นข้อมูลสังเคราะห์ ห้ามใส่ข้อมูลจริง ค่าที่เป็น {\"$repeat\":{\"text\":..,\"times\":n}} จะถูกขยายเป็นข้อความซ้ำ n ครั้งตอนอ่าน (JSON เขียนข้อความยาวซ้ำไม่ได้)",
+  "base": {
+    "type": "GeneralDocument", "title": "บันทึกทดสอบ TC-001", "documentNumber": "TST-0001",
+    "payload": { "description": "สร้างโดยชุดทดสอบควัน", "legalEntityId": "co-alpha" }
+  },
+  "valid": [
+    { "name": "ชื่อภาษาไทยปกติ", "body": { "type": "GeneralDocument", "title": "บันทึกข้อความภายใน", "payload": { "description": "ทดสอบภาษาไทย ตัวเลข ๑๒๓ และอักขระพิเศษ", "legalEntityId": "co-alpha" } } },
+    { "name": "ชื่อยาว 200 ตัวอักษร (ค่าขอบบน)", "body": { "type": "GeneralDocument", "title": { "$repeat": { "text": "ก", "times": 200 } }, "payload": { "description": "ขอบบนของชื่อ", "legalEntityId": "co-alpha" } } },
+    { "name": "เนื้อหามีเครื่องหมายคำพูด ขึ้นบรรทัดใหม่ และแท็กที่ต้องถูกเก็บเป็นข้อความธรรมดา", "body": { "type": "GeneralDocument", "title": "ทดสอบการ escape", "payload": { "description": "บรรทัดหนึ่ง\n\"ในเครื่องหมายคำพูด\" <b>ไม่ใช่ตัวหนา</b> <script>alert(1)</script>", "legalEntityId": "co-alpha" } } }
+  ],
+  "negative": [
+    { "name": "ไม่มีชื่อเอกสาร", "body": { "type": "GeneralDocument", "payload": { "legalEntityId": "co-alpha" } }, "expect": "ปฏิเสธ (4xx) พร้อมข้อความว่าต้องมีชื่อ" },
+    { "name": "ชื่อเป็นช่องว่างล้วน", "body": { "type": "GeneralDocument", "title": "   ", "payload": { "legalEntityId": "co-alpha" } }, "expect": "ปฏิเสธ (4xx)" }
+  ]
+}
