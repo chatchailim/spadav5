@@ -1,0 +1,11 @@
+{
+  "_comment": "ผู้ใช้สมมติ รูปแบบเดียวกับ scripts/onboard-users.example.json ในส่วนที่ใช้ทดสอบ บทบาทของแต่ละคนใช้ตรวจสิทธิ์ข้ามนิติบุคคล",
+  "people": [
+    { "subjectId": "did:test:alpha-staff", "displayName": "พนักงานอัลฟ่า", "legalEntity": "co-alpha", "purpose": "ผู้ใช้ปกติของ co-alpha" },
+    { "subjectId": "did:test:beta-staff",  "displayName": "พนักงานเบต้า",  "legalEntity": "co-beta",  "purpose": "ผู้ใช้ต่างนิติบุคคล ใช้ตรวจว่ามองไม่เห็นข้อมูลของ co-alpha" }
+  ],
+  "adminCreatedUser": {
+    "subjectId": "did:test:pw-user", "displayName": "ผู้ใช้ทดสอบรหัสผ่าน", "legalEntityIds": ["co-alpha"],
+    "initialPassword": "รหัสผ่านชั่วคราวยาวพอ-001", "newPassword": "รหัสผ่านใหม่ยาวพอ-002", "wrongPassword": "รหัสผิด"
+  }
+}
