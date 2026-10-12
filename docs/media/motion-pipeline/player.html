@@ -1,0 +1,85 @@
+<!doctype html><meta charset="utf-8"><title>mg</title>
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1920px;height:1080px;background:#0B1B2B;color:#F5F1E7;font-family:'Noto Sans Thai',sans-serif;position:relative;overflow:hidden}
+canvas{position:absolute;inset:0}
+.scene{position:absolute;left:100px;right:100px;top:56px;bottom:50px;opacity:0}
+.kick{font-size:36px;color:#51D9BE;font-weight:700}
+.title{margin-top:20px;font-size:92px;line-height:1.25;font-weight:700}
+.title .ln{display:block;overflow:hidden}.title .ln span{display:inline-block}
+.area{position:absolute;left:0;right:0;top:400px;display:flex;gap:30px;align-items:stretch}
+.card{flex:1;background:rgba(18,37,53,.92);border:4px solid #294252;border-radius:26px;padding:26px 22px;font-size:50px;font-weight:700;text-align:center;display:flex;align-items:center;justify-content:center;min-height:170px;line-height:1.3;opacity:0;box-shadow:0 0 0 rgba(81,217,190,0)}
+.arrow{font-size:70px;color:#F3BD6A;align-self:center;opacity:0}
+.panel{flex:1;background:rgba(18,37,53,.92);border:4px solid #294252;border-radius:26px;padding:30px 36px;opacity:0}
+.ph{font-size:56px;font-weight:700}.p0 .ph{color:#51D9BE}.p1 .ph{color:#F3BD6A}.pb{font-size:44px;margin-top:12px;line-height:1.35}
+#cap{position:absolute;left:100px;right:100px;top:760px;text-align:center;font-size:52px;font-weight:700;line-height:1.3;background:rgba(5,12,20,.72);border-radius:22px;padding:18px 24px;opacity:0}
+.foot{position:absolute;left:100px;bottom:50px;font-size:28px;color:#9EB0BF}
+#bars{position:absolute;left:0;right:0;bottom:0;height:34px;display:flex;gap:6px;align-items:flex-end;padding:0 100px}
+#bars i{flex:1;background:linear-gradient(#51D9BE,#72B8F5);border-radius:3px 3px 0 0;height:4px;opacity:.75}
+</style>
+<canvas id="bg" width="1920" height="1080"></canvas><div id="stage"></div><div id="cap"></div><div class="foot">วิสัยทัศน์ · ร่างเพื่อทบทวน · สร้างโดยเอไอ · ภาพประกอบ · ไม่ใช่คำแนะนำการลงทุน</div><div id="bars"></div>
+<script src="gsap.min.js"></script>
+<script>
+let D=null,TL=null,bars=[],ctx=document.getElementById('bg').getContext('2d');
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+function rnd(i){const x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x)}   // deterministic pseudo-random
+function init(data){
+  D=data;const st=document.getElementById('stage');
+  const B=document.getElementById('bars');for(let i=0;i<48;i++){const e=document.createElement('i');B.appendChild(e);bars.push(e)}
+  TL=gsap.timeline({paused:true});
+  D.scenes.forEach((s,si)=>{
+    const el=document.createElement('div');el.className='scene';el.id='sc'+si;
+    let h=`<div class="kick">${esc(s.ch)} · SPADA × OneManOS</div><div class="title">${s.title.split('\n').map(l=>`<span class="ln"><span>${esc(l)}</span></span>`).join('')}</div><div class="area">`;
+    if(s.kind==='flow')s.items.forEach((t,j)=>{if(j)h+=`<div class="arrow">➜</div>`;h+=`<div class="card">${esc(t)}</div>`});
+    else if(s.kind==='split')s.items.forEach((t,j)=>{const [a,b]=t.split('|');h+=`<div class="panel p${j}"><div class="ph">${esc(a)}</div><div class="pb">${esc(b)}</div></div>`});
+    else s.items.forEach(t=>{h+=`<div class="card">${esc(t)}</div>`});
+    el.innerHTML=h+'</div>';st.appendChild(el);
+    const t0=s.start-0.5,t1=s.start+s.dur;
+    TL.set(el,{opacity:1},Math.max(0,t0));TL.to(el,{opacity:0,duration:.35,ease:'power1.in'},t1-.35);
+    // title lines: rise + unmask
+    el.querySelectorAll('.title .ln span').forEach((n,k)=>TL.fromTo(n,{yPercent:110,rotate:3},{yPercent:0,rotate:0,duration:.7,ease:'power4.out'},Math.max(0,s.start-0.4)+k*.12));
+    TL.fromTo(el.querySelector('.kick'),{x:-60,opacity:0},{x:0,opacity:1,duration:.6,ease:'power3.out'},Math.max(0,s.start-0.45));
+    // items: spring in at narration-synced times
+    const items=[...el.querySelectorAll('.card,.panel')];const arrows=[...el.querySelectorAll('.arrow')];
+    items.forEach((n,j)=>{
+      const at=s.itemT[j];
+      const fromX=n.classList.contains('panel')?(j%2?120:-120):0;
+      TL.fromTo(n,{opacity:0,y:50,x:fromX,scale:.86},{opacity:1,y:0,x:0,scale:1,duration:.75,ease:'back.out(1.8)'},at);
+      TL.to(n,{borderColor:n.classList.contains('p1')?'#F3BD6A':'#51D9BE',duration:.3},at);
+      if(j>0&&arrows[j-1])TL.fromTo(arrows[j-1],{opacity:0,x:-30,scaleX:.2},{opacity:1,x:0,scaleX:1,duration:.45,ease:'power3.out'},at-0.12);
+    });
+    // captions
+    s.subs.forEach(([a,b,txt])=>{
+      TL.call(()=>{document.getElementById('cap').textContent=txt},null,a);
+      TL.fromTo('#cap',{opacity:0,y:14},{opacity:1,y:0,duration:.25,ease:'power2.out'},a);
+      TL.to('#cap',{opacity:0,duration:.15},b-.05);
+    });
+  });
+}
+function beatEnv(t){const ph=((t*D.bpm/60)%1+1)%1;return Math.exp(-ph*5.5)}
+function render(t){
+  TL.time(t,false);
+  const f=Math.min(D.bands.length-1,Math.floor(t*D.fps)),bd=D.bands[f],env=beatEnv(t);
+  // background: animated gradient + floating particles that breathe with the beat
+  ctx.clearRect(0,0,1920,1080);
+  const g=ctx.createRadialGradient(1500+Math.sin(t*.3)*200,160+Math.cos(t*.25)*80,0,1500,160,1100);
+  g.addColorStop(0,`rgba(30,90,125,${.55+env*.12})`);g.addColorStop(1,'rgba(11,27,43,1)');ctx.fillStyle=g;ctx.fillRect(0,0,1920,1080);
+  const g2=ctx.createRadialGradient(150,1000,0,150,1000,900);g2.addColorStop(0,'rgba(20,60,85,.55)');g2.addColorStop(1,'rgba(11,27,43,0)');ctx.fillStyle=g2;ctx.fillRect(0,0,1920,1080);
+  for(let i=0;i<70;i++){
+    const sp=0.25+rnd(i)*0.6,x=(rnd(i+9)*2100+t*sp*40)%2100-90,y=1080-((rnd(i+3)*1300+t*sp*55)%1300)+110;
+    const r=2+rnd(i+5)*5+env*2.2+bd[i%12]*3;
+    ctx.beginPath();ctx.arc(x,y,r,0,7);ctx.fillStyle=`rgba(${i%3?81:243},${i%3?217:189},${i%3?190:106},${.18+rnd(i+1)*.35})`;ctx.fill();
+  }
+  // connection lines between near particles (network feel)
+  ctx.lineWidth=1;
+  for(let i=0;i<30;i++){const x1=(rnd(i+9)*2100+t*(0.25+rnd(i)*.6)*40)%2100-90,y1=1080-((rnd(i+3)*1300+t*(0.25+rnd(i)*.6)*55)%1300)+110;
+    for(let j=i+1;j<30;j++){const x2=(rnd(j+9)*2100+t*(0.25+rnd(j)*.6)*40)%2100-90,y2=1080-((rnd(j+3)*1300+t*(0.25+rnd(j)*.6)*55)%1300)+110;
+      const d=Math.hypot(x1-x2,y1-y2);if(d<170){ctx.strokeStyle=`rgba(114,184,245,${(1-d/170)*.22})`;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke()}}}
+  // beat pulse on cards + title micro-scale
+  document.querySelectorAll('.card,.panel').forEach(n=>{const sh=env*28;n.style.boxShadow=`0 0 ${sh}px rgba(81,217,190,${env*.45})`});
+  document.querySelectorAll('.title').forEach(n=>n.style.transform=`scale(${1+env*.006})`);
+  // spectrum bars driven by the real music analysis
+  bars.forEach((b,i)=>{const v=bd[Math.floor(i/4)]*(0.6+0.4*rnd(i+f%7));b.style.height=(4+v*30)+'px'});
+}
+window.init=init;window.render=render;
+</script>
